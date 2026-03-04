@@ -1,0 +1,17 @@
+/*
+  # Security Headers für alle Seiten
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  X-XSS-Protection: 1; mode=block
+
+  # Content Security Policy
+  # - Google Fonts erlaubt (Landing Page nutzt Space Mono)
+  # - LemonSqueezy erlaubt (Checkout-Links)
+  # - Kein Inline-Script außer eigener Code
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.lemonsqueezy.com; frame-src https://holisticcointrainer.lemonsqueezy.com;
+
+/download
+  # Cache-Control für DMG-Download: kein caching (immer aktuelle Version)
+  Cache-Control: no-cache, no-store, must-revalidate

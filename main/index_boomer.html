@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holistic Coin Trainer — Krypto-Analyse für ernsthafte Investoren</title>
+  <meta name="description" content="Professionelle Krypto-Analyse. Kein Fachjargon. Keine Cloud. Einmal kaufen, dauerhaft nutzen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:         #080b0f;
+      --bg2:        #0d1117;
+      --bg3:        #111820;
+      --gold:       #ffd700;
+      --gold-dim:   #b8860b;
+      --gold-soft:  rgba(255,215,0,0.08);
+      --green:      #00ff41;
+      --green-mid:  #39d353;
+      --green-dim:  #1a7431;
+      --amber:      #ffa500;
+      --text:       #c8d0d8;
+      --text-soft:  #8a9ab0;
+      --gray:       #3a4555;
+      --gray-light: #556070;
+      --serif:      'Inter', system-ui, -apple-system, sans-serif;
+      --mono:       'Space Mono', 'Courier New', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Subtle scanlines — much lighter than tech version */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,0,0,0.03) 3px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── TOP BAR ──────────────────────────────────────────────── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(8,11,15,0.97) 0%, transparent 100%);
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold-dim);
+    }
+    .logo span { color: var(--gold); }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--green);
+      text-decoration: none;
+      border: 1px solid var(--green-dim);
+      padding: 8px 20px;
+      letter-spacing: 0.1em;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--green); color: var(--bg); }
+
+    /* ── LANG SWITCHER ────────────────────────────────────────── */
+    .lang-switcher { display: flex; gap: 2px; align-items: center; }
+    .lang-btn {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gray-light);
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 5px 8px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .lang-btn:hover { color: var(--gold-dim); border-color: var(--gray); }
+    .lang-btn.active {
+      color: var(--gold);
+      border-color: var(--gold-dim);
+      background: rgba(255,215,0,0.06);
+    }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 100px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-color: var(--bg);
+      background-image: url('hero.jpeg');
+      background-size: auto 100%;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right,
+          rgba(8,11,15,1) 0%, rgba(8,11,15,0.9) 8%,
+          rgba(8,11,15,0.4) 18%, transparent 30%,
+          transparent 70%, rgba(8,11,15,0.4) 82%,
+          rgba(8,11,15,0.9) 92%, rgba(8,11,15,1) 100%
+        ),
+        linear-gradient(to top,
+          rgba(8,11,15,1) 0%, rgba(8,11,15,0.85) 12%,
+          rgba(8,11,15,0.4) 28%, transparent 50%
+        ),
+        linear-gradient(to bottom, rgba(8,11,15,0.7) 0%, transparent 22%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 760px;
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--gold-dim);
+      letter-spacing: 0.28em;
+      margin-bottom: 28px;
+      opacity: 0.8;
+    }
+
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 700;
+      color: #e8edf2;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-soft);
+      font-weight: 400;
+      max-width: 560px;
+      margin: 0 auto 52px;
+      line-height: 1.6;
+    }
+
+    /* Trust bar — 3 key points */
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 52px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border: 1px solid var(--gray);
+      background: rgba(8,11,15,0.6);
+      backdrop-filter: blur(6px);
+      font-size: 12px;
+      color: var(--text-soft);
+      letter-spacing: 0.04em;
+      margin: 2px;
+    }
+
+    .trust-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      flex-shrink: 0;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      color: var(--gold);
+      border: 2px solid var(--gold-dim);
+      padding: 16px 44px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 0 35px rgba(255,215,0,0.3);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      z-index: 3;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.25; }
+      50%       { opacity: 0.7; }
+    }
+
+    /* ── SECTION BASE ─────────────────────────────────────────── */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      border-top: 1px solid var(--gray);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--green-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 600px;
+      margin-bottom: 52px;
+      line-height: 1.7;
+    }
+
+    /* ── 3 STEPS ──────────────────────────────────────────────── */
+    .steps-simple {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+    }
+
+    .step-simple {
+      background: var(--bg2);
+      padding: 44px 32px;
+      transition: background 0.2s;
+    }
+    .step-simple:hover { background: var(--bg3); }
+
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .step-simple-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .step-simple-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    /* ── WHAT YOU GET ─────────────────────────────────────────── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+    }
+
+    .benefit {
+      background: var(--bg2);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+    .benefit:hover { background: var(--bg3); }
+
+    .benefit-icon {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green-dim);
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-dim);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .benefit-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.85;
+    }
+
+    /* ── TRUST SECTION ────────────────────────────────────────── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+      margin-bottom: 60px;
+    }
+
+    .trust-box {
+      background: var(--bg2);
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .trust-number {
+      font-family: var(--mono);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .trust-label {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .trust-statement {
+      background: var(--bg2);
+      border: 1px solid var(--gray);
+      border-left: 3px solid var(--gold-dim);
+      padding: 28px 36px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* ── TRIAL ────────────────────────────────────────────────── */
+    .trial-banner {
+      border: 1px solid var(--green-dim);
+      background: rgba(0,255,65,0.03);
+      padding: 44px 44px;
+      margin-bottom: 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .trial-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--bg);
+      background: var(--green-dim);
+      padding: 4px 12px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .trial-title {
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 12px;
+      text-shadow: 0 0 20px rgba(0,255,65,0.3);
+    }
+
+    .trial-text {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.85;
+      max-width: 540px;
+    }
+    .trial-text strong { color: var(--text); }
+
+    .trial-cta-wrap { display: flex; flex-direction: column; align-items: center; }
+
+    .trial-cta {
+      display: inline-block;
+      white-space: nowrap;
+      color: var(--bg);
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      padding: 17px 36px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+    .trial-cta:hover { background: var(--green); box-shadow: 0 0 30px rgba(0,255,65,0.25); }
+
+    .trial-sub {
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 0.06em;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* ── PRICING ──────────────────────────────────────────────── */
+    .no-sub-banner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,215,0,0.04);
+      border: 1px solid var(--gold-dim);
+      padding: 20px 32px;
+      margin-bottom: 52px;
+    }
+
+    .no-sub-icon {
+      font-family: var(--mono);
+      font-size: 22px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .no-sub-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .no-sub-text strong { color: var(--gold); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+      margin-bottom: 1px;
+    }
+
+    .price-card {
+      background: var(--bg2);
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .price-card:hover { background: var(--bg3); transform: translateY(-3px); }
+
+    .price-card.featured { background: #0d1a0f; }
+    .price-card.featured::before {
+      content: 'BELIEBTESTE WAHL';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--gold-dim);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .card-tier {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: var(--green-dim);
+      margin-bottom: 20px;
+      margin-top: 12px;
+    }
+    .price-card:not(.featured) .card-tier { margin-top: 0; }
+
+    .card-price {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .card-price sup {
+      font-size: 18px;
+      vertical-align: top;
+      margin-top: 8px;
+      color: var(--gold-dim);
+    }
+
+    .card-period {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .card-saving {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green-dim);
+      letter-spacing: 0.1em;
+      margin-bottom: 28px;
+      min-height: 16px;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 40px;
+      flex: 1;
+    }
+    .card-features li {
+      font-size: 13px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(58,69,85,0.35);
+      color: var(--text);
+    }
+    .card-features li::before {
+      content: '✓ ';
+      color: var(--green-mid);
+      font-weight: 700;
+    }
+
+    .card-btn {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-outline { border: 1px solid var(--gold-dim); color: var(--gold-dim); }
+    .btn-outline:hover { background: var(--gold-dim); color: var(--bg); }
+
+    .btn-solid { background: var(--gold-dim); color: var(--bg); border: 1px solid var(--gold); }
+    .btn-solid:hover { background: var(--gold); box-shadow: 0 0 25px rgba(255,215,0,0.35); }
+
+    /* Setup note — boomer-friendly */
+    .setup-note {
+      background: var(--bg2);
+      border: 1px solid var(--gray);
+      border-left: 3px solid var(--amber);
+      padding: 28px 32px;
+      margin-top: 36px;
+    }
+
+    .setup-note-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+
+    .setup-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .setup-step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .setup-num {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .setup-step-text {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+    .setup-step-text strong { color: var(--text); }
+
+    /* ── DISCLAIMER ───────────────────────────────────────────── */
+    .disclaimer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 40px 60px;
+      font-size: 11px;
+      color: var(--gray-light);
+      line-height: 1.9;
+      border-top: 1px solid rgba(58,69,85,0.3);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--gray);
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--gray);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      font-family: var(--mono);
+      color: var(--gold-dim);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-dim); }
+
+    .footer-version {
+      font-family: var(--mono);
+      opacity: 0.35;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .topbar { padding: 16px 20px; }
+      .section-wrap { padding: 72px 20px; }
+      .trial-banner { grid-template-columns: 1fr; }
+      .trial-cta-wrap { align-items: flex-start; }
+      footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+      .no-sub-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logo"><span>HCT</span> // HOLISTIC COIN TRAINER</div>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn active" data-lang="DE">DE</button>
+      <button class="lang-btn" data-lang="EN">EN</button>
+      <button class="lang-btn" data-lang="FR">FR</button>
+      <button class="lang-btn" data-lang="ES">ES</button>
+      <button class="lang-btn" data-lang="IT">IT</button>
+      <button class="lang-btn" data-lang="PT">PT</button>
+    </div>
+    <a href="#trial" class="nav-cta">KOSTENLOS TESTEN</a>
+  </header>
+
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-label">HOLISTIC COIN TRAINER · KI-GESTÜTZTE KRYPTO-ANALYSE</div>
+
+      <h1 class="hero-h1">
+        Krypto analysieren<br>wie ein <em>Profi.</em>
+      </h1>
+
+      <p class="hero-sub">
+        Coin eingeben. Analyse lesen. Entscheidung treffen.<br>
+        Ohne Vorkenntnisse. Ohne Abo-Falle. Läuft auf deinem Mac.
+      </p>
+
+      <div class="hero-trust">
+        <div class="trust-item"><div class="trust-dot"></div>Echtzeit-Marktdaten</div>
+        <div class="trust-item"><div class="trust-dot"></div>Kein Abo — einmal kaufen</div>
+        <div class="trust-item"><div class="trust-dot"></div>Deine Daten bleiben bei dir</div>
+        <div class="trust-item"><div class="trust-dot"></div>2 Analysen kostenlos testen</div>
+      </div>
+
+      <a href="#trial" class="hero-cta">Kostenlos starten</a>
+    </div>
+
+    <div class="scroll-hint">▼ · MEHR ERFAHREN</div>
+  </section>
+
+
+  <!-- ── SO FUNKTIONIERT ES ────────────────────────────────────── -->
+  <div class="section-wrap">
+    <div class="section-label">&gt; ABLAUF</div>
+    <div class="section-title">So einfach ist es.</div>
+    <p class="section-sub">Keine Vorkenntnisse notwendig. HCT übernimmt die komplette Analyse — du bekommst ein klares Ergebnis.</p>
+
+    <div class="steps-simple">
+      <div class="step-simple">
+        <div class="step-icon">01</div>
+        <div class="step-simple-title">App herunterladen</div>
+        <p class="step-simple-text">HCT direkt auf deinen Mac laden. Kein App Store. Keine Registrierung. Einmal einrichten — fertig.</p>
+      </div>
+      <div class="step-simple">
+        <div class="step-icon">02</div>
+        <div class="step-simple-title">Coin eingeben</div>
+        <p class="step-simple-text">Tippe den Namen oder das Kürzel des Coins ein — z.B. "BTC" oder "ETH". Das System lädt automatisch alle aktuellen Marktdaten.</p>
+      </div>
+      <div class="step-simple">
+        <div class="step-icon">03</div>
+        <div class="step-simple-title">Analyse lesen</div>
+        <p class="step-simple-text">Du bekommst eine vollständige Einschätzung: Ist der Preis günstig? Ist das Projekt solide? Was wäre ein sinnvoller Einstiegsplan?</p>
+      </div>
+      <div class="step-simple">
+        <div class="step-icon">04</div>
+        <div class="step-simple-title">PDF exportieren</div>
+        <p class="step-simple-text">Speichere jeden Bericht als PDF. Dein persönliches Archiv — übersichtlich, jederzeit abrufbar, ausschließlich auf deinem Rechner.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── WAS DU BEKOMMST ───────────────────────────────────────── -->
+  <div class="section-wrap">
+    <div class="section-label">&gt; LEISTUNGSUMFANG</div>
+    <div class="section-title">Was HCT für dich tut.</div>
+    <p class="section-sub">Professionelle Analyse-Werkzeuge — verpackt in eine Oberfläche, die jeder nutzen kann.</p>
+
+    <div class="benefits-grid">
+
+      <div class="benefit">
+        <div class="benefit-icon">// MARKTDATEN</div>
+        <div class="benefit-title">Live-Preise &amp; Marktlage</div>
+        <p class="benefit-text">Aktuelle Daten direkt von CoinGecko. Wie weit ist der Coin von seinem Allzeithoch entfernt? Wo steht er im Marktvergleich? Alles automatisch abgerufen — keine manuelle Recherche.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">// SICHERHEITSCHECK</div>
+        <div class="benefit-title">Automatischer Projekt-Check</div>
+        <p class="benefit-text">Bevor ein Einstiegsplan erstellt wird, prüft HCT ob das Projekt überhaupt vertrauenswürdig ist — Team-Aktivität, Börsen-Listings, bekannte Warnsignale. Kein Plan für fragwürdige Projekte.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">// EINSTIEGSSTRATEGIE</div>
+        <div class="benefit-title">Schritt-für-Schritt Kaufplan</div>
+        <p class="benefit-text">Du bekommst keine pauschale Empfehlung, sondern einen konkreten Plan: fünf gestaffelte Einstiegspunkte mit Preiszielen und Prozentzuteilungen — für geduldige, strategische Käufer.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">// STEUERHINWEISE</div>
+        <div class="benefit-title">Deutsche Steuerhinweise inklusive</div>
+        <p class="benefit-text">Jeder Bericht enthält Hinweise zur deutschen Besteuerung von Krypto-Gewinnen (§ 23 EStG). Kein Ersatz für Steuerberatung — aber eine solide Grundlage für das Gespräch mit deinem Berater.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">// DATENSCHUTZ</div>
+        <div class="benefit-title">Komplett lokal — keine Cloud</div>
+        <p class="benefit-text">Alle deine Analysen, dein Archiv, deine Daten — alles bleibt auf deinem Mac. Keine Synchronisation, keine Datenweitergabe, kein Konto nötig. Was auf deinem Rechner liegt, gehört dir.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon">// LERNEFFEKT</div>
+        <div class="benefit-title">Du wirst besser mit jedem Bericht</div>
+        <p class="benefit-text">HCT erklärt seine Einschätzungen — du siehst nicht nur das Ergebnis, sondern die Begründung dahinter. Nach 20–30 Analysen entwickelst du ein eigenes Gespür für den Markt. Das Tool macht dich unabhängiger.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ── VERTRAUEN ─────────────────────────────────────────────── -->
+  <div class="section-wrap">
+    <div class="section-label">&gt; WARUM HCT</div>
+    <div class="section-title">Für Menschen, die ihr Geld ernst nehmen.</div>
+    <p class="section-sub">Du brauchst kein GitHub-Konto. Kein Telegram. Keine 3-Stunden-YouTube-Videos. Nur ein Mac und eine Entscheidung, informiert zu investieren.</p>
+
+    <div class="trust-grid">
+      <div class="trust-box">
+        <div class="trust-number">2</div>
+        <div class="trust-label">Analysen kostenlos —<br>ohne Kreditkarte</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-number">6</div>
+        <div class="trust-label">Sprachen — DE, EN,<br>FR, ES, IT, PT</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-number">0</div>
+        <div class="trust-label">Daten in der Cloud —<br>alles bleibt lokal</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-number">∞</div>
+        <div class="trust-label">Analysen mit Lizenz —<br>kein Limit</div>
+      </div>
+    </div>
+
+    <div class="trust-statement">
+      „Die meisten Krypto-Tools richten sich an Entwickler oder Day-Trader. HCT ist für jemanden gebaut, der einmal pro Woche eine fundierte Entscheidung treffen will — ohne den ganzen Rest."
+    </div>
+  </div>
+
+
+  <!-- ── KOSTENLOS TESTEN ──────────────────────────────────────── -->
+  <div class="section-wrap" id="trial">
+    <div class="section-label">&gt; KOSTENLOS TESTEN</div>
+    <div class="section-title">Überzeuge dich selbst.</div>
+
+    <div class="trial-banner">
+      <div>
+        <div class="trial-badge">// 2 VOLLSTÄNDIGE ANALYSEN KOSTENLOS</div>
+        <div class="trial-title">Sieh es, bevor du kaufst.</div>
+        <p class="trial-text">
+          Jeder Download enthält <strong>2 vollständige Analysen — ohne Lizenz, ohne Kreditkarte.</strong>
+          Wähle einen echten Coin. Lies den Bericht. Exportiere das PDF.
+          Schau ob es dir nützt. Dann entscheide.<br><br>
+          Bei diesem Preis verdienst du es zu wissen, was du bekommst.
+        </p>
+      </div>
+      <div class="trial-cta-wrap">
+        <a href="/download" class="trial-cta">Kostenlos herunterladen</a>
+        <div class="trial-sub">macOS · kein Konto · keine Kreditkarte</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── PREISE ────────────────────────────────────────────────── -->
+  <div class="section-wrap" id="pricing">
+    <div class="section-label">&gt; ZUGANGSSTUFEN</div>
+    <div class="section-title">Wähle deine Lizenz.</div>
+
+    <div class="no-sub-banner">
+      <div class="no-sub-icon">✓</div>
+      <div class="no-sub-text">
+        <strong>Kein Abo. Keine automatische Verlängerung. Keine Überraschungen.</strong><br>
+        Du zahlst einmal und nutzt HCT für die gesamte Lizenzdauer — mit allen Updates, ohne weiteren Kosten.
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- ANNUAL -->
+      <div class="price-card">
+        <div class="card-tier">// JAHRES-LIZENZ</div>
+        <div class="card-price"><sup>€</sup>599</div>
+        <div class="card-period">pro Jahr · manuelle Verlängerung</div>
+        <div class="card-saving">&nbsp;</div>
+        <ul class="card-features">
+          <li>Unbegrenzte Analysen</li>
+          <li>Live-Marktdaten (CoinGecko)</li>
+          <li>Professionelle Marktphasen-Analyse</li>
+          <li>Automatischer Sicherheitscheck</li>
+          <li>Schritt-für-Schritt Kaufplan</li>
+          <li>PDF-Export &amp; lokales Archiv</li>
+          <li>6 Sprachen</li>
+          <li>Alle Updates im Lizenzzeitraum</li>
+        </ul>
+        <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356826" class="card-btn btn-outline">Jahres-Lizenz holen</a>
+      </div>
+
+      <!-- 3-YEAR (FEATURED) -->
+      <div class="price-card featured">
+        <div class="card-tier">// 3-JAHRES-LIZENZ</div>
+        <div class="card-price"><sup>€</sup>1.399</div>
+        <div class="card-period">einmalig · 3 Jahre gültig</div>
+        <div class="card-saving">&gt; SPARE €398 gegenüber Jahres-Lizenz</div>
+        <ul class="card-features">
+          <li>Unbegrenzte Analysen</li>
+          <li>Live-Marktdaten (CoinGecko)</li>
+          <li>Professionelle Marktphasen-Analyse</li>
+          <li>Automatischer Sicherheitscheck</li>
+          <li>Schritt-für-Schritt Kaufplan</li>
+          <li>PDF-Export &amp; lokales Archiv</li>
+          <li>6 Sprachen</li>
+          <li>Alle Updates für 3 Jahre</li>
+        </ul>
+        <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356865" class="card-btn btn-solid">3-Jahres-Lizenz holen</a>
+      </div>
+
+      <!-- LIFETIME -->
+      <div class="price-card">
+        <div class="card-tier">// LIFETIME-LIZENZ</div>
+        <div class="card-price"><sup>€</sup>1.999</div>
+        <div class="card-period">einmalig · alle zukünftigen Updates</div>
+        <div class="card-saving">&gt; EINMAL ZAHLEN. FÜR IMMER BESITZEN.</div>
+        <ul class="card-features">
+          <li>Unbegrenzte Analysen</li>
+          <li>Live-Marktdaten (CoinGecko)</li>
+          <li>Professionelle Marktphasen-Analyse</li>
+          <li>Automatischer Sicherheitscheck</li>
+          <li>Schritt-für-Schritt Kaufplan</li>
+          <li>PDF-Export &amp; lokales Archiv</li>
+          <li>6 Sprachen</li>
+          <li>Alle zukünftigen Updates — für immer</li>
+        </ul>
+        <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356866" class="card-btn btn-outline">Lifetime-Lizenz holen</a>
+      </div>
+
+    </div>
+
+    <!-- SETUP NOTE — simplified for non-techies -->
+    <div class="setup-note">
+      <div class="setup-note-title">&gt; EINMALIGE EINRICHTUNG — CA. 5 MINUTEN</div>
+      <p style="font-size:13px; color:var(--text-soft); margin-bottom:20px; line-height:1.7;">
+        HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel
+        bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben.
+        Die KI-Nutzung kostet ca. <strong style="color:var(--text);">€0,50–0,80 pro Analyse</strong>,
+        direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.
+      </p>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-num">1.</div>
+          <div class="setup-step-text"><strong>console.anthropic.com</strong> aufrufen &amp; kostenloses Konto erstellen</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num">2.</div>
+          <div class="setup-step-text"><strong>API-Schlüssel</strong> im Dashboard erstellen (1 Klick)</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num">3.</div>
+          <div class="setup-step-text"><strong>Schlüssel in HCT</strong> einmalig eingeben — fertig</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── DISCLAIMER ────────────────────────────────────────────── -->
+  <div class="disclaimer">
+    <strong style="color:var(--gray-light);">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Recherche-Tool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Investiere niemals mehr, als du dir leisten kannst zu verlieren. Konsultiere vor Anlageentscheidungen einen qualifizierten Finanzberater. Steuerliche Hinweise sind allgemeiner Natur und kein Ersatz für professionelle Steuerberatung.
+  </div>
+
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-brand">HCT // HOLISTIC COIN TRAINER</div>
+    <div class="footer-links">
+      <a href="legal/impressum.html">Impressum</a>
+      <a href="legal/datenschutz.html">Datenschutz</a>
+      <a href="mailto:hello@holisticcointrainer.com">Kontakt</a>
+    </div>
+    <div class="footer-version">&gt; holisticcointrainer.com &nbsp;//&nbsp; v1.5 &nbsp;//&nbsp; 2026</div>
+  </footer>
+
+
+<script>
+// Language switcher — placeholder structure (full translations to be added if version is chosen)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
