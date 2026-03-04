@@ -1,0 +1,10 @@
+# Cloudflare Pages Redirects — profi.holisticcointrainer.com
+
+# Download-Redirect (gleiche DMG wie Hauptseite)
+# Bei neuem Release: Dateiname hier aktualisieren + neue DMG in R2 hochladen
+/download    https://download.holisticcointrainer.com/HolisticCoinTrainer_Beta_v1.5.24.dmg    302
+
+# Legal-Seiten
+/impressum      /legal/impressum.html    200
+/datenschutz    /legal/datenschutz.html  200
+/privacy        /legal/datenschutz.html  200

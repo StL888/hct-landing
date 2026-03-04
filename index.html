@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holistic Coin Trainer — Krypto-Analyse für ernsthafte Investoren</title>
+  <meta name="description" content="Professionelle Krypto-Analyse. Kein Fachjargon. Keine Cloud. Einmal kaufen, dauerhaft nutzen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:         #080b0f;
+      --bg2:        #0d1117;
+      --bg3:        #111820;
+      --gold:       #ffd700;
+      --gold-dim:   #b8860b;
+      --gold-soft:  rgba(255,215,0,0.08);
+      --green:      #00ff41;
+      --green-mid:  #39d353;
+      --green-dim:  #1a7431;
+      --amber:      #ffa500;
+      --text:       #c8d0d8;
+      --text-soft:  #8a9ab0;
+      --gray:       #3a4555;
+      --gray-light: #556070;
+      --serif:      'Inter', system-ui, -apple-system, sans-serif;
+      --mono:       'Space Mono', 'Courier New', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Subtle scanlines */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent 0px,
+        transparent 3px,
+        rgba(0,0,0,0.03) 3px,
+        rgba(0,0,0,0.03) 4px
+      );
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* ── TOP BAR ──────────────────────────────────────────────── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      padding: 18px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: linear-gradient(to bottom, rgba(8,11,15,0.97) 0%, transparent 100%);
+    }
+
+    .logo {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold-dim);
+    }
+    .logo span { color: var(--gold); }
+
+    .nav-cta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--green);
+      text-decoration: none;
+      border: 1px solid var(--green-dim);
+      padding: 8px 20px;
+      letter-spacing: 0.1em;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--green); color: var(--bg); }
+
+    /* ── LANG SWITCHER ────────────────────────────────────────── */
+    .lang-switcher { display: flex; gap: 2px; align-items: center; }
+    .lang-btn {
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gray-light);
+      background: transparent;
+      border: 1px solid transparent;
+      padding: 5px 8px;
+      cursor: pointer;
+      transition: all 0.18s;
+    }
+    .lang-btn:hover { color: var(--gold-dim); border-color: var(--gray); }
+    .lang-btn.active {
+      color: var(--gold);
+      border-color: var(--gold-dim);
+      background: rgba(255,215,0,0.06);
+    }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 24px 100px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-color: var(--bg);
+      background-image: url('hero.jpeg');
+      background-size: auto 100%;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to right,
+          rgba(8,11,15,1) 0%, rgba(8,11,15,0.9) 8%,
+          rgba(8,11,15,0.4) 18%, transparent 30%,
+          transparent 70%, rgba(8,11,15,0.4) 82%,
+          rgba(8,11,15,0.9) 92%, rgba(8,11,15,1) 100%
+        ),
+        linear-gradient(to top,
+          rgba(8,11,15,1) 0%, rgba(8,11,15,0.85) 12%,
+          rgba(8,11,15,0.4) 28%, transparent 50%
+        ),
+        linear-gradient(to bottom, rgba(8,11,15,0.7) 0%, transparent 22%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 760px;
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--gold-dim);
+      letter-spacing: 0.28em;
+      margin-bottom: 28px;
+      opacity: 0.8;
+    }
+
+    .hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 700;
+      color: #e8edf2;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-soft);
+      font-weight: 400;
+      max-width: 560px;
+      margin: 0 auto 52px;
+      line-height: 1.6;
+    }
+
+    /* Trust bar */
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 52px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 24px;
+      border: 1px solid var(--gray);
+      background: rgba(8,11,15,0.6);
+      backdrop-filter: blur(6px);
+      font-size: 12px;
+      color: var(--text-soft);
+      letter-spacing: 0.04em;
+      margin: 2px;
+    }
+
+    .trust-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      flex-shrink: 0;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      color: var(--gold);
+      border: 2px solid var(--gold-dim);
+      padding: 16px 44px;
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+    .hero-cta:hover {
+      background: var(--gold);
+      color: var(--bg);
+      box-shadow: 0 0 35px rgba(255,215,0,0.3);
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      z-index: 3;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.25; }
+      50%       { opacity: 0.7; }
+    }
+
+    /* ── SECTION BASE ─────────────────────────────────────────── */
+    .section-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 40px;
+      border-top: 1px solid var(--gray);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: var(--green-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--text-soft);
+      max-width: 600px;
+      margin-bottom: 52px;
+      line-height: 1.7;
+    }
+
+    /* ── 3 STEPS ──────────────────────────────────────────────── */
+    .steps-simple {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+    }
+
+    .step-simple {
+      background: var(--bg2);
+      padding: 44px 32px;
+      transition: background 0.2s;
+    }
+    .step-simple:hover { background: var(--bg3); }
+
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .step-simple-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .step-simple-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.8;
+    }
+
+    /* ── WHAT YOU GET ─────────────────────────────────────────── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+    }
+
+    .benefit {
+      background: var(--bg2);
+      padding: 36px 32px;
+      transition: background 0.2s;
+    }
+    .benefit:hover { background: var(--bg3); }
+
+    .benefit-icon {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green-dim);
+      letter-spacing: 0.2em;
+      margin-bottom: 14px;
+    }
+
+    .benefit-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-dim);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .benefit-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.85;
+    }
+
+    /* ── TRUST SECTION ────────────────────────────────────────── */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+      margin-bottom: 60px;
+    }
+
+    .trust-box {
+      background: var(--bg2);
+      padding: 36px 28px;
+      text-align: center;
+    }
+
+    .trust-number {
+      font-family: var(--mono);
+      font-size: 38px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .trust-label {
+      font-size: 13px;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .trust-statement {
+      background: var(--bg2);
+      border: 1px solid var(--gray);
+      border-left: 3px solid var(--gold-dim);
+      padding: 28px 36px;
+      font-size: 15px;
+      color: var(--text);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* ── TRIAL ────────────────────────────────────────────────── */
+    .trial-banner {
+      border: 1px solid var(--green-dim);
+      background: rgba(0,255,65,0.03);
+      padding: 44px 44px;
+      margin-bottom: 52px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .trial-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      color: var(--bg);
+      background: var(--green-dim);
+      padding: 4px 12px;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .trial-title {
+      font-size: clamp(18px, 2.2vw, 24px);
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 12px;
+      text-shadow: 0 0 20px rgba(0,255,65,0.3);
+    }
+
+    .trial-text {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.85;
+      max-width: 540px;
+    }
+    .trial-text strong { color: var(--text); }
+
+    .trial-cta-wrap { display: flex; flex-direction: column; align-items: center; }
+
+    .trial-cta {
+      display: inline-block;
+      white-space: nowrap;
+      color: var(--bg);
+      background: var(--green-dim);
+      border: 1px solid var(--green);
+      padding: 17px 36px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.25s;
+    }
+    .trial-cta:hover { background: var(--green); box-shadow: 0 0 30px rgba(0,255,65,0.25); }
+
+    .trial-sub {
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 0.06em;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* ── PRICING ──────────────────────────────────────────────── */
+    .no-sub-banner {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,215,0,0.04);
+      border: 1px solid var(--gold-dim);
+      padding: 20px 32px;
+      margin-bottom: 52px;
+    }
+
+    .no-sub-icon {
+      font-family: var(--mono);
+      font-size: 22px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .no-sub-text {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .no-sub-text strong { color: var(--gold); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+      margin-bottom: 1px;
+    }
+
+    .price-card {
+      background: var(--bg2);
+      padding: 44px 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .price-card:hover { background: var(--bg3); transform: translateY(-3px); }
+
+    .price-card.featured { background: #0d1a0f; }
+
+    /* Featured badge — real element (translatable) */
+    .featured-badge {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      background: var(--gold-dim);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .card-tier {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      color: var(--green-dim);
+      margin-bottom: 20px;
+      margin-top: 12px;
+    }
+    .price-card:not(.featured) .card-tier { margin-top: 0; }
+
+    .card-price {
+      font-family: var(--serif);
+      font-size: clamp(36px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .card-price sup {
+      font-size: 18px;
+      vertical-align: top;
+      margin-top: 8px;
+      color: var(--gold-dim);
+    }
+
+    .card-period {
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-bottom: 8px;
+    }
+
+    .card-saving {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green-dim);
+      letter-spacing: 0.1em;
+      margin-bottom: 28px;
+      min-height: 16px;
+    }
+
+    .card-features {
+      list-style: none;
+      margin-bottom: 40px;
+      flex: 1;
+    }
+    .card-features li {
+      font-size: 13px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(58,69,85,0.35);
+      color: var(--text);
+    }
+    .card-features li::before {
+      content: '✓ ';
+      color: var(--green-mid);
+      font-weight: 700;
+    }
+
+    .card-btn {
+      display: block;
+      text-align: center;
+      padding: 16px;
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.25s;
+      cursor: pointer;
+    }
+
+    .btn-outline { border: 1px solid var(--gold-dim); color: var(--gold-dim); }
+    .btn-outline:hover { background: var(--gold-dim); color: var(--bg); }
+
+    .btn-solid { background: var(--gold-dim); color: var(--bg); border: 1px solid var(--gold); }
+    .btn-solid:hover { background: var(--gold); box-shadow: 0 0 25px rgba(255,215,0,0.35); }
+
+    /* Setup note */
+    .setup-note {
+      background: var(--bg2);
+      border: 1px solid var(--gray);
+      border-left: 3px solid var(--amber);
+      padding: 28px 32px;
+      margin-top: 36px;
+    }
+
+    .setup-note-title {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--amber);
+      margin-bottom: 16px;
+    }
+
+    .setup-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .setup-step {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .setup-num {
+      font-family: var(--mono);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--amber);
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    .setup-step-text {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+    .setup-step-text strong { color: var(--text); }
+
+    /* ── DISCLAIMER ───────────────────────────────────────────── */
+    .disclaimer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 40px 60px;
+      font-size: 11px;
+      color: var(--gray-light);
+      line-height: 1.9;
+      border-top: 1px solid rgba(58,69,85,0.3);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--gray);
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--gray);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      font-family: var(--mono);
+      color: var(--gold-dim);
+      font-weight: 700;
+      letter-spacing: 0.15em;
+    }
+
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold-dim); }
+
+    .footer-version {
+      font-family: var(--mono);
+      opacity: 0.35;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      .topbar { padding: 16px 20px; }
+      .section-wrap { padding: 72px 20px; }
+      .trial-banner { grid-template-columns: 1fr; }
+      .trial-cta-wrap { align-items: flex-start; }
+      footer { padding: 32px 20px; flex-direction: column; text-align: center; }
+      .no-sub-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="logo"><span>HCT</span> // HOLISTIC COIN TRAINER</div>
+    <div class="lang-switcher" id="langSwitcher">
+      <button class="lang-btn active" data-lang="DE">DE</button>
+      <button class="lang-btn" data-lang="EN">EN</button>
+      <button class="lang-btn" data-lang="FR">FR</button>
+      <button class="lang-btn" data-lang="ES">ES</button>
+      <button class="lang-btn" data-lang="IT">IT</button>
+      <button class="lang-btn" data-lang="PT">PT</button>
+    </div>
+    <a href="#trial" class="nav-cta" data-i18n="nav_cta">KOSTENLOS TESTEN</a>
+  </header>
+
+
+  <!-- ── HERO ─────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-label" data-i18n="hero_label">HOLISTIC COIN TRAINER · KI-GESTÜTZTE KRYPTO-ANALYSE</div>
+
+      <h1 class="hero-h1" data-i18n-html="hero_h1">
+        Krypto analysieren<br>wie ein <em>Profi.</em>
+      </h1>
+
+      <p class="hero-sub" data-i18n-html="hero_sub">
+        Coin eingeben. Analyse lesen. Entscheidung treffen.<br>
+        Ohne Vorkenntnisse. Ohne Abo-Falle. Läuft auf deinem Mac.
+      </p>
+
+      <div class="hero-trust">
+        <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust1">Echtzeit-Marktdaten</span></div>
+        <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust2">Kein Abo — einmal kaufen</span></div>
+        <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust3">Deine Daten bleiben bei dir</span></div>
+        <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust4">2 Analysen kostenlos testen</span></div>
+      </div>
+
+      <a href="#trial" class="hero-cta" data-i18n="hero_cta">Kostenlos starten</a>
+    </div>
+
+    <div class="scroll-hint" data-i18n="scroll_hint">▼ · MEHR ERFAHREN</div>
+  </section>
+
+
+  <!-- ── SO FUNKTIONIERT ES ────────────────────────────────────── -->
+  <div class="section-wrap">
+    <div class="section-label" data-i18n="steps_label">&gt; ABLAUF</div>
+    <div class="section-title" data-i18n="steps_title">So einfach ist es.</div>
+    <p class="section-sub" data-i18n="steps_sub">Keine Vorkenntnisse notwendig. HCT übernimmt die komplette Analyse — du bekommst ein klares Ergebnis.</p>
+
+    <div class="steps-simple">
+      <div class="step-simple">
+        <div class="step-icon">01</div>
+        <div class="step-simple-title" data-i18n="step1_title">App herunterladen</div>
+        <p class="step-simple-text" data-i18n="step1_text">HCT direkt auf deinen Mac laden. Kein App Store. Keine Registrierung. Einmal einrichten — fertig.</p>
+      </div>
+      <div class="step-simple">
+        <div class="step-icon">02</div>
+        <div class="step-simple-title" data-i18n="step2_title">Coin eingeben</div>
+        <p class="step-simple-text" data-i18n="step2_text">Tippe den Namen oder das Kürzel des Coins ein — z.B. "BTC" oder "ETH". Das System lädt automatisch alle aktuellen Marktdaten.</p>
+      </div>
+      <div class="step-simple">
+        <div class="step-icon">03</div>
+        <div class="step-simple-title" data-i18n="step3_title">Analyse lesen</div>
+        <p class="step-simple-text" data-i18n="step3_text">Du bekommst eine vollständige Einschätzung: Ist der Preis günstig? Ist das Projekt solide? Was wäre ein sinnvoller Einstiegsplan?</p>
+      </div>
+      <div class="step-simple">
+        <div class="step-icon">04</div>
+        <div class="step-simple-title" data-i18n="step4_title">PDF exportieren</div>
+        <p class="step-simple-text" data-i18n="step4_text">Speichere jeden Bericht als PDF. Dein persönliches Archiv — übersichtlich, jederzeit abrufbar, ausschließlich auf deinem Rechner.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── WAS DU BEKOMMST ───────────────────────────────────────── -->
+  <div class="section-wrap">
+    <div class="section-label" data-i18n="benefits_label">&gt; LEISTUNGSUMFANG</div>
+    <div class="section-title" data-i18n="benefits_title">Was HCT für dich tut.</div>
+    <p class="section-sub" data-i18n="benefits_sub">Professionelle Analyse-Werkzeuge — verpackt in eine Oberfläche, die jeder nutzen kann.</p>
+
+    <div class="benefits-grid">
+
+      <div class="benefit">
+        <div class="benefit-icon" data-i18n="b1_icon">// MARKTDATEN</div>
+        <div class="benefit-title" data-i18n="b1_title">Live-Preise &amp; Marktlage</div>
+        <p class="benefit-text" data-i18n="b1_text">Aktuelle Daten direkt von CoinGecko. Wie weit ist der Coin von seinem Allzeithoch entfernt? Wo steht er im Marktvergleich? Alles automatisch abgerufen — keine manuelle Recherche.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon" data-i18n="b2_icon">// SICHERHEITSCHECK</div>
+        <div class="benefit-title" data-i18n="b2_title">Automatischer Projekt-Check</div>
+        <p class="benefit-text" data-i18n="b2_text">Bevor ein Einstiegsplan erstellt wird, prüft HCT ob das Projekt überhaupt vertrauenswürdig ist — Team-Aktivität, Börsen-Listings, bekannte Warnsignale. Kein Plan für fragwürdige Projekte.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon" data-i18n="b3_icon">// EINSTIEGSSTRATEGIE</div>
+        <div class="benefit-title" data-i18n="b3_title">Schritt-für-Schritt Kaufplan</div>
+        <p class="benefit-text" data-i18n="b3_text">Du bekommst keine pauschale Empfehlung, sondern einen konkreten Plan: fünf gestaffelte Einstiegspunkte mit Preiszielen und Prozentzuteilungen — für geduldige, strategische Käufer.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon" data-i18n="b4_icon">// STEUERHINWEISE</div>
+        <div class="benefit-title" data-i18n="b4_title">Deutsche Steuerhinweise inklusive</div>
+        <p class="benefit-text" data-i18n="b4_text">Jeder Bericht enthält Hinweise zur deutschen Besteuerung von Krypto-Gewinnen (§ 23 EStG). Kein Ersatz für Steuerberatung — aber eine solide Grundlage für das Gespräch mit deinem Berater.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon" data-i18n="b5_icon">// DATENSCHUTZ</div>
+        <div class="benefit-title" data-i18n="b5_title">Komplett lokal — keine Cloud</div>
+        <p class="benefit-text" data-i18n="b5_text">Alle deine Analysen, dein Archiv, deine Daten — alles bleibt auf deinem Mac. Keine Synchronisation, keine Datenweitergabe, kein Konto nötig. Was auf deinem Rechner liegt, gehört dir.</p>
+      </div>
+
+      <div class="benefit">
+        <div class="benefit-icon" data-i18n="b6_icon">// LERNEFFEKT</div>
+        <div class="benefit-title" data-i18n="b6_title">Du wirst besser mit jedem Bericht</div>
+        <p class="benefit-text" data-i18n="b6_text">HCT erklärt seine Einschätzungen — du siehst nicht nur das Ergebnis, sondern die Begründung dahinter. Nach 20–30 Analysen entwickelst du ein eigenes Gespür für den Markt. Das Tool macht dich unabhängiger.</p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ── VERTRAUEN ─────────────────────────────────────────────── -->
+  <div class="section-wrap">
+    <div class="section-label" data-i18n="trust_label">&gt; WARUM HCT</div>
+    <div class="section-title" data-i18n="trust_title">Für Menschen, die ihr Geld ernst nehmen.</div>
+    <p class="section-sub" data-i18n="trust_sub">Du brauchst kein GitHub-Konto. Kein Telegram. Keine 3-Stunden-YouTube-Videos. Nur ein Mac und eine Entscheidung, informiert zu investieren.</p>
+
+    <div class="trust-grid">
+      <div class="trust-box">
+        <div class="trust-number">2</div>
+        <div class="trust-label" data-i18n-html="tbox1_label">Analysen kostenlos —<br>ohne Kreditkarte</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-number">6</div>
+        <div class="trust-label" data-i18n-html="tbox2_label">Sprachen — DE, EN,<br>FR, ES, IT, PT</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-number">0</div>
+        <div class="trust-label" data-i18n-html="tbox3_label">Daten in der Cloud —<br>alles bleibt lokal</div>
+      </div>
+      <div class="trust-box">
+        <div class="trust-number">∞</div>
+        <div class="trust-label" data-i18n-html="tbox4_label">Analysen mit Lizenz —<br>kein Limit</div>
+      </div>
+    </div>
+
+    <div class="trust-statement" data-i18n="trust_statement">
+      „Die meisten Krypto-Tools richten sich an Entwickler oder Day-Trader. HCT ist für jemanden gebaut, der einmal pro Woche eine fundierte Entscheidung treffen will — ohne den ganzen Rest."
+    </div>
+  </div>
+
+
+  <!-- ── KOSTENLOS TESTEN ──────────────────────────────────────── -->
+  <div class="section-wrap" id="trial">
+    <div class="section-label" data-i18n="trial_label">&gt; KOSTENLOS TESTEN</div>
+    <div class="section-title" data-i18n="trial_title">Überzeuge dich selbst.</div>
+
+    <div class="trial-banner">
+      <div>
+        <div class="trial-badge" data-i18n="trial_badge">// 2 VOLLSTÄNDIGE ANALYSEN KOSTENLOS</div>
+        <div class="trial-title" data-i18n="trial_heading">Sieh es, bevor du kaufst.</div>
+        <p class="trial-text" data-i18n-html="trial_text">
+          Jeder Download enthält <strong>2 vollständige Analysen — ohne Lizenz, ohne Kreditkarte.</strong>
+          Wähle einen echten Coin. Lies den Bericht. Exportiere das PDF.
+          Schau ob es dir nützt. Dann entscheide.<br><br>
+          Bei diesem Preis verdienst du es zu wissen, was du bekommst.
+        </p>
+      </div>
+      <div class="trial-cta-wrap">
+        <a href="/download" class="trial-cta" data-i18n="trial_cta">Kostenlos herunterladen</a>
+        <div class="trial-sub" data-i18n="trial_sub">macOS · kein Konto · keine Kreditkarte</div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── PREISE ────────────────────────────────────────────────── -->
+  <div class="section-wrap" id="pricing">
+    <div class="section-label" data-i18n="pricing_label">&gt; ZUGANGSSTUFEN</div>
+    <div class="section-title" data-i18n="pricing_title">Wähle deine Lizenz.</div>
+
+    <div class="no-sub-banner">
+      <div class="no-sub-icon">✓</div>
+      <div class="no-sub-text" data-i18n-html="nosub_text">
+        <strong>Kein Abo. Keine automatische Verlängerung. Keine Überraschungen.</strong><br>
+        Du zahlst einmal und nutzt HCT für die gesamte Lizenzdauer — mit allen Updates, ohne weiteren Kosten.
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- ANNUAL -->
+      <div class="price-card">
+        <div class="card-tier" data-i18n="tier1">// JAHRES-LIZENZ</div>
+        <div class="card-price"><sup>€</sup>599</div>
+        <div class="card-period" data-i18n="period1">pro Jahr · manuelle Verlängerung</div>
+        <div class="card-saving" data-i18n-html="saving1">&nbsp;</div>
+        <ul class="card-features">
+          <li data-i18n="feat1_1">Unbegrenzte Analysen</li>
+          <li data-i18n="feat1_2">Live-Marktdaten (CoinGecko)</li>
+          <li data-i18n="feat1_3">Professionelle Marktphasen-Analyse</li>
+          <li data-i18n="feat1_4">Automatischer Sicherheitscheck</li>
+          <li data-i18n="feat1_5">Schritt-für-Schritt Kaufplan</li>
+          <li data-i18n="feat1_6">PDF-Export &amp; lokales Archiv</li>
+          <li data-i18n="feat1_7">6 Sprachen</li>
+          <li data-i18n="feat1_8">Alle Updates im Lizenzzeitraum</li>
+        </ul>
+        <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356826" class="card-btn btn-outline" data-i18n="btn1">Jahres-Lizenz holen</a>
+      </div>
+
+      <!-- 3-YEAR (FEATURED) -->
+      <div class="price-card featured">
+        <div class="featured-badge" data-i18n="featured_badge">BELIEBTESTE WAHL</div>
+        <div class="card-tier" data-i18n="tier2">// 3-JAHRES-LIZENZ</div>
+        <div class="card-price"><sup>€</sup>1.399</div>
+        <div class="card-period" data-i18n="period2">einmalig · 3 Jahre gültig</div>
+        <div class="card-saving" data-i18n="saving2">&gt; SPARE €398 gegenüber Jahres-Lizenz</div>
+        <ul class="card-features">
+          <li data-i18n="feat2_1">Unbegrenzte Analysen</li>
+          <li data-i18n="feat2_2">Live-Marktdaten (CoinGecko)</li>
+          <li data-i18n="feat2_3">Professionelle Marktphasen-Analyse</li>
+          <li data-i18n="feat2_4">Automatischer Sicherheitscheck</li>
+          <li data-i18n="feat2_5">Schritt-für-Schritt Kaufplan</li>
+          <li data-i18n="feat2_6">PDF-Export &amp; lokales Archiv</li>
+          <li data-i18n="feat2_7">6 Sprachen</li>
+          <li data-i18n="feat2_8">Alle Updates für 3 Jahre</li>
+        </ul>
+        <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356865" class="card-btn btn-solid" data-i18n="btn2">3-Jahres-Lizenz holen</a>
+      </div>
+
+      <!-- LIFETIME -->
+      <div class="price-card">
+        <div class="card-tier" data-i18n="tier3">// LIFETIME-LIZENZ</div>
+        <div class="card-price"><sup>€</sup>1.999</div>
+        <div class="card-period" data-i18n="period3">einmalig · alle zukünftigen Updates</div>
+        <div class="card-saving" data-i18n="saving3">&gt; EINMAL ZAHLEN. FÜR IMMER BESITZEN.</div>
+        <ul class="card-features">
+          <li data-i18n="feat3_1">Unbegrenzte Analysen</li>
+          <li data-i18n="feat3_2">Live-Marktdaten (CoinGecko)</li>
+          <li data-i18n="feat3_3">Professionelle Marktphasen-Analyse</li>
+          <li data-i18n="feat3_4">Automatischer Sicherheitscheck</li>
+          <li data-i18n="feat3_5">Schritt-für-Schritt Kaufplan</li>
+          <li data-i18n="feat3_6">PDF-Export &amp; lokales Archiv</li>
+          <li data-i18n="feat3_7">6 Sprachen</li>
+          <li data-i18n="feat3_8">Alle zukünftigen Updates — für immer</li>
+        </ul>
+        <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356866" class="card-btn btn-outline" data-i18n="btn3">Lifetime-Lizenz holen</a>
+      </div>
+
+    </div>
+
+    <!-- SETUP NOTE -->
+    <div class="setup-note">
+      <div class="setup-note-title" data-i18n="setup_title">&gt; EINMALIGE EINRICHTUNG — CA. 5 MINUTEN</div>
+      <p class="setup-note-body" style="font-size:13px; color:var(--text-soft); margin-bottom:20px; line-height:1.7;" data-i18n-html="setup_text">
+        HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel
+        bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben.
+        Die KI-Nutzung kostet ca. <strong style="color:var(--text);">€0,50–0,80 pro Analyse</strong>,
+        direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.
+      </p>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-num">1.</div>
+          <div class="setup-step-text" data-i18n-html="setup1_text"><strong>console.anthropic.com</strong> aufrufen &amp; kostenloses Konto erstellen</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num">2.</div>
+          <div class="setup-step-text" data-i18n-html="setup2_text"><strong>API-Schlüssel</strong> im Dashboard erstellen (1 Klick)</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num">3.</div>
+          <div class="setup-step-text" data-i18n-html="setup3_text"><strong>Schlüssel in HCT</strong> einmalig eingeben — fertig</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── DISCLAIMER ────────────────────────────────────────────── -->
+  <div class="disclaimer" data-i18n-html="disclaimer">
+    <strong style="color:var(--gray-light);">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Recherche-Tool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Investiere niemals mehr, als du dir leisten kannst zu verlieren. Konsultiere vor Anlageentscheidungen einen qualifizierten Finanzberater. Steuerliche Hinweise sind allgemeiner Natur und kein Ersatz für professionelle Steuerberatung.
+  </div>
+
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-brand">HCT // HOLISTIC COIN TRAINER</div>
+    <div class="footer-links">
+      <a href="legal/impressum.html" data-i18n="footer_impressum">Impressum</a>
+      <a href="legal/datenschutz.html" data-i18n="footer_datenschutz">Datenschutz</a>
+      <a href="mailto:hello@holisticcointrainer.com" data-i18n="footer_kontakt">Kontakt</a>
+    </div>
+    <div class="footer-version">&gt; holisticcointrainer.com &nbsp;//&nbsp; v1.5 &nbsp;//&nbsp; 2026</div>
+  </footer>
+
+
+<script>
+// ── i18n Translation System ───────────────────────────────────────────────────
+const TRANSLATIONS = {
+
+  DE: {
+    html_lang: 'de',
+    page_title: 'Holistic Coin Trainer — Krypto-Analyse für ernsthafte Investoren',
+    nav_cta: 'KOSTENLOS TESTEN',
+    hero_label: 'HOLISTIC COIN TRAINER · KI-GESTÜTZTE KRYPTO-ANALYSE',
+    hero_h1: 'Krypto analysieren<br>wie ein <em>Profi.</em>',
+    hero_sub: 'Coin eingeben. Analyse lesen. Entscheidung treffen.<br>Ohne Vorkenntnisse. Ohne Abo-Falle. Läuft auf deinem Mac.',
+    trust1: 'Echtzeit-Marktdaten',
+    trust2: 'Kein Abo — einmal kaufen',
+    trust3: 'Deine Daten bleiben bei dir',
+    trust4: '2 Analysen kostenlos testen',
+    hero_cta: 'Kostenlos starten',
+    scroll_hint: '▼ · MEHR ERFAHREN',
+    steps_label: '> ABLAUF',
+    steps_title: 'So einfach ist es.',
+    steps_sub: 'Keine Vorkenntnisse notwendig. HCT übernimmt die komplette Analyse — du bekommst ein klares Ergebnis.',
+    step1_title: 'App herunterladen',
+    step1_text: 'HCT direkt auf deinen Mac laden. Kein App Store. Keine Registrierung. Einmal einrichten — fertig.',
+    step2_title: 'Coin eingeben',
+    step2_text: 'Tippe den Namen oder das Kürzel des Coins ein — z.B. "BTC" oder "ETH". Das System lädt automatisch alle aktuellen Marktdaten.',
+    step3_title: 'Analyse lesen',
+    step3_text: 'Du bekommst eine vollständige Einschätzung: Ist der Preis günstig? Ist das Projekt solide? Was wäre ein sinnvoller Einstiegsplan?',
+    step4_title: 'PDF exportieren',
+    step4_text: 'Speichere jeden Bericht als PDF. Dein persönliches Archiv — übersichtlich, jederzeit abrufbar, ausschließlich auf deinem Rechner.',
+    benefits_label: '> LEISTUNGSUMFANG',
+    benefits_title: 'Was HCT für dich tut.',
+    benefits_sub: 'Professionelle Analyse-Werkzeuge — verpackt in eine Oberfläche, die jeder nutzen kann.',
+    b1_icon: '// MARKTDATEN',
+    b1_title: 'Live-Preise & Marktlage',
+    b1_text: 'Aktuelle Daten direkt von CoinGecko. Wie weit ist der Coin von seinem Allzeithoch entfernt? Wo steht er im Marktvergleich? Alles automatisch abgerufen — keine manuelle Recherche.',
+    b2_icon: '// SICHERHEITSCHECK',
+    b2_title: 'Automatischer Projekt-Check',
+    b2_text: 'Bevor ein Einstiegsplan erstellt wird, prüft HCT ob das Projekt überhaupt vertrauenswürdig ist — Team-Aktivität, Börsen-Listings, bekannte Warnsignale. Kein Plan für fragwürdige Projekte.',
+    b3_icon: '// EINSTIEGSSTRATEGIE',
+    b3_title: 'Schritt-für-Schritt Kaufplan',
+    b3_text: 'Du bekommst keine pauschale Empfehlung, sondern einen konkreten Plan: fünf gestaffelte Einstiegspunkte mit Preiszielen und Prozentzuteilungen — für geduldige, strategische Käufer.',
+    b4_icon: '// STEUERHINWEISE',
+    b4_title: 'Deutsche Steuerhinweise inklusive',
+    b4_text: 'Jeder Bericht enthält Hinweise zur deutschen Besteuerung von Krypto-Gewinnen (§ 23 EStG). Kein Ersatz für Steuerberatung — aber eine solide Grundlage für das Gespräch mit deinem Berater.',
+    b5_icon: '// DATENSCHUTZ',
+    b5_title: 'Komplett lokal — keine Cloud',
+    b5_text: 'Alle deine Analysen, dein Archiv, deine Daten — alles bleibt auf deinem Mac. Keine Synchronisation, keine Datenweitergabe, kein Konto nötig. Was auf deinem Rechner liegt, gehört dir.',
+    b6_icon: '// LERNEFFEKT',
+    b6_title: 'Du wirst besser mit jedem Bericht',
+    b6_text: 'HCT erklärt seine Einschätzungen — du siehst nicht nur das Ergebnis, sondern die Begründung dahinter. Nach 20–30 Analysen entwickelst du ein eigenes Gespür für den Markt. Das Tool macht dich unabhängiger.',
+    trust_label: '> WARUM HCT',
+    trust_title: 'Für Menschen, die ihr Geld ernst nehmen.',
+    trust_sub: 'Du brauchst kein GitHub-Konto. Kein Telegram. Keine 3-Stunden-YouTube-Videos. Nur ein Mac und eine Entscheidung, informiert zu investieren.',
+    tbox1_label: 'Analysen kostenlos —<br>ohne Kreditkarte',
+    tbox2_label: 'Sprachen — DE, EN,<br>FR, ES, IT, PT',
+    tbox3_label: 'Daten in der Cloud —<br>alles bleibt lokal',
+    tbox4_label: 'Analysen mit Lizenz —<br>kein Limit',
+    trust_statement: '„Die meisten Krypto-Tools richten sich an Entwickler oder Day-Trader. HCT ist für jemanden gebaut, der einmal pro Woche eine fundierte Entscheidung treffen will — ohne den ganzen Rest."',
+    trial_label: '> KOSTENLOS TESTEN',
+    trial_title: 'Überzeuge dich selbst.',
+    trial_badge: '// 2 VOLLSTÄNDIGE ANALYSEN KOSTENLOS',
+    trial_heading: 'Sieh es, bevor du kaufst.',
+    trial_text: 'Jeder Download enthält <strong>2 vollständige Analysen — ohne Lizenz, ohne Kreditkarte.</strong> Wähle einen echten Coin. Lies den Bericht. Exportiere das PDF. Schau ob es dir nützt. Dann entscheide.<br><br>Bei diesem Preis verdienst du es zu wissen, was du bekommst.',
+    trial_cta: 'Kostenlos herunterladen',
+    trial_sub: 'macOS · kein Konto · keine Kreditkarte',
+    pricing_label: '> ZUGANGSSTUFEN',
+    pricing_title: 'Wähle deine Lizenz.',
+    nosub_text: '<strong>Kein Abo. Keine automatische Verlängerung. Keine Überraschungen.</strong><br>Du zahlst einmal und nutzt HCT für die gesamte Lizenzdauer — mit allen Updates, ohne weiteren Kosten.',
+    featured_badge: 'BELIEBTESTE WAHL',
+    tier1: '// JAHRES-LIZENZ',
+    period1: 'pro Jahr · manuelle Verlängerung',
+    saving1: '\u00a0',
+    feat1_1: 'Unbegrenzte Analysen',
+    feat1_2: 'Live-Marktdaten (CoinGecko)',
+    feat1_3: 'Professionelle Marktphasen-Analyse',
+    feat1_4: 'Automatischer Sicherheitscheck',
+    feat1_5: 'Schritt-für-Schritt Kaufplan',
+    feat1_6: 'PDF-Export & lokales Archiv',
+    feat1_7: '6 Sprachen',
+    feat1_8: 'Alle Updates im Lizenzzeitraum',
+    btn1: 'Jahres-Lizenz holen',
+    tier2: '// 3-JAHRES-LIZENZ',
+    period2: 'einmalig · 3 Jahre gültig',
+    saving2: '> SPARE €398 gegenüber Jahres-Lizenz',
+    feat2_1: 'Unbegrenzte Analysen',
+    feat2_2: 'Live-Marktdaten (CoinGecko)',
+    feat2_3: 'Professionelle Marktphasen-Analyse',
+    feat2_4: 'Automatischer Sicherheitscheck',
+    feat2_5: 'Schritt-für-Schritt Kaufplan',
+    feat2_6: 'PDF-Export & lokales Archiv',
+    feat2_7: '6 Sprachen',
+    feat2_8: 'Alle Updates für 3 Jahre',
+    btn2: '3-Jahres-Lizenz holen',
+    tier3: '// LIFETIME-LIZENZ',
+    period3: 'einmalig · alle zukünftigen Updates',
+    saving3: '> EINMAL ZAHLEN. FÜR IMMER BESITZEN.',
+    feat3_1: 'Unbegrenzte Analysen',
+    feat3_2: 'Live-Marktdaten (CoinGecko)',
+    feat3_3: 'Professionelle Marktphasen-Analyse',
+    feat3_4: 'Automatischer Sicherheitscheck',
+    feat3_5: 'Schritt-für-Schritt Kaufplan',
+    feat3_6: 'PDF-Export & lokales Archiv',
+    feat3_7: '6 Sprachen',
+    feat3_8: 'Alle zukünftigen Updates — für immer',
+    btn3: 'Lifetime-Lizenz holen',
+    setup_title: '> EINMALIGE EINRICHTUNG — CA. 5 MINUTEN',
+    setup_text: 'HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben. Die KI-Nutzung kostet ca. <strong style="color:var(--text);">€0,50–0,80 pro Analyse</strong>, direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.',
+    setup1_text: '<strong>console.anthropic.com</strong> aufrufen & kostenloses Konto erstellen',
+    setup2_text: '<strong>API-Schlüssel</strong> im Dashboard erstellen (1 Klick)',
+    setup3_text: '<strong>Schlüssel in HCT</strong> einmalig eingeben — fertig',
+    disclaimer: '<strong style="color:var(--gray-light);">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Recherche-Tool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Investiere niemals mehr, als du dir leisten kannst zu verlieren. Konsultiere vor Anlageentscheidungen einen qualifizierten Finanzberater. Steuerliche Hinweise sind allgemeiner Natur und kein Ersatz für professionelle Steuerberatung.',
+    footer_impressum: 'Impressum',
+    footer_datenschutz: 'Datenschutz',
+    footer_kontakt: 'Kontakt',
+  },
+
+  EN: {
+    html_lang: 'en',
+    page_title: 'Holistic Coin Trainer — Crypto Analysis for Serious Investors',
+    nav_cta: 'TRY FOR FREE',
+    hero_label: 'HOLISTIC COIN TRAINER · AI-POWERED CRYPTO ANALYSIS',
+    hero_h1: 'Analyse crypto<br>like a <em>Pro.</em>',
+    hero_sub: 'Enter a coin. Read the analysis. Make your decision.<br>No prior knowledge. No subscription trap. Runs on your Mac.',
+    trust1: 'Real-time market data',
+    trust2: 'No subscription — buy once',
+    trust3: 'Your data stays with you',
+    trust4: '2 free analyses to try',
+    hero_cta: 'Start for free',
+    scroll_hint: '▼ · LEARN MORE',
+    steps_label: '> HOW IT WORKS',
+    steps_title: "It's this simple.",
+    steps_sub: 'No prior knowledge required. HCT handles the complete analysis — you get a clear result.',
+    step1_title: 'Download the app',
+    step1_text: 'Get HCT directly on your Mac. No App Store. No registration. Set up once — done.',
+    step2_title: 'Enter a coin',
+    step2_text: 'Type the name or ticker of the coin — e.g. "BTC" or "ETH". The system automatically loads all current market data.',
+    step3_title: 'Read the analysis',
+    step3_text: 'You get a complete assessment: Is the price attractive? Is the project solid? What would be a smart entry plan?',
+    step4_title: 'Export as PDF',
+    step4_text: 'Save every report as PDF. Your personal archive — well-organised, always accessible, exclusively on your machine.',
+    benefits_label: '> WHAT YOU GET',
+    benefits_title: 'What HCT does for you.',
+    benefits_sub: 'Professional analysis tools — wrapped in an interface anyone can use.',
+    b1_icon: '// MARKET DATA',
+    b1_title: 'Live Prices & Market Status',
+    b1_text: 'Current data directly from CoinGecko. How far is the coin from its all-time high? Where does it stand in market comparison? Everything retrieved automatically — no manual research.',
+    b2_icon: '// SECURITY CHECK',
+    b2_title: 'Automatic Project Check',
+    b2_text: 'Before creating an entry plan, HCT checks whether the project is trustworthy — team activity, exchange listings, known red flags. No plan for questionable projects.',
+    b3_icon: '// ENTRY STRATEGY',
+    b3_title: 'Step-by-Step Buy Plan',
+    b3_text: "You don't get a generic recommendation, but a concrete plan: five staggered entry points with price targets and percentage allocations — for patient, strategic buyers.",
+    b4_icon: '// TAX NOTES',
+    b4_title: 'Tax Notes Included',
+    b4_text: 'Every report includes notes on cryptocurrency taxation. Not a substitute for tax advice — but a solid foundation for the conversation with your advisor.',
+    b5_icon: '// PRIVACY',
+    b5_title: 'Completely Local — No Cloud',
+    b5_text: "All your analyses, your archive, your data — everything stays on your Mac. No syncing, no data sharing, no account needed. What's on your machine belongs to you.",
+    b6_icon: '// LEARNING EFFECT',
+    b6_title: 'You get better with every report',
+    b6_text: 'HCT explains its assessments — you see not just the result, but the reasoning behind it. After 20–30 analyses you develop your own feel for the market. The tool makes you more independent.',
+    trust_label: '> WHY HCT',
+    trust_title: 'For people who take their money seriously.',
+    trust_sub: "You don't need a GitHub account. No Telegram. No 3-hour YouTube videos. Just a Mac and a decision to invest with information.",
+    tbox1_label: 'free analyses —<br>no credit card',
+    tbox2_label: 'languages — DE, EN,<br>FR, ES, IT, PT',
+    tbox3_label: 'data in the cloud —<br>everything stays local',
+    tbox4_label: 'analyses with licence —<br>no limit',
+    trust_statement: '"Most crypto tools are built for developers or day-traders. HCT is built for someone who wants to make one well-informed decision per week — without all the rest."',
+    trial_label: '> TRY FOR FREE',
+    trial_title: 'See it for yourself.',
+    trial_badge: '// 2 FULL ANALYSES FREE',
+    trial_heading: 'See it before you buy.',
+    trial_text: "Every download includes <strong>2 complete analyses — no licence, no credit card.</strong> Choose a real coin. Read the report. Export the PDF. See if it helps you. Then decide.<br><br>At this price, you deserve to know what you're getting.",
+    trial_cta: 'Download for free',
+    trial_sub: 'macOS · no account · no credit card',
+    pricing_label: '> ACCESS TIERS',
+    pricing_title: 'Choose your licence.',
+    nosub_text: '<strong>No subscription. No automatic renewal. No surprises.</strong><br>You pay once and use HCT for the full licence period — with all updates, no further costs.',
+    featured_badge: 'MOST POPULAR',
+    tier1: '// ANNUAL LICENCE',
+    period1: 'per year · manual renewal',
+    saving1: '\u00a0',
+    feat1_1: 'Unlimited analyses',
+    feat1_2: 'Live market data (CoinGecko)',
+    feat1_3: 'Professional market phase analysis',
+    feat1_4: 'Automatic security check',
+    feat1_5: 'Step-by-step buy plan',
+    feat1_6: 'PDF export & local archive',
+    feat1_7: '6 languages',
+    feat1_8: 'All updates during licence period',
+    btn1: 'Get annual licence',
+    tier2: '// 3-YEAR LICENCE',
+    period2: 'one-time · valid for 3 years',
+    saving2: '> SAVE €398 vs. annual licence',
+    feat2_1: 'Unlimited analyses',
+    feat2_2: 'Live market data (CoinGecko)',
+    feat2_3: 'Professional market phase analysis',
+    feat2_4: 'Automatic security check',
+    feat2_5: 'Step-by-step buy plan',
+    feat2_6: 'PDF export & local archive',
+    feat2_7: '6 languages',
+    feat2_8: 'All updates for 3 years',
+    btn2: 'Get 3-year licence',
+    tier3: '// LIFETIME LICENCE',
+    period3: 'one-time · all future updates',
+    saving3: '> PAY ONCE. OWN FOREVER.',
+    feat3_1: 'Unlimited analyses',
+    feat3_2: 'Live market data (CoinGecko)',
+    feat3_3: 'Professional market phase analysis',
+    feat3_4: 'Automatic security check',
+    feat3_5: 'Step-by-step buy plan',
+    feat3_6: 'PDF export & local archive',
+    feat3_7: '6 languages',
+    feat3_8: 'All future updates — forever',
+    btn3: 'Get lifetime licence',
+    setup_title: '> ONE-TIME SETUP — APPROX. 5 MINUTES',
+    setup_text: 'HCT uses AI for its analyses. You\'ll need a personal access key from Anthropic (the AI provider) — free to create, entered just once. AI usage costs approx. <strong style="color:var(--text);">€0.50–0.80 per analysis</strong>, billed directly by Anthropic. No hidden costs, full control.',
+    setup1_text: 'Visit <strong>console.anthropic.com</strong> & create a free account',
+    setup2_text: 'Create an <strong>API key</strong> in the dashboard (1 click)',
+    setup3_text: 'Enter the <strong>key in HCT</strong> once — done',
+    disclaimer: '<strong style="color:var(--gray-light);">NOT INVESTMENT ADVICE.</strong> Holistic Coin Trainer is exclusively an educational and research tool. All analysis outputs are generated by AI and do not constitute investment advice, financial advice, or a recommendation to buy or sell any asset. Crypto assets are highly volatile. Past performance is not indicative of future results. Never invest more than you can afford to lose. Consult a qualified financial advisor before making investment decisions. Tax notes are general in nature and are not a substitute for professional tax advice.',
+    footer_impressum: 'Legal Notice',
+    footer_datenschutz: 'Privacy Policy',
+    footer_kontakt: 'Contact',
+  },
+
+  FR: {
+    html_lang: 'fr',
+    page_title: 'Holistic Coin Trainer — Analyse crypto pour investisseurs sérieux',
+    nav_cta: 'ESSAI GRATUIT',
+    hero_label: 'HOLISTIC COIN TRAINER · ANALYSE CRYPTO ASSISTÉE PAR IA',
+    hero_h1: 'Analysez les cryptos<br>comme un <em>Pro.</em>',
+    hero_sub: "Saisissez une crypto. Lisez l'analyse. Prenez votre décision.<br>Sans connaissances préalables. Sans abonnement. Sur votre Mac.",
+    trust1: 'Données de marché en temps réel',
+    trust2: "Pas d'abonnement — achat unique",
+    trust3: 'Vos données restent chez vous',
+    trust4: "2 analyses gratuites à l'essai",
+    hero_cta: 'Commencer gratuitement',
+    scroll_hint: '▼ · EN SAVOIR PLUS',
+    steps_label: '> COMMENT ÇA MARCHE',
+    steps_title: "C'est aussi simple que ça.",
+    steps_sub: 'Aucune connaissance préalable requise. HCT effectue l\'analyse complète — vous obtenez un résultat clair.',
+    step1_title: "Télécharger l'app",
+    step1_text: "Chargez HCT directement sur votre Mac. Pas d'App Store. Pas d'inscription. Configurez une fois — c'est tout.",
+    step2_title: 'Saisir une crypto',
+    step2_text: 'Tapez le nom ou le symbole de la crypto — ex. "BTC" ou "ETH". Le système charge automatiquement toutes les données de marché actuelles.',
+    step3_title: "Lire l'analyse",
+    step3_text: 'Vous obtenez une évaluation complète : Le prix est-il attractif ? Le projet est-il solide ? Quel serait un plan d\'entrée judicieux ?',
+    step4_title: 'Exporter en PDF',
+    step4_text: 'Sauvegardez chaque rapport en PDF. Votre archive personnelle — claire, accessible à tout moment, exclusivement sur votre machine.',
+    benefits_label: '> CE QUE VOUS OBTENEZ',
+    benefits_title: 'Ce que HCT fait pour vous.',
+    benefits_sub: 'Outils d\'analyse professionnels — dans une interface accessible à tous.',
+    b1_icon: '// DONNÉES DE MARCHÉ',
+    b1_title: 'Prix en direct & état du marché',
+    b1_text: 'Données actuelles directement de CoinGecko. À quelle distance est la crypto de son plus haut historique ? Où se situe-t-elle par rapport au marché ? Tout récupéré automatiquement — aucune recherche manuelle.',
+    b2_icon: '// VÉRIFICATION SÉCURITÉ',
+    b2_title: 'Vérification automatique du projet',
+    b2_text: "Avant de créer un plan d'entrée, HCT vérifie si le projet est digne de confiance — activité de l'équipe, listings d'échanges, signaux d'alerte connus. Pas de plan pour les projets douteux.",
+    b3_icon: "// STRATÉGIE D'ENTRÉE",
+    b3_title: "Plan d'achat étape par étape",
+    b3_text: "Vous n'obtenez pas une recommandation générale, mais un plan concret : cinq points d'entrée échelonnés avec des objectifs de prix et des allocations en pourcentage — pour des acheteurs patients et stratégiques.",
+    b4_icon: '// NOTES FISCALES',
+    b4_title: 'Notes fiscales incluses',
+    b4_text: 'Chaque rapport comprend des notes sur la fiscalité des cryptomonnaies. Pas un substitut à un conseil fiscal — mais une base solide pour la discussion avec votre conseiller.',
+    b5_icon: '// CONFIDENTIALITÉ',
+    b5_title: 'Entièrement local — pas de cloud',
+    b5_text: 'Toutes vos analyses, votre archive, vos données — tout reste sur votre Mac. Pas de synchronisation, pas de partage de données, pas de compte nécessaire. Ce qui est sur votre machine vous appartient.',
+    b6_icon: "// EFFET D'APPRENTISSAGE",
+    b6_title: 'Vous progressez avec chaque rapport',
+    b6_text: "HCT explique ses évaluations — vous voyez non seulement le résultat, mais le raisonnement qui le sous-tend. Après 20–30 analyses, vous développez votre propre intuition du marché. L'outil vous rend plus autonome.",
+    trust_label: '> POURQUOI HCT',
+    trust_title: 'Pour ceux qui prennent leur argent au sérieux.',
+    trust_sub: "Vous n'avez pas besoin d'un compte GitHub. Pas de Telegram. Pas de vidéos YouTube de 3 heures. Juste un Mac et la décision d'investir de manière informée.",
+    tbox1_label: 'analyses gratuites —<br>sans carte bancaire',
+    tbox2_label: 'langues — DE, EN,<br>FR, ES, IT, PT',
+    tbox3_label: 'données dans le cloud —<br>tout reste en local',
+    tbox4_label: 'analyses avec licence —<br>sans limite',
+    trust_statement: '"La plupart des outils crypto s\'adressent aux développeurs ou aux day-traders. HCT est conçu pour quelqu\'un qui veut prendre une décision bien informée par semaine — sans tout le reste."',
+    trial_label: '> ESSAI GRATUIT',
+    trial_title: 'Voyez par vous-même.',
+    trial_badge: '// 2 ANALYSES COMPLÈTES GRATUITES',
+    trial_heading: "Voyez-le avant d'acheter.",
+    trial_text: "Chaque téléchargement inclut <strong>2 analyses complètes — sans licence, sans carte bancaire.</strong> Choisissez une vraie crypto. Lisez le rapport. Exportez le PDF. Voyez si ça vous aide. Puis décidez.<br><br>À ce prix, vous méritez de savoir ce que vous obtenez.",
+    trial_cta: 'Télécharger gratuitement',
+    trial_sub: 'macOS · pas de compte · pas de carte bancaire',
+    pricing_label: "> NIVEAUX D'ACCÈS",
+    pricing_title: 'Choisissez votre licence.',
+    nosub_text: "<strong>Pas d'abonnement. Pas de renouvellement automatique. Pas de surprises.</strong><br>Vous payez une fois et utilisez HCT pour toute la durée de la licence — avec toutes les mises à jour, sans frais supplémentaires.",
+    featured_badge: 'LE PLUS POPULAIRE',
+    tier1: '// LICENCE ANNUELLE',
+    period1: 'par an · renouvellement manuel',
+    saving1: '\u00a0',
+    feat1_1: 'Analyses illimitées',
+    feat1_2: 'Données de marché en direct (CoinGecko)',
+    feat1_3: 'Analyse professionnelle des phases de marché',
+    feat1_4: 'Vérification automatique de sécurité',
+    feat1_5: "Plan d'achat étape par étape",
+    feat1_6: 'Export PDF & archive locale',
+    feat1_7: '6 langues',
+    feat1_8: 'Toutes les mises à jour pendant la licence',
+    btn1: 'Obtenir la licence annuelle',
+    tier2: '// LICENCE 3 ANS',
+    period2: 'une fois · valide 3 ans',
+    saving2: '> ÉCONOMISEZ €398 vs. licence annuelle',
+    feat2_1: 'Analyses illimitées',
+    feat2_2: 'Données de marché en direct (CoinGecko)',
+    feat2_3: 'Analyse professionnelle des phases de marché',
+    feat2_4: 'Vérification automatique de sécurité',
+    feat2_5: "Plan d'achat étape par étape",
+    feat2_6: 'Export PDF & archive locale',
+    feat2_7: '6 langues',
+    feat2_8: 'Toutes les mises à jour pendant 3 ans',
+    btn2: 'Obtenir la licence 3 ans',
+    tier3: '// LICENCE À VIE',
+    period3: 'une fois · toutes les mises à jour futures',
+    saving3: '> PAYER UNE FOIS. POSSÉDER POUR TOUJOURS.',
+    feat3_1: 'Analyses illimitées',
+    feat3_2: 'Données de marché en direct (CoinGecko)',
+    feat3_3: 'Analyse professionnelle des phases de marché',
+    feat3_4: 'Vérification automatique de sécurité',
+    feat3_5: "Plan d'achat étape par étape",
+    feat3_6: 'Export PDF & archive locale',
+    feat3_7: '6 langues',
+    feat3_8: 'Toutes les mises à jour futures — pour toujours',
+    btn3: 'Obtenir la licence à vie',
+    setup_title: '> CONFIGURATION UNIQUE — ENVIRON 5 MINUTES',
+    setup_text: "HCT utilise l'IA pour ses analyses. Vous avez besoin d'une clé d'accès personnelle chez Anthropic (le fournisseur IA) — gratuite à créer, à saisir une seule fois. L'utilisation de l'IA coûte environ <strong style=\"color:var(--text);\">€0,50–0,80 par analyse</strong>, facturé directement par Anthropic. Pas de frais cachés, contrôle total.",
+    setup1_text: 'Visitez <strong>console.anthropic.com</strong> & créez un compte gratuit',
+    setup2_text: 'Créez une <strong>clé API</strong> dans le tableau de bord (1 clic)',
+    setup3_text: "Entrez la <strong>clé dans HCT</strong> une fois — c'est tout",
+    disclaimer: '<strong style="color:var(--gray-light);">PAS DE CONSEIL EN INVESTISSEMENT.</strong> Holistic Coin Trainer est exclusivement un outil éducatif et de recherche. Tous les résultats d\'analyse sont générés par IA et ne constituent pas des conseils en investissement, des conseils financiers ou une recommandation d\'achat ou de vente d\'actifs. Les crypto-actifs sont très volatils. Les performances passées ne sont pas indicatives des résultats futurs. N\'investissez jamais plus que ce que vous pouvez vous permettre de perdre. Consultez un conseiller financier qualifié avant de prendre des décisions d\'investissement. Les notes fiscales sont de nature générale et ne remplacent pas un conseil fiscal professionnel.',
+    footer_impressum: 'Mentions légales',
+    footer_datenschutz: 'Politique de confidentialité',
+    footer_kontakt: 'Contact',
+  },
+
+  ES: {
+    html_lang: 'es',
+    page_title: 'Holistic Coin Trainer — Análisis cripto para inversores serios',
+    nav_cta: 'PRUEBA GRATIS',
+    hero_label: 'HOLISTIC COIN TRAINER · ANÁLISIS CRIPTO CON IA',
+    hero_h1: 'Analiza criptos<br>como un <em>Profesional.</em>',
+    hero_sub: 'Introduce una cripto. Lee el análisis. Toma tu decisión.<br>Sin conocimientos previos. Sin suscripción. En tu Mac.',
+    trust1: 'Datos de mercado en tiempo real',
+    trust2: 'Sin suscripción — pago único',
+    trust3: 'Tus datos permanecen contigo',
+    trust4: '2 análisis gratuitos de prueba',
+    hero_cta: 'Empezar gratis',
+    scroll_hint: '▼ · SABER MÁS',
+    steps_label: '> CÓMO FUNCIONA',
+    steps_title: 'Así de simple.',
+    steps_sub: 'Sin conocimientos previos necesarios. HCT realiza el análisis completo — tú obtienes un resultado claro.',
+    step1_title: 'Descargar la app',
+    step1_text: 'Instala HCT directamente en tu Mac. Sin App Store. Sin registro. Configura una vez — listo.',
+    step2_title: 'Introduce una cripto',
+    step2_text: 'Escribe el nombre o símbolo de la cripto — ej. "BTC" o "ETH". El sistema carga automáticamente todos los datos de mercado actuales.',
+    step3_title: 'Lee el análisis',
+    step3_text: '¿Está el precio en un buen punto? ¿Es sólido el proyecto? ¿Cuál sería un plan de entrada inteligente? Obtienes una evaluación completa.',
+    step4_title: 'Exportar como PDF',
+    step4_text: 'Guarda cada informe como PDF. Tu archivo personal — organizado, accesible en cualquier momento, exclusivamente en tu máquina.',
+    benefits_label: '> LO QUE OBTIENES',
+    benefits_title: 'Lo que HCT hace por ti.',
+    benefits_sub: 'Herramientas de análisis profesionales — en una interfaz que cualquiera puede usar.',
+    b1_icon: '// DATOS DE MERCADO',
+    b1_title: 'Precios en vivo y estado del mercado',
+    b1_text: 'Datos actuales directamente de CoinGecko. ¿Cuán lejos está la cripto de su máximo histórico? ¿Dónde se sitúa en comparación con el mercado? Todo recuperado automáticamente — sin investigación manual.',
+    b2_icon: '// VERIFICACIÓN DE SEGURIDAD',
+    b2_title: 'Verificación automática del proyecto',
+    b2_text: 'Antes de crear un plan de entrada, HCT verifica si el proyecto es de confianza — actividad del equipo, listados en exchanges, señales de alerta conocidas. Sin plan para proyectos dudosos.',
+    b3_icon: '// ESTRATEGIA DE ENTRADA',
+    b3_title: 'Plan de compra paso a paso',
+    b3_text: 'No obtienes una recomendación genérica, sino un plan concreto: cinco puntos de entrada escalonados con objetivos de precio y asignaciones porcentuales — para compradores pacientes y estratégicos.',
+    b4_icon: '// NOTAS FISCALES',
+    b4_title: 'Notas fiscales incluidas',
+    b4_text: 'Cada informe incluye notas sobre la tributación de criptomonedas. No es un sustituto del asesoramiento fiscal — pero sí una base sólida para la conversación con tu asesor.',
+    b5_icon: '// PRIVACIDAD',
+    b5_title: 'Completamente local — sin nube',
+    b5_text: 'Todos tus análisis, tu archivo, tus datos — todo se queda en tu Mac. Sin sincronización, sin compartir datos, sin necesidad de cuenta. Lo que está en tu máquina te pertenece.',
+    b6_icon: '// EFECTO APRENDIZAJE',
+    b6_title: 'Mejoras con cada informe',
+    b6_text: 'HCT explica sus evaluaciones — no solo ves el resultado, sino el razonamiento detrás. Después de 20–30 análisis desarrollas tu propia intuición del mercado. La herramienta te hace más independiente.',
+    trust_label: '> POR QUÉ HCT',
+    trust_title: 'Para personas que se toman su dinero en serio.',
+    trust_sub: 'No necesitas una cuenta de GitHub. Sin Telegram. Sin videos de YouTube de 3 horas. Solo un Mac y la decisión de invertir con información.',
+    tbox1_label: 'análisis gratuitos —<br>sin tarjeta de crédito',
+    tbox2_label: 'idiomas — DE, EN,<br>FR, ES, IT, PT',
+    tbox3_label: 'datos en la nube —<br>todo permanece local',
+    tbox4_label: 'análisis con licencia —<br>sin límite',
+    trust_statement: '"La mayoría de las herramientas cripto están diseñadas para desarrolladores o day-traders. HCT está construido para alguien que quiere tomar una decisión bien informada a la semana — sin todo lo demás."',
+    trial_label: '> PRUEBA GRATIS',
+    trial_title: 'Compruébalo tú mismo.',
+    trial_badge: '// 2 ANÁLISIS COMPLETOS GRATIS',
+    trial_heading: 'Véalo antes de comprar.',
+    trial_text: 'Cada descarga incluye <strong>2 análisis completos — sin licencia, sin tarjeta de crédito.</strong> Elige una cripto real. Lee el informe. Exporta el PDF. Comprueba si te ayuda. Luego decide.<br><br>A este precio, mereces saber lo que obtienes.',
+    trial_cta: 'Descargar gratis',
+    trial_sub: 'macOS · sin cuenta · sin tarjeta de crédito',
+    pricing_label: '> NIVELES DE ACCESO',
+    pricing_title: 'Elige tu licencia.',
+    nosub_text: '<strong>Sin suscripción. Sin renovación automática. Sin sorpresas.</strong><br>Pagas una vez y usas HCT durante todo el período de licencia — con todas las actualizaciones, sin costes adicionales.',
+    featured_badge: 'MÁS POPULAR',
+    tier1: '// LICENCIA ANUAL',
+    period1: 'por año · renovación manual',
+    saving1: '\u00a0',
+    feat1_1: 'Análisis ilimitados',
+    feat1_2: 'Datos de mercado en vivo (CoinGecko)',
+    feat1_3: 'Análisis profesional de fases del mercado',
+    feat1_4: 'Verificación automática de seguridad',
+    feat1_5: 'Plan de compra paso a paso',
+    feat1_6: 'Exportación PDF & archivo local',
+    feat1_7: '6 idiomas',
+    feat1_8: 'Todas las actualizaciones durante la licencia',
+    btn1: 'Obtener licencia anual',
+    tier2: '// LICENCIA 3 AÑOS',
+    period2: 'único pago · válida 3 años',
+    saving2: '> AHORRA €398 vs. licencia anual',
+    feat2_1: 'Análisis ilimitados',
+    feat2_2: 'Datos de mercado en vivo (CoinGecko)',
+    feat2_3: 'Análisis profesional de fases del mercado',
+    feat2_4: 'Verificación automática de seguridad',
+    feat2_5: 'Plan de compra paso a paso',
+    feat2_6: 'Exportación PDF & archivo local',
+    feat2_7: '6 idiomas',
+    feat2_8: 'Todas las actualizaciones durante 3 años',
+    btn2: 'Obtener licencia 3 años',
+    tier3: '// LICENCIA VITALICIA',
+    period3: 'único pago · todas las actualizaciones futuras',
+    saving3: '> PAGAR UNA VEZ. POSEER PARA SIEMPRE.',
+    feat3_1: 'Análisis ilimitados',
+    feat3_2: 'Datos de mercado en vivo (CoinGecko)',
+    feat3_3: 'Análisis profesional de fases del mercado',
+    feat3_4: 'Verificación automática de seguridad',
+    feat3_5: 'Plan de compra paso a paso',
+    feat3_6: 'Exportación PDF & archivo local',
+    feat3_7: '6 idiomas',
+    feat3_8: 'Todas las actualizaciones futuras — para siempre',
+    btn3: 'Obtener licencia vitalicia',
+    setup_title: '> CONFIGURACIÓN ÚNICA — APROX. 5 MINUTOS',
+    setup_text: 'HCT utiliza IA para sus análisis. Necesitas una clave de acceso personal de Anthropic (el proveedor de IA) — gratuita de crear, se introduce una sola vez. El uso de IA cuesta aprox. <strong style="color:var(--text);">€0,50–0,80 por análisis</strong>, facturado directamente por Anthropic. Sin costes ocultos, control total.',
+    setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea una cuenta gratuita',
+    setup2_text: 'Crea una <strong>clave API</strong> en el panel de control (1 clic)',
+    setup3_text: 'Introduce la <strong>clave en HCT</strong> una vez — listo',
+    disclaimer: '<strong style="color:var(--gray-light);">NO ES ASESORAMIENTO DE INVERSIÓN.</strong> Holistic Coin Trainer es exclusivamente una herramienta educativa y de investigación. Todos los resultados de análisis son generados por IA y no constituyen asesoramiento de inversión, asesoramiento financiero o una recomendación de compra o venta de activos. Los criptoactivos son altamente volátiles. El rendimiento pasado no es indicativo de resultados futuros. Nunca inviertas más de lo que puedas permitirte perder. Consulta a un asesor financiero cualificado antes de tomar decisiones de inversión. Las notas fiscales son de carácter general y no sustituyen al asesoramiento fiscal profesional.',
+    footer_impressum: 'Aviso legal',
+    footer_datenschutz: 'Política de privacidad',
+    footer_kontakt: 'Contacto',
+  },
+
+  IT: {
+    html_lang: 'it',
+    page_title: 'Holistic Coin Trainer — Analisi crypto per investitori seri',
+    nav_cta: 'PROVA GRATUITA',
+    hero_label: 'HOLISTIC COIN TRAINER · ANALISI CRYPTO CON IA',
+    hero_h1: 'Analizza le crypto<br>come un <em>Professionista.</em>',
+    hero_sub: "Inserisci una crypto. Leggi l'analisi. Prendi la tua decisione.<br>Senza conoscenze pregresse. Senza abbonamenti. Sul tuo Mac.",
+    trust1: 'Dati di mercato in tempo reale',
+    trust2: 'Nessun abbonamento — acquisto unico',
+    trust3: 'I tuoi dati rimangono con te',
+    trust4: '2 analisi gratuite di prova',
+    hero_cta: 'Inizia gratuitamente',
+    scroll_hint: '▼ · SCOPRI DI PIÙ',
+    steps_label: '> COME FUNZIONA',
+    steps_title: 'È così semplice.',
+    steps_sub: "Nessuna conoscenza pregressa richiesta. HCT esegue l'analisi completa — tu ottieni un risultato chiaro.",
+    step1_title: "Scarica l'app",
+    step1_text: 'Carica HCT direttamente sul tuo Mac. Senza App Store. Senza registrazione. Configura una volta — fatto.',
+    step2_title: 'Inserisci una crypto',
+    step2_text: 'Digita il nome o il simbolo della crypto — es. "BTC" o "ETH". Il sistema carica automaticamente tutti i dati di mercato attuali.',
+    step3_title: "Leggi l'analisi",
+    step3_text: 'Ottieni una valutazione completa: Il prezzo è conveniente? Il progetto è solido? Qual sarebbe un piano di ingresso sensato?',
+    step4_title: 'Esporta in PDF',
+    step4_text: 'Salva ogni report come PDF. Il tuo archivio personale — ordinato, accessibile in qualsiasi momento, esclusivamente sulla tua macchina.',
+    benefits_label: '> COSA OTTIENI',
+    benefits_title: 'Cosa fa HCT per te.',
+    benefits_sub: "Strumenti di analisi professionali — in un'interfaccia che chiunque può usare.",
+    b1_icon: '// DATI DI MERCATO',
+    b1_title: 'Prezzi live e stato del mercato',
+    b1_text: 'Dati attuali direttamente da CoinGecko. Quanto è lontana la crypto dal suo massimo storico? Come si posiziona rispetto al mercato? Tutto recuperato automaticamente — nessuna ricerca manuale.',
+    b2_icon: '// VERIFICA SICUREZZA',
+    b2_title: 'Verifica automatica del progetto',
+    b2_text: 'Prima di creare un piano di ingresso, HCT verifica se il progetto è affidabile — attività del team, listing sugli exchange, segnali di allerta noti. Nessun piano per progetti dubbi.',
+    b3_icon: '// STRATEGIA DI INGRESSO',
+    b3_title: 'Piano di acquisto passo dopo passo',
+    b3_text: 'Non ottieni una raccomandazione generica, ma un piano concreto: cinque punti di ingresso scaglionati con obiettivi di prezzo e allocazioni percentuali — per acquirenti pazienti e strategici.',
+    b4_icon: '// NOTE FISCALI',
+    b4_title: 'Note fiscali incluse',
+    b4_text: 'Ogni report include note sulla tassazione delle criptovalute. Non è un sostituto della consulenza fiscale — ma una solida base per la discussione con il tuo consulente.',
+    b5_icon: '// PRIVACY',
+    b5_title: 'Completamente locale — nessun cloud',
+    b5_text: 'Tutte le tue analisi, il tuo archivio, i tuoi dati — tutto rimane sul tuo Mac. Nessuna sincronizzazione, nessuna condivisione di dati, nessun account necessario. Ciò che è sulla tua macchina appartiene a te.',
+    b6_icon: '// EFFETTO APPRENDIMENTO',
+    b6_title: 'Migliori con ogni report',
+    b6_text: 'HCT spiega le sue valutazioni — non vedi solo il risultato, ma il ragionamento dietro di esso. Dopo 20–30 analisi sviluppi il tuo senso del mercato. Lo strumento ti rende più indipendente.',
+    trust_label: '> PERCHÉ HCT',
+    trust_title: 'Per chi prende i propri soldi sul serio.',
+    trust_sub: "Non ti serve un account GitHub. Nessun Telegram. Nessun video YouTube di 3 ore. Solo un Mac e la decisione di investire con informazioni.",
+    tbox1_label: 'analisi gratuite —<br>senza carta di credito',
+    tbox2_label: 'lingue — DE, EN,<br>FR, ES, IT, PT',
+    tbox3_label: 'dati nel cloud —<br>tutto rimane locale',
+    tbox4_label: 'analisi con licenza —<br>senza limiti',
+    trust_statement: '"La maggior parte degli strumenti crypto è pensata per sviluppatori o day-trader. HCT è costruito per chi vuole prendere una decisione informata a settimana — senza tutto il resto."',
+    trial_label: '> PROVA GRATUITA',
+    trial_title: 'Vedi tu stesso.',
+    trial_badge: '// 2 ANALISI COMPLETE GRATUITE',
+    trial_heading: 'Provalo prima di acquistare.',
+    trial_text: 'Ogni download include <strong>2 analisi complete — senza licenza, senza carta di credito.</strong> Scegli una crypto reale. Leggi il report. Esporta il PDF. Verifica se ti è utile. Poi decidi.<br><br>A questo prezzo, meriti di sapere cosa stai ottenendo.',
+    trial_cta: 'Scarica gratuitamente',
+    trial_sub: 'macOS · nessun account · nessuna carta di credito',
+    pricing_label: '> LIVELLI DI ACCESSO',
+    pricing_title: 'Scegli la tua licenza.',
+    nosub_text: "<strong>Nessun abbonamento. Nessun rinnovo automatico. Nessuna sorpresa.</strong><br>Paghi una volta e usi HCT per l'intera durata della licenza — con tutti gli aggiornamenti, senza costi aggiuntivi.",
+    featured_badge: 'PIÙ POPOLARE',
+    tier1: '// LICENZA ANNUALE',
+    period1: "all'anno · rinnovo manuale",
+    saving1: '\u00a0',
+    feat1_1: 'Analisi illimitate',
+    feat1_2: 'Dati di mercato live (CoinGecko)',
+    feat1_3: 'Analisi professionale delle fasi di mercato',
+    feat1_4: 'Verifica automatica della sicurezza',
+    feat1_5: 'Piano di acquisto passo dopo passo',
+    feat1_6: 'Export PDF & archivio locale',
+    feat1_7: '6 lingue',
+    feat1_8: 'Tutti gli aggiornamenti durante la licenza',
+    btn1: 'Ottieni la licenza annuale',
+    tier2: '// LICENZA 3 ANNI',
+    period2: 'una tantum · valida 3 anni',
+    saving2: '> RISPARMIA €398 vs. licenza annuale',
+    feat2_1: 'Analisi illimitate',
+    feat2_2: 'Dati di mercato live (CoinGecko)',
+    feat2_3: 'Analisi professionale delle fasi di mercato',
+    feat2_4: 'Verifica automatica della sicurezza',
+    feat2_5: 'Piano di acquisto passo dopo passo',
+    feat2_6: 'Export PDF & archivio locale',
+    feat2_7: '6 lingue',
+    feat2_8: 'Tutti gli aggiornamenti per 3 anni',
+    btn2: 'Ottieni la licenza 3 anni',
+    tier3: '// LICENZA A VITA',
+    period3: 'una tantum · tutti gli aggiornamenti futuri',
+    saving3: '> PAGA UNA VOLTA. POSSIEDI PER SEMPRE.',
+    feat3_1: 'Analisi illimitate',
+    feat3_2: 'Dati di mercato live (CoinGecko)',
+    feat3_3: 'Analisi professionale delle fasi di mercato',
+    feat3_4: 'Verifica automatica della sicurezza',
+    feat3_5: 'Piano di acquisto passo dopo passo',
+    feat3_6: 'Export PDF & archivio locale',
+    feat3_7: '6 lingue',
+    feat3_8: 'Tutti gli aggiornamenti futuri — per sempre',
+    btn3: 'Ottieni la licenza a vita',
+    setup_title: '> CONFIGURAZIONE UNICA — CIRCA 5 MINUTI',
+    setup_text: "HCT usa l'IA per le sue analisi. Hai bisogno di una chiave di accesso personale da Anthropic (il fornitore IA) — gratuita da creare, da inserire una sola volta. L'utilizzo dell'IA costa circa <strong style=\"color:var(--text);\">€0,50–0,80 per analisi</strong>, fatturato direttamente da Anthropic. Nessun costo nascosto, pieno controllo.",
+    setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea un account gratuito',
+    setup2_text: 'Crea una <strong>chiave API</strong> nella dashboard (1 clic)',
+    setup3_text: 'Inserisci la <strong>chiave in HCT</strong> una volta — fatto',
+    disclaimer: '<strong style="color:var(--gray-light);">NON È UN CONSIGLIO DI INVESTIMENTO.</strong> Holistic Coin Trainer è esclusivamente uno strumento educativo e di ricerca. Tutti i risultati di analisi sono generati dall\'IA e non costituiscono consigli di investimento, consulenza finanziaria o una raccomandazione di acquisto o vendita di asset. I cripto-asset sono altamente volatili. Le performance passate non sono indicative dei risultati futuri. Non investire mai più di quanto puoi permetterti di perdere. Consulta un consulente finanziario qualificato prima di prendere decisioni di investimento. Le note fiscali sono di carattere generale e non sostituiscono la consulenza fiscale professionale.',
+    footer_impressum: 'Note legali',
+    footer_datenschutz: 'Informativa sulla privacy',
+    footer_kontakt: 'Contatto',
+  },
+
+  PT: {
+    html_lang: 'pt',
+    page_title: 'Holistic Coin Trainer — Análise cripto para investidores sérios',
+    nav_cta: 'TESTAR GRÁTIS',
+    hero_label: 'HOLISTIC COIN TRAINER · ANÁLISE CRIPTO COM IA',
+    hero_h1: 'Analise criptos<br>como um <em>Profissional.</em>',
+    hero_sub: 'Insira uma cripto. Leia a análise. Tome a sua decisão.<br>Sem conhecimentos prévios. Sem subscrição. No seu Mac.',
+    trust1: 'Dados de mercado em tempo real',
+    trust2: 'Sem subscrição — compra única',
+    trust3: 'Os seus dados ficam consigo',
+    trust4: '2 análises gratuitas para testar',
+    hero_cta: 'Começar gratuitamente',
+    scroll_hint: '▼ · SABER MAIS',
+    steps_label: '> COMO FUNCIONA',
+    steps_title: 'É assim tão simples.',
+    steps_sub: 'Sem conhecimentos prévios necessários. O HCT realiza a análise completa — você obtém um resultado claro.',
+    step1_title: 'Descarregar a app',
+    step1_text: 'Instale o HCT diretamente no seu Mac. Sem App Store. Sem registo. Configure uma vez — pronto.',
+    step2_title: 'Introduzir uma cripto',
+    step2_text: 'Escreva o nome ou símbolo da cripto — ex. "BTC" ou "ETH". O sistema carrega automaticamente todos os dados de mercado atuais.',
+    step3_title: 'Ler a análise',
+    step3_text: 'Obtém uma avaliação completa: O preço está atrativo? O projeto é sólido? Qual seria um plano de entrada inteligente?',
+    step4_title: 'Exportar como PDF',
+    step4_text: 'Guarde cada relatório como PDF. O seu arquivo pessoal — organizado, acessível a qualquer momento, exclusivamente na sua máquina.',
+    benefits_label: '> O QUE OBTÉM',
+    benefits_title: 'O que o HCT faz por si.',
+    benefits_sub: 'Ferramentas de análise profissionais — numa interface que qualquer pessoa pode usar.',
+    b1_icon: '// DADOS DE MERCADO',
+    b1_title: 'Preços ao vivo e estado do mercado',
+    b1_text: 'Dados atuais diretamente do CoinGecko. Quão longe está a cripto do seu máximo histórico? Onde se posiciona em comparação com o mercado? Tudo recuperado automaticamente — sem pesquisa manual.',
+    b2_icon: '// VERIFICAÇÃO DE SEGURANÇA',
+    b2_title: 'Verificação automática do projeto',
+    b2_text: 'Antes de criar um plano de entrada, o HCT verifica se o projeto é de confiança — atividade da equipa, listagens em exchanges, sinais de alerta conhecidos. Sem plano para projetos duvidosos.',
+    b3_icon: '// ESTRATÉGIA DE ENTRADA',
+    b3_title: 'Plano de compra passo a passo',
+    b3_text: 'Não obtém uma recomendação genérica, mas um plano concreto: cinco pontos de entrada escalonados com objetivos de preço e alocações percentuais — para compradores pacientes e estratégicos.',
+    b4_icon: '// NOTAS FISCAIS',
+    b4_title: 'Notas fiscais incluídas',
+    b4_text: 'Cada relatório inclui notas sobre a tributação de criptomoedas. Não substitui o aconselhamento fiscal — mas é uma base sólida para a conversa com o seu consultor.',
+    b5_icon: '// PRIVACIDADE',
+    b5_title: 'Completamente local — sem cloud',
+    b5_text: 'Todas as suas análises, o seu arquivo, os seus dados — tudo fica no seu Mac. Sem sincronização, sem partilha de dados, sem necessidade de conta. O que está na sua máquina pertence-lhe.',
+    b6_icon: '// EFEITO DE APRENDIZAGEM',
+    b6_title: 'Melhora com cada relatório',
+    b6_text: 'O HCT explica as suas avaliações — não vê apenas o resultado, mas o raciocínio por trás. Após 20–30 análises desenvolve a sua própria intuição do mercado. A ferramenta torna-o mais independente.',
+    trust_label: '> PORQUÊ O HCT',
+    trust_title: 'Para quem leva o seu dinheiro a sério.',
+    trust_sub: 'Não precisa de uma conta GitHub. Sem Telegram. Sem vídeos YouTube de 3 horas. Apenas um Mac e a decisão de investir com informação.',
+    tbox1_label: 'análises gratuitas —<br>sem cartão de crédito',
+    tbox2_label: 'idiomas — DE, EN,<br>FR, ES, IT, PT',
+    tbox3_label: 'dados na cloud —<br>tudo fica local',
+    tbox4_label: 'análises com licença —<br>sem limite',
+    trust_statement: '"A maioria das ferramentas cripto é feita para programadores ou day-traders. O HCT é construído para alguém que quer tomar uma decisão bem informada por semana — sem todo o resto."',
+    trial_label: '> TESTAR GRÁTIS',
+    trial_title: 'Veja por si mesmo.',
+    trial_badge: '// 2 ANÁLISES COMPLETAS GRÁTIS',
+    trial_heading: 'Veja antes de comprar.',
+    trial_text: 'Cada download inclui <strong>2 análises completas — sem licença, sem cartão de crédito.</strong> Escolha uma cripto real. Leia o relatório. Exporte o PDF. Veja se lhe é útil. Depois decida.<br><br>A este preço, merece saber o que está a obter.',
+    trial_cta: 'Descarregar gratuitamente',
+    trial_sub: 'macOS · sem conta · sem cartão de crédito',
+    pricing_label: '> NÍVEIS DE ACESSO',
+    pricing_title: 'Escolha a sua licença.',
+    nosub_text: '<strong>Sem subscrição. Sem renovação automática. Sem surpresas.</strong><br>Paga uma vez e usa o HCT durante todo o período da licença — com todas as atualizações, sem custos adicionais.',
+    featured_badge: 'MAIS POPULAR',
+    tier1: '// LICENÇA ANUAL',
+    period1: 'por ano · renovação manual',
+    saving1: '\u00a0',
+    feat1_1: 'Análises ilimitadas',
+    feat1_2: 'Dados de mercado ao vivo (CoinGecko)',
+    feat1_3: 'Análise profissional de fases do mercado',
+    feat1_4: 'Verificação automática de segurança',
+    feat1_5: 'Plano de compra passo a passo',
+    feat1_6: 'Exportação PDF & arquivo local',
+    feat1_7: '6 idiomas',
+    feat1_8: 'Todas as atualizações durante a licença',
+    btn1: 'Obter licença anual',
+    tier2: '// LICENÇA 3 ANOS',
+    period2: 'pagamento único · válida 3 anos',
+    saving2: '> POUPE €398 vs. licença anual',
+    feat2_1: 'Análises ilimitadas',
+    feat2_2: 'Dados de mercado ao vivo (CoinGecko)',
+    feat2_3: 'Análise profissional de fases do mercado',
+    feat2_4: 'Verificação automática de segurança',
+    feat2_5: 'Plano de compra passo a passo',
+    feat2_6: 'Exportação PDF & arquivo local',
+    feat2_7: '6 idiomas',
+    feat2_8: 'Todas as atualizações durante 3 anos',
+    btn2: 'Obter licença 3 anos',
+    tier3: '// LICENÇA VITALÍCIA',
+    period3: 'pagamento único · todas as atualizações futuras',
+    saving3: '> PAGUE UMA VEZ. POSSUA PARA SEMPRE.',
+    feat3_1: 'Análises ilimitadas',
+    feat3_2: 'Dados de mercado ao vivo (CoinGecko)',
+    feat3_3: 'Análise profissional de fases do mercado',
+    feat3_4: 'Verificação automática de segurança',
+    feat3_5: 'Plano de compra passo a passo',
+    feat3_6: 'Exportação PDF & arquivo local',
+    feat3_7: '6 idiomas',
+    feat3_8: 'Todas as atualizações futuras — para sempre',
+    btn3: 'Obter licença vitalícia',
+    setup_title: '> CONFIGURAÇÃO ÚNICA — APROX. 5 MINUTOS',
+    setup_text: 'O HCT usa IA para as suas análises. Precisa de uma chave de acesso pessoal da Anthropic (o fornecedor de IA) — gratuita para criar, inserida apenas uma vez. O uso de IA custa aprox. <strong style="color:var(--text);">€0,50–0,80 por análise</strong>, faturado diretamente pela Anthropic. Sem custos ocultos, controlo total.',
+    setup1_text: 'Visite <strong>console.anthropic.com</strong> & crie uma conta gratuita',
+    setup2_text: 'Crie uma <strong>chave API</strong> no painel (1 clique)',
+    setup3_text: 'Introduza a <strong>chave no HCT</strong> uma vez — pronto',
+    disclaimer: '<strong style="color:var(--gray-light);">NÃO É ACONSELHAMENTO DE INVESTIMENTO.</strong> O Holistic Coin Trainer é exclusivamente uma ferramenta educativa e de investigação. Todos os resultados de análise são gerados por IA e não constituem aconselhamento de investimento, aconselhamento financeiro ou uma recomendação de compra ou venda de ativos. Os cripto-ativos são altamente voláteis. O desempenho passado não é indicativo de resultados futuros. Nunca invista mais do que pode perder. Consulte um consultor financeiro qualificado antes de tomar decisões de investimento. As notas fiscais são de natureza geral e não substituem o aconselhamento fiscal profissional.',
+    footer_impressum: 'Aviso legal',
+    footer_datenschutz: 'Política de privacidade',
+    footer_kontakt: 'Contacto',
+  },
+
+};
+
+// ── Apply language ─────────────────────────────────────────────────────────────
+function applyLang(lang) {
+  const t = TRANSLATIONS[lang];
+  if (!t) return;
+
+  // Update html[lang] and page title
+  document.documentElement.lang = t.html_lang;
+  document.title = t.page_title;
+
+  // Plain-text translations (textContent)
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.textContent = t[key];
+  });
+
+  // HTML translations (innerHTML — for bold, <br>, <em>, etc.)
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.getAttribute('data-i18n-html');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  // Update active language button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+  });
+
+  // Persist selection
+  try { localStorage.setItem('hct-lang', lang); } catch(e) {}
+}
+
+// ── Initialise ─────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. URL-Parameter hat höchste Priorität: ?lang=en / ?lang=de / etc.
+  let lang = 'DE';
+  const urlParam = new URLSearchParams(window.location.search).get('lang');
+  if (urlParam && TRANSLATIONS[urlParam.toUpperCase()]) {
+    lang = urlParam.toUpperCase();
+  } else {
+    // 2. Gespeicherte Sprache aus localStorage
+    try {
+      const stored = localStorage.getItem('hct-lang');
+      if (stored && TRANSLATIONS[stored]) lang = stored;
+    } catch(e) {}
+
+    // 3. Browser-Sprache als Fallback
+    if (lang === 'DE') {
+      const browser = (navigator.language || navigator.userLanguage || '').toUpperCase().split('-')[0];
+      if (browser && TRANSLATIONS[browser]) lang = browser;
+    }
+  }
+
+  applyLang(lang);
+
+  // Wire up buttons
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.getAttribute('data-lang')));
+  });
+});
+</script>
+
+</body>
+</html>
