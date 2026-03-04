@@ -853,6 +853,49 @@
       .learn-bar { gap: 12px; justify-content: center; }
       .bar-arrow { display: none; }
     }
+    /* ── ENTERPRISE SECTION ───────────────────────────────────── */
+    .enterprise-wrap { margin-top: 2px; padding: 52px 0 0; }
+    .ent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+      margin: 28px 0 0;
+    }
+    .ent-card { background: var(--bg2); padding: 32px 28px; }
+    .ent-seats {
+      font-family: var(--mono, monospace);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--green-dim);
+      margin-bottom: 16px;
+    }
+    .ent-price {
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .ent-price sup { font-size: 14px; color: var(--green-mid); vertical-align: top; margin-top: 6px; }
+    .ent-unit { font-size: 11px; color: var(--gray-light); font-weight: 400; font-family: var(--mono, monospace); }
+    .ent-price-req { font-size: 22px; font-weight: 700; color: var(--green); line-height: 1; margin-bottom: 4px; padding-top: 8px; font-family: var(--mono, monospace); }
+    .ent-saving {
+      font-size: 10px;
+      color: var(--green-mid);
+      letter-spacing: 0.08em;
+      margin-top: 8px;
+      font-family: var(--mono, monospace);
+    }
+    .ent-info {
+      font-size: 11px;
+      color: var(--gray-light);
+      text-align: center;
+      margin: 20px 0 28px;
+      font-family: var(--mono, monospace);
+      letter-spacing: 0.04em;
+    }
+    .ent-cta { display: flex; justify-content: center; margin-bottom: 16px; }
   </style>
 </head>
 <body>
@@ -1068,6 +1111,7 @@
           <li data-i18n="feat_claude">Claude Opus KI-Modell</li>
           <li data-i18n="feat_multilang">Mehrsprachiger Output (6 Sprachen)</li>
           <li data-i18n="feat_a_upd">Alle Updates im Lizenzzeitraum</li>
+          <li data-i18n="feat_a_seats">2 Installationen</li>
         </ul>
         <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356826"
            class="card-btn btn-outline" data-i18n="price_a_btn">Zugang holen</a>
@@ -1088,6 +1132,7 @@
           <li data-i18n="feat_claude">Claude Opus KI-Modell</li>
           <li data-i18n="feat_multilang">Mehrsprachiger Output (6 Sprachen)</li>
           <li data-i18n="feat_3_upd">Alle Updates für 3 Jahre</li>
+          <li data-i18n="feat_3_seats">2 Installationen</li>
         </ul>
         <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356865"
            class="card-btn btn-solid" data-i18n="price_3_btn">Position einnehmen</a>
@@ -1108,11 +1153,52 @@
           <li data-i18n="feat_claude">Claude Opus KI-Modell</li>
           <li data-i18n="feat_multilang">Mehrsprachiger Output (6 Sprachen)</li>
           <li data-i18n="feat_l_upd">Alle zukünftigen Updates · für immer</li>
+          <li data-i18n="feat_l_seats">1 Installation</li>
         </ul>
         <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356866"
            class="card-btn btn-outline" data-i18n="price_l_btn">Für immer</a>
       </div>
 
+    </div>
+
+    <!-- ── ENTERPRISE ──────────────────────────────────────────────── -->
+    <div class="enterprise-wrap" id="enterprise">
+      <div class="section-label" data-i18n="price_e_label">&gt; ENTERPRISE</div>
+      <div class="section-title" data-i18n="price_e_title">Für Teams, Clubs und Institutionen.</div>
+
+      <div class="ent-grid">
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_1">3–5 SEATS</div>
+          <div class="ent-price"><sup>€</sup>499<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
+          <div class="ent-saving" data-i18n="ent_save_1">–€100 · 17% RABATT</div>
+        </div>
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_2">6–20 SEATS</div>
+          <div class="ent-price"><sup>€</sup>399<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
+          <div class="ent-saving" data-i18n="ent_save_2">–€200 · 33% RABATT</div>
+        </div>
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_3">21–50 SEATS</div>
+          <div class="ent-price"><sup>€</sup>299<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
+          <div class="ent-saving" data-i18n="ent_save_3">–€300 · 50% RABATT</div>
+        </div>
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_4">50+ SEATS</div>
+          <div class="ent-price-req" data-i18n="ent_price_req">AUF ANFRAGE</div>
+          <div class="ent-saving" data-i18n="ent_save_4">INDIVIDUELLE KONDITIONEN</div>
+        </div>
+
+      </div>
+
+      <p class="ent-info" data-i18n="ent_info">// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · INVESTMENT-CLUBS · FAMILY OFFICES · TRADING-DESKS · BILDUNGSEINRICHTUNGEN</p>
+      <div class="ent-cta">
+        <a href="mailto:hello@holisticcointrainer.com"
+           class="card-btn btn-outline" data-i18n="price_e_btn">ZUGANG VERHANDELN</a>
+      </div>
     </div>
 
     <!-- API KEY NOTE -->
@@ -1223,6 +1309,23 @@ const T = {
     feat_a_upd: "Alle Updates im Lizenzzeitraum",
     feat_3_upd: "Alle Updates für 3 Jahre",
     feat_l_upd: "Alle zukünftigen Updates · für immer",
+    feat_a_seats: "2 Installationen",
+    feat_3_seats: "2 Installationen",
+    feat_l_seats: "1 Installation",
+    price_e_label: "> ENTERPRISE",
+    price_e_title: "Für Teams, Clubs und Institutionen.",
+    ent_seats_1: "3–5 SEATS",
+    ent_seats_2: "6–20 SEATS",
+    ent_seats_3: "21–50 SEATS",
+    ent_seats_4: "50+ SEATS",
+    ent_per_seat: "/Seat/Jahr",
+    ent_save_1: "–€100 · 17% RABATT",
+    ent_save_2: "–€200 · 33% RABATT",
+    ent_save_3: "–€300 · 50% RABATT",
+    ent_price_req: "AUF ANFRAGE",
+    ent_save_4: "INDIVIDUELLE KONDITIONEN",
+    ent_info: "// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · INVESTMENT-CLUBS · FAMILY OFFICES · TRADING-DESKS · BILDUNGSEINRICHTUNGEN",
+    price_e_btn: "ZUGANG VERHANDELN",
     api_note: "<strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-Analysen. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Analyse kostet etwa <code>$0,60 – $0,90</code> mit Claude Sonnet. Analysen mit Claude Opus (höchste Genauigkeit) kosten mehr. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Recherche-Tool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Investiere niemals mehr, als du dir leisten kannst zu verlieren. Konsultiere vor Anlageentscheidungen einen qualifizierten Finanzberater. Steuerliche Hinweise sind allgemeiner Natur und kein Ersatz für professionelle Steuerberatung.",
     footer_contact: "Kontakt"
@@ -1315,7 +1418,24 @@ const T = {
     feat_a_upd: "All updates during license period",
     feat_3_upd: "All updates for 3 years",
     feat_l_upd: "All future updates · forever",
-    api_note: "<strong>&gt; IMPORTANT — API KEY &amp; USAGE COSTS</strong><br>HCT requires your own <strong>Anthropic API key</strong> to run AI analyses. The key is entered once in the app and never leaves your machine. API usage is billed directly by Anthropic — separate from your HCT license. A typical analysis costs approximately <code>$0.60 – $0.90</code> using Claude Sonnet. Analyses with Claude Opus (highest accuracy) will cost more. You stay in full control of your API spend at all times. An Anthropic account can be created at <code>console.anthropic.com</code>.",
+    feat_a_seats: "2 installs",
+    feat_3_seats: "2 installs",
+    feat_l_seats: "1 install",
+    price_e_label: "> ENTERPRISE",
+    price_e_title: "For teams, clubs and institutions.",
+    ent_seats_1: "3–5 SEATS",
+    ent_seats_2: "6–20 SEATS",
+    ent_seats_3: "21–50 SEATS",
+    ent_seats_4: "50+ SEATS",
+    ent_per_seat: "/seat/year",
+    ent_save_1: "–€100 · 17% DISCOUNT",
+    ent_save_2: "–€200 · 33% DISCOUNT",
+    ent_save_3: "–€300 · 50% DISCOUNT",
+    ent_price_req: "ON REQUEST",
+    ent_save_4: "INDIVIDUAL TERMS",
+    ent_info: "// 1 SEAT = 1 MAC · ANNUAL LICENCE ONLY · INVESTMENT CLUBS · FAMILY OFFICES · TRADING DESKS · EDUCATIONAL INSTITUTIONS",
+    price_e_btn: "NEGOTIATE ACCESS",
+    api_note: "<strong>&gt; IMPORTANT — API KEY &amp; USAGE COSTS</strong><br>HCT requires your own <strong>Anthropic API key</strong> to run AI analyses. The key is entered once in the app and never leaves your machine. API usage is billed directly by Anthropic — separate from your HCT license. A typical analysis costs approximately <code>~$0.80 per analysis with Claude Sonnet, ~$5.00 with Claude Opus. You stay in full control of your API spend at all times. An Anthropic account can be created at <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NOT FINANCIAL ADVICE.</strong> Holistic Coin Trainer is an educational and research tool only. All analysis output is generated by AI and does not constitute investment advice, financial advice, or a recommendation to buy or sell any asset. Crypto assets are highly volatile. Past performance is not indicative of future results. Never invest more than you can afford to lose. Consult a qualified financial advisor before making investment decisions. Tax information provided is general in nature and not a substitute for professional tax advice.",
     footer_contact: "Contact"
   },
@@ -1407,6 +1527,23 @@ const T = {
     feat_a_upd: "Toutes les mises à jour pendant la période de licence",
     feat_3_upd: "Toutes les mises à jour pendant 3 ans",
     feat_l_upd: "Toutes les futures mises à jour · à vie",
+    feat_a_seats: "2 installations",
+    feat_3_seats: "2 installations",
+    feat_l_seats: "1 installation",
+    price_e_label: "> ENTERPRISE",
+    price_e_title: "Pour les équipes, clubs et institutions.",
+    ent_seats_1: "3–5 SEATS",
+    ent_seats_2: "6–20 SEATS",
+    ent_seats_3: "21–50 SEATS",
+    ent_seats_4: "50+ SEATS",
+    ent_per_seat: "/siège/an",
+    ent_save_1: "–€100 · 17% RÉDUCTION",
+    ent_save_2: "–€200 · 33% RÉDUCTION",
+    ent_save_3: "–€300 · 50% RÉDUCTION",
+    ent_price_req: "SUR DEMANDE",
+    ent_save_4: "CONDITIONS INDIVIDUELLES",
+    ent_info: "// 1 SIÈGE = 1 MAC · LICENCE ANNUELLE UNIQUEMENT · CLUBS D'INVESTISSEMENT · FAMILY OFFICES · TRADING DESKS · ÉTABLISSEMENTS D'ENSEIGNEMENT",
+    price_e_btn: "NÉGOCIER L'ACCÈS",
     api_note: "<strong>&gt; IMPORTANT — CLÉ API &amp; COÛTS D'UTILISATION</strong><br>HCT nécessite ta propre <strong>clé API Anthropic</strong> pour effectuer des analyses IA. La clé est saisie une seule fois dans l'app et ne quitte jamais ta machine. L'utilisation de l'API est facturée directement par Anthropic — séparément de ta licence HCT. Une analyse typique coûte environ <code>$0,60 – $0,90</code> avec Claude Sonnet. Les analyses avec Claude Opus (précision maximale) coûteront plus. Tu gardes le contrôle total de tes dépenses API. Un compte Anthropic peut être créé sur <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">PAS DE CONSEIL FINANCIER.</strong> Holistic Coin Trainer est uniquement un outil éducatif et de recherche. Tous les outputs d'analyse sont générés par IA et ne constituent pas des conseils en investissement, conseils financiers ou recommandations d'achat ou de vente d'actifs. Les crypto-actifs sont très volatils. Les performances passées ne présagent pas des résultats futurs. N'investissez jamais plus que ce que vous pouvez vous permettre de perdre. Consultez un conseiller financier qualifié avant de prendre des décisions d'investissement. Les informations fiscales fournies sont générales et ne remplacent pas les conseils fiscaux professionnels.",
     footer_contact: "Contact"
@@ -1499,6 +1636,23 @@ const T = {
     feat_a_upd: "Todas las actualizaciones durante el período de licencia",
     feat_3_upd: "Todas las actualizaciones durante 3 años",
     feat_l_upd: "Todas las actualizaciones futuras · para siempre",
+    feat_a_seats: "2 instalaciones",
+    feat_3_seats: "2 instalaciones",
+    feat_l_seats: "1 instalación",
+    price_e_label: "> ENTERPRISE",
+    price_e_title: "Para equipos, clubes e instituciones.",
+    ent_seats_1: "3–5 SEATS",
+    ent_seats_2: "6–20 SEATS",
+    ent_seats_3: "21–50 SEATS",
+    ent_seats_4: "50+ SEATS",
+    ent_per_seat: "/puesto/año",
+    ent_save_1: "–€100 · 17% DESCUENTO",
+    ent_save_2: "–€200 · 33% DESCUENTO",
+    ent_save_3: "–€300 · 50% DESCUENTO",
+    ent_price_req: "A CONSULTAR",
+    ent_save_4: "CONDICIONES INDIVIDUALES",
+    ent_info: "// 1 PUESTO = 1 MAC · SOLO LICENCIA ANUAL · CLUBS DE INVERSIÓN · FAMILY OFFICES · TRADING DESKS · INSTITUCIONES EDUCATIVAS",
+    price_e_btn: "NEGOCIAR ACCESO",
     api_note: "<strong>&gt; IMPORTANTE — CLAVE API &amp; COSTOS DE USO</strong><br>HCT requiere tu propia <strong>clave API de Anthropic</strong> para ejecutar análisis IA. La clave se ingresa una vez en la app y nunca sale de tu máquina. El uso de la API es facturado directamente por Anthropic — por separado de tu licencia HCT. Un análisis típico cuesta aproximadamente <code>$0.60 – $0.90</code> usando Claude Sonnet. Los análisis con Claude Opus (mayor precisión) costarán más. Mantienes control total de tus gastos de API. Se puede crear una cuenta de Anthropic en <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NO ES ASESORAMIENTO FINANCIERO.</strong> Holistic Coin Trainer es exclusivamente una herramienta educativa y de investigación. Todo el output de análisis es generado por IA y no constituye asesoramiento de inversión, financiero ni recomendación de compra o venta de activos. Los criptoactivos son altamente volátiles. El rendimiento pasado no indica resultados futuros. Nunca inviertas más de lo que puedas permitirte perder. Consulta a un asesor financiero calificado antes de tomar decisiones de inversión. La información fiscal proporcionada es de naturaleza general.",
     footer_contact: "Contacto"
@@ -1591,6 +1745,23 @@ const T = {
     feat_a_upd: "Tutti gli aggiornamenti durante il periodo di licenza",
     feat_3_upd: "Tutti gli aggiornamenti per 3 anni",
     feat_l_upd: "Tutti i futuri aggiornamenti · per sempre",
+    feat_a_seats: "2 installazioni",
+    feat_3_seats: "2 installazioni",
+    feat_l_seats: "1 installazione",
+    price_e_label: "> ENTERPRISE",
+    price_e_title: "Per team, club e istituzioni.",
+    ent_seats_1: "3–5 SEATS",
+    ent_seats_2: "6–20 SEATS",
+    ent_seats_3: "21–50 SEATS",
+    ent_seats_4: "50+ SEATS",
+    ent_per_seat: "/postazione/anno",
+    ent_save_1: "–€100 · 17% SCONTO",
+    ent_save_2: "–€200 · 33% SCONTO",
+    ent_save_3: "–€300 · 50% SCONTO",
+    ent_price_req: "SU RICHIESTA",
+    ent_save_4: "CONDIZIONI INDIVIDUALI",
+    ent_info: "// 1 POSTAZIONE = 1 MAC · SOLO LICENZA ANNUALE · CONFIGURAZIONE DI SQUADRA SU RICHIESTA",
+    price_e_btn: "NEGOZIA L'ACCESSO",
     api_note: "<strong>&gt; IMPORTANTE — CHIAVE API &amp; COSTI DI UTILIZZO</strong><br>HCT richiede la tua <strong>chiave API Anthropic</strong> per eseguire analisi IA. La chiave viene inserita una volta nell'app e non lascia mai la tua macchina. L'utilizzo dell'API viene fatturato direttamente da Anthropic — separatamente dalla tua licenza HCT. Una tipica analisi costa circa <code>$0,60 – $0,90</code> con Claude Sonnet. Le analisi con Claude Opus (massima precisione) costeranno di più. Mantieni il pieno controllo delle tue spese API. Un account Anthropic può essere creato su <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NON È CONSULENZA FINANZIARIA.</strong> Holistic Coin Trainer è esclusivamente uno strumento educativo e di ricerca. Tutti gli output di analisi sono generati da IA e non costituiscono consulenza sugli investimenti, finanziaria o raccomandazione di acquisto o vendita di attività. Le criptovalute sono altamente volatili. I risultati passati non indicano risultati futuri. Non investire mai più di quanto ti puoi permettere di perdere. Consulta un consulente finanziario qualificato prima di prendere decisioni di investimento. Le informazioni fiscali fornite sono di natura generale.",
     footer_contact: "Contatto"
@@ -1683,6 +1854,23 @@ const T = {
     feat_a_upd: "Todas as atualizações durante o período de licença",
     feat_3_upd: "Todas as atualizações durante 3 anos",
     feat_l_upd: "Todas as atualizações futuras · para sempre",
+    feat_a_seats: "2 instalações",
+    feat_3_seats: "2 instalações",
+    feat_l_seats: "1 instalação",
+    price_e_label: "> ENTERPRISE",
+    price_e_title: "Para equipas, clubes e instituições.",
+    ent_seats_1: "3–5 SEATS",
+    ent_seats_2: "6–20 SEATS",
+    ent_seats_3: "21–50 SEATS",
+    ent_seats_4: "50+ SEATS",
+    ent_per_seat: "/lugar/ano",
+    ent_save_1: "–€100 · 17% DESCONTO",
+    ent_save_2: "–€200 · 33% DESCONTO",
+    ent_save_3: "–€300 · 50% DESCONTO",
+    ent_price_req: "SOB CONSULTA",
+    ent_save_4: "CONDIÇÕES INDIVIDUAIS",
+    ent_info: "// 1 LUGAR = 1 MAC · APENAS LICENÇA ANUAL · CONFIGURAÇÃO DE EQUIPA SOB CONSULTA",
+    price_e_btn: "NEGOCIAR ACESSO",
     api_note: "<strong>&gt; IMPORTANTE — CHAVE API &amp; CUSTOS DE UTILIZAÇÃO</strong><br>HCT requer a tua própria <strong>chave API Anthropic</strong> para executar análises IA. A chave é inserida uma vez na app e nunca sai da tua máquina. A utilização da API é faturada diretamente pela Anthropic — separadamente da tua licença HCT. Uma análise típica custa aproximadamente <code>$0,60 – $0,90</code> com Claude Sonnet. As análises com Claude Opus (máxima precisão) custarão mais. Mantens o controlo total dos teus gastos de API. Uma conta Anthropic pode ser criada em <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NÃO É ACONSELHAMENTO FINANCEIRO.</strong> Holistic Coin Trainer é exclusivamente uma ferramenta educativa e de investigação. Todo o output de análise é gerado por IA e não constitui aconselhamento de investimento, financeiro ou recomendação de compra ou venda de ativos. Os criptoativos são altamente voláteis. O desempenho passado não indica resultados futuros. Nunca investas mais do que podes perder. Consulta um consultor financeiro qualificado antes de tomar decisões de investimento. As informações fiscais fornecidas são de natureza geral.",
     footer_contact: "Contacto"

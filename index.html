@@ -719,6 +719,60 @@
       footer { padding: 32px 20px; flex-direction: column; text-align: center; }
       .no-sub-banner { flex-direction: column; text-align: center; }
     }
+    /* ── ENTERPRISE SECTION ───────────────────────────────────── */
+    .enterprise-wrap {
+      margin-top: 2px;
+      padding: 52px 0 0;
+    }
+    .ent-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--gray);
+      margin: 28px 0 0;
+    }
+    .ent-card {
+      background: var(--bg2);
+      padding: 32px 28px;
+    }
+    .ent-seats {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      color: var(--green-dim);
+      margin-bottom: 16px;
+    }
+    .ent-price {
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .ent-price sup { font-size: 14px; color: var(--gold-dim); vertical-align: top; margin-top: 6px; }
+    .ent-unit { font-size: 11px; color: var(--text-soft); font-weight: 400; font-family: var(--mono); }
+    .ent-price-req { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 4px; padding-top: 8px; }
+    .ent-saving {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--green-mid);
+      letter-spacing: 0.08em;
+      margin-top: 8px;
+    }
+    .ent-info {
+      font-size: 12px;
+      color: var(--text-soft);
+      text-align: center;
+      margin: 20px 0 28px;
+      font-family: var(--mono);
+      letter-spacing: 0.05em;
+    }
+    .ent-cta {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
   </style>
 </head>
 <body>
@@ -932,6 +986,7 @@
           <li data-i18n="feat1_6">PDF-Export &amp; lokales Archiv</li>
           <li data-i18n="feat1_7">6 Sprachen</li>
           <li data-i18n="feat1_8">Alle Updates im Lizenzzeitraum</li>
+          <li data-i18n="feat1_seats">2 Arbeitsplätze</li>
         </ul>
         <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356826" class="card-btn btn-outline" data-i18n="btn1">Jahres-Lizenz holen</a>
       </div>
@@ -952,6 +1007,7 @@
           <li data-i18n="feat2_6">PDF-Export &amp; lokales Archiv</li>
           <li data-i18n="feat2_7">6 Sprachen</li>
           <li data-i18n="feat2_8">Alle Updates für 3 Jahre</li>
+          <li data-i18n="feat2_seats">2 Arbeitsplätze</li>
         </ul>
         <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356865" class="card-btn btn-solid" data-i18n="btn2">3-Jahres-Lizenz holen</a>
       </div>
@@ -971,10 +1027,50 @@
           <li data-i18n="feat3_6">PDF-Export &amp; lokales Archiv</li>
           <li data-i18n="feat3_7">6 Sprachen</li>
           <li data-i18n="feat3_8">Alle zukünftigen Updates — für immer</li>
+          <li data-i18n="feat3_seats">1 Arbeitsplatz</li>
         </ul>
         <a href="https://holisticcointrainer.lemonsqueezy.com/buy/1356866" class="card-btn btn-outline" data-i18n="btn3">Lifetime-Lizenz holen</a>
       </div>
 
+    </div>
+
+    <!-- ── ENTERPRISE ──────────────────────────────────────────────── -->
+    <div class="enterprise-wrap" id="enterprise">
+      <div class="section-label" data-i18n="ent_label">&gt; ENTERPRISE</div>
+      <div class="section-title" data-i18n="ent_title">Für Teams, Clubs und Institutionen.</div>
+
+      <div class="ent-grid">
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_1">3–5 SEATS</div>
+          <div class="ent-price"><sup>€</sup>499<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
+          <div class="ent-saving" data-i18n="ent_save_1">–€100 · 17% Rabatt</div>
+        </div>
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_2">6–20 SEATS</div>
+          <div class="ent-price"><sup>€</sup>399<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
+          <div class="ent-saving" data-i18n="ent_save_2">–€200 · 33% Rabatt</div>
+        </div>
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_3">21–50 SEATS</div>
+          <div class="ent-price"><sup>€</sup>299<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
+          <div class="ent-saving" data-i18n="ent_save_3">–€300 · 50% Rabatt</div>
+        </div>
+
+        <div class="ent-card">
+          <div class="ent-seats" data-i18n="ent_seats_4">50+ SEATS</div>
+          <div class="ent-price-req" data-i18n="ent_price_req">Auf Anfrage</div>
+          <div class="ent-saving" data-i18n="ent_save_4">Individuelle Konditionen</div>
+        </div>
+
+      </div>
+
+      <p class="ent-info" data-i18n="ent_info">1 Seat = 1 Mac · Nur Jahres-Lizenz · Investment-Clubs · Family Offices · Trading-Desks · Bildungseinrichtungen</p>
+      <div class="ent-cta">
+        <a href="mailto:hello@holisticcointrainer.com" class="card-btn btn-outline" data-i18n="ent_btn">Angebot anfragen</a>
+      </div>
     </div>
 
     <!-- SETUP NOTE -->
@@ -983,7 +1079,7 @@
       <p class="setup-note-body" style="font-size:13px; color:var(--text-soft); margin-bottom:20px; line-height:1.7;" data-i18n-html="setup_text">
         HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel
         bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben.
-        Die KI-Nutzung kostet ca. <strong style="color:var(--text);">€0,50–0,80 pro Analyse</strong>,
+        Die KI-Nutzung kostet ca. <strong style="color:var(--text);">~$0,80 pro Analyse (Sonnet) / ~$5,00 (Opus)</strong>,
         direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.
       </p>
       <div class="setup-steps">
@@ -1126,8 +1222,25 @@ const TRANSLATIONS = {
     feat3_7: '6 Sprachen',
     feat3_8: 'Alle zukünftigen Updates — für immer',
     btn3: 'Lifetime-Lizenz holen',
+    feat1_seats: '2 Arbeitsplätze',
+    feat2_seats: '2 Arbeitsplätze',
+    feat3_seats: '1 Arbeitsplatz',
+    ent_label: '> ENTERPRISE',
+    ent_title: 'Für Teams, Clubs und Institutionen.',
+    ent_seats_1: '3–5 SEATS',
+    ent_seats_2: '6–20 SEATS',
+    ent_seats_3: '21–50 SEATS',
+    ent_seats_4: '50+ SEATS',
+    ent_per_seat: '/Seat/Jahr',
+    ent_save_1: '–€100 · 17% Rabatt',
+    ent_save_2: '–€200 · 33% Rabatt',
+    ent_save_3: '–€300 · 50% Rabatt',
+    ent_price_req: 'Auf Anfrage',
+    ent_save_4: 'Individuelle Konditionen',
+    ent_info: '1 Seat = 1 Mac · Nur Jahres-Lizenz · Investment-Clubs · Family Offices · Trading-Desks · Bildungseinrichtungen',
+    ent_btn: 'Angebot anfragen',
     setup_title: '> EINMALIGE EINRICHTUNG — CA. 5 MINUTEN',
-    setup_text: 'HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben. Die KI-Nutzung kostet ca. <strong style="color:var(--text);">€0,50–0,80 pro Analyse</strong>, direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.',
+    setup_text: 'HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben. Die KI-Nutzung kostet ca. <strong style="color:var(--text);">~$0,80 pro Analyse (Sonnet) / ~$5,00 (Opus)</strong>, direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.',
     setup1_text: '<strong>console.anthropic.com</strong> aufrufen & kostenloses Konto erstellen',
     setup2_text: '<strong>API-Schlüssel</strong> im Dashboard erstellen (1 Klick)',
     setup3_text: '<strong>Schlüssel in HCT</strong> einmalig eingeben — fertig',
@@ -1237,8 +1350,25 @@ const TRANSLATIONS = {
     feat3_7: '6 languages',
     feat3_8: 'All future updates — forever',
     btn3: 'Get lifetime licence',
+    feat1_seats: '2 installs',
+    feat2_seats: '2 installs',
+    feat3_seats: '1 install',
+    ent_label: '> ENTERPRISE',
+    ent_title: 'For teams, clubs and institutions.',
+    ent_seats_1: '3–5 SEATS',
+    ent_seats_2: '6–20 SEATS',
+    ent_seats_3: '21–50 SEATS',
+    ent_seats_4: '50+ SEATS',
+    ent_per_seat: '/seat/year',
+    ent_save_1: '–€100 · 17% discount',
+    ent_save_2: '–€200 · 33% discount',
+    ent_save_3: '–€300 · 50% discount',
+    ent_price_req: 'On Request',
+    ent_save_4: 'Individual terms',
+    ent_info: '1 seat = 1 Mac · Annual licence only · Investment clubs · Family offices · Trading desks · Educational institutions',
+    ent_btn: 'Request a quote',
     setup_title: '> ONE-TIME SETUP — APPROX. 5 MINUTES',
-    setup_text: 'HCT uses AI for its analyses. You\'ll need a personal access key from Anthropic (the AI provider) — free to create, entered just once. AI usage costs approx. <strong style="color:var(--text);">€0.50–0.80 per analysis</strong>, billed directly by Anthropic. No hidden costs, full control.',
+    setup_text: 'HCT uses AI for its analyses. You\'ll need a personal access key from Anthropic (the AI provider) — free to create, entered just once. AI usage costs approx. <strong style="color:var(--text);">~$0.80 per analysis (Sonnet) / ~$5.00 (Opus)</strong>, billed directly by Anthropic. No hidden costs, full control.',
     setup1_text: 'Visit <strong>console.anthropic.com</strong> & create a free account',
     setup2_text: 'Create an <strong>API key</strong> in the dashboard (1 click)',
     setup3_text: 'Enter the <strong>key in HCT</strong> once — done',
@@ -1348,8 +1478,25 @@ const TRANSLATIONS = {
     feat3_7: '6 langues',
     feat3_8: 'Toutes les mises à jour futures — pour toujours',
     btn3: 'Obtenir la licence à vie',
+    feat1_seats: '2 postes',
+    feat2_seats: '2 postes',
+    feat3_seats: '1 poste',
+    ent_label: '> ENTERPRISE',
+    ent_title: 'Pour les équipes, clubs et institutions.',
+    ent_seats_1: '3–5 SEATS',
+    ent_seats_2: '6–20 SEATS',
+    ent_seats_3: '21–50 SEATS',
+    ent_seats_4: '50+ SEATS',
+    ent_per_seat: '/siège/an',
+    ent_save_1: '–€100 · 17% de réduction',
+    ent_save_2: '–€200 · 33% de réduction',
+    ent_save_3: '–€300 · 50% de réduction',
+    ent_price_req: 'Sur demande',
+    ent_save_4: 'Conditions individuelles',
+    ent_info: '1 siège = 1 Mac · Licence annuelle uniquement · Clubs d\'investissement · Family offices · Trading desks · Établissements d\'enseignement',
+    ent_btn: 'Demander un devis',
     setup_title: '> CONFIGURATION UNIQUE — ENVIRON 5 MINUTES',
-    setup_text: "HCT utilise l'IA pour ses analyses. Vous avez besoin d'une clé d'accès personnelle chez Anthropic (le fournisseur IA) — gratuite à créer, à saisir une seule fois. L'utilisation de l'IA coûte environ <strong style=\"color:var(--text);\">€0,50–0,80 par analyse</strong>, facturé directement par Anthropic. Pas de frais cachés, contrôle total.",
+    setup_text: "HCT utilise l'IA pour ses analyses. Vous avez besoin d'une clé d'accès personnelle chez Anthropic (le fournisseur IA) — gratuite à créer, à saisir une seule fois. L'utilisation de l'IA coûte environ <strong style=\"color:var(--text);\">~$0,80 par analyse (Sonnet) / ~$5,00 (Opus)</strong>, facturé directement par Anthropic. Pas de frais cachés, contrôle total.",
     setup1_text: 'Visitez <strong>console.anthropic.com</strong> & créez un compte gratuit',
     setup2_text: 'Créez une <strong>clé API</strong> dans le tableau de bord (1 clic)',
     setup3_text: "Entrez la <strong>clé dans HCT</strong> une fois — c'est tout",
@@ -1459,8 +1606,25 @@ const TRANSLATIONS = {
     feat3_7: '6 idiomas',
     feat3_8: 'Todas las actualizaciones futuras — para siempre',
     btn3: 'Obtener licencia vitalicia',
+    feat1_seats: '2 puestos',
+    feat2_seats: '2 puestos',
+    feat3_seats: '1 puesto',
+    ent_label: '> ENTERPRISE',
+    ent_title: 'Para equipos, clubes e instituciones.',
+    ent_seats_1: '3–5 SEATS',
+    ent_seats_2: '6–20 SEATS',
+    ent_seats_3: '21–50 SEATS',
+    ent_seats_4: '50+ SEATS',
+    ent_per_seat: '/puesto/año',
+    ent_save_1: '–€100 · 17% de descuento',
+    ent_save_2: '–€200 · 33% de descuento',
+    ent_save_3: '–€300 · 50% de descuento',
+    ent_price_req: 'A consultar',
+    ent_save_4: 'Condiciones individuales',
+    ent_info: '1 puesto = 1 Mac · Solo licencia anual · Clubs de inversión · Family offices · Trading desks · Instituciones educativas',
+    ent_btn: 'Solicitar presupuesto',
     setup_title: '> CONFIGURACIÓN ÚNICA — APROX. 5 MINUTOS',
-    setup_text: 'HCT utiliza IA para sus análisis. Necesitas una clave de acceso personal de Anthropic (el proveedor de IA) — gratuita de crear, se introduce una sola vez. El uso de IA cuesta aprox. <strong style="color:var(--text);">€0,50–0,80 por análisis</strong>, facturado directamente por Anthropic. Sin costes ocultos, control total.',
+    setup_text: 'HCT utiliza IA para sus análisis. Necesitas una clave de acceso personal de Anthropic (el proveedor de IA) — gratuita de crear, se introduce una sola vez. El uso de IA cuesta aprox. <strong style="color:var(--text);">~$0,80 por análisis (Sonnet) / ~$5,00 (Opus)</strong>, facturado directamente por Anthropic. Sin costes ocultos, control total.',
     setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea una cuenta gratuita',
     setup2_text: 'Crea una <strong>clave API</strong> en el panel de control (1 clic)',
     setup3_text: 'Introduce la <strong>clave en HCT</strong> una vez — listo',
@@ -1570,8 +1734,25 @@ const TRANSLATIONS = {
     feat3_7: '6 lingue',
     feat3_8: 'Tutti gli aggiornamenti futuri — per sempre',
     btn3: 'Ottieni la licenza a vita',
+    feat1_seats: '2 postazioni',
+    feat2_seats: '2 postazioni',
+    feat3_seats: '1 postazione',
+    ent_label: '> ENTERPRISE',
+    ent_title: 'Per team, club e istituzioni.',
+    ent_seats_1: '3–5 SEATS',
+    ent_seats_2: '6–20 SEATS',
+    ent_seats_3: '21–50 SEATS',
+    ent_seats_4: '50+ SEATS',
+    ent_per_seat: '/postazione/anno',
+    ent_save_1: '–€100 · sconto 17%',
+    ent_save_2: '–€200 · sconto 33%',
+    ent_save_3: '–€300 · sconto 50%',
+    ent_price_req: 'Su richiesta',
+    ent_save_4: 'Condizioni individuali',
+    ent_info: '1 postazione = 1 Mac · Solo licenza annuale · Club di investimento · Family office · Trading desk · Istituti scolastici',
+    ent_btn: 'Richiedi un preventivo',
     setup_title: '> CONFIGURAZIONE UNICA — CIRCA 5 MINUTI',
-    setup_text: "HCT usa l'IA per le sue analisi. Hai bisogno di una chiave di accesso personale da Anthropic (il fornitore IA) — gratuita da creare, da inserire una sola volta. L'utilizzo dell'IA costa circa <strong style=\"color:var(--text);\">€0,50–0,80 per analisi</strong>, fatturato direttamente da Anthropic. Nessun costo nascosto, pieno controllo.",
+    setup_text: "HCT usa l'IA per le sue analisi. Hai bisogno di una chiave di accesso personale da Anthropic (il fornitore IA) — gratuita da creare, da inserire una sola volta. L'utilizzo dell'IA costa circa <strong style=\"color:var(--text);\">~$0,80 per analisi (Sonnet) / ~$5,00 (Opus)</strong>, fatturato direttamente da Anthropic. Nessun costo nascosto, pieno controllo.",
     setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea un account gratuito',
     setup2_text: 'Crea una <strong>chiave API</strong> nella dashboard (1 clic)',
     setup3_text: 'Inserisci la <strong>chiave in HCT</strong> una volta — fatto',
@@ -1681,8 +1862,25 @@ const TRANSLATIONS = {
     feat3_7: '6 idiomas',
     feat3_8: 'Todas as atualizações futuras — para sempre',
     btn3: 'Obter licença vitalícia',
+    feat1_seats: '2 postos',
+    feat2_seats: '2 postos',
+    feat3_seats: '1 posto',
+    ent_label: '> ENTERPRISE',
+    ent_title: 'Para equipas, clubes e instituições.',
+    ent_seats_1: '3–5 SEATS',
+    ent_seats_2: '6–20 SEATS',
+    ent_seats_3: '21–50 SEATS',
+    ent_seats_4: '50+ SEATS',
+    ent_per_seat: '/posto/ano',
+    ent_save_1: '–€100 · 17% de desconto',
+    ent_save_2: '–€200 · 33% de desconto',
+    ent_save_3: '–€300 · 50% de desconto',
+    ent_price_req: 'Sob consulta',
+    ent_save_4: 'Condições individuais',
+    ent_info: '1 posto = 1 Mac · Apenas licença anual · Clubes de investimento · Family offices · Trading desks · Instituições de ensino',
+    ent_btn: 'Solicitar orçamento',
     setup_title: '> CONFIGURAÇÃO ÚNICA — APROX. 5 MINUTOS',
-    setup_text: 'O HCT usa IA para as suas análises. Precisa de uma chave de acesso pessoal da Anthropic (o fornecedor de IA) — gratuita para criar, inserida apenas uma vez. O uso de IA custa aprox. <strong style="color:var(--text);">€0,50–0,80 por análise</strong>, faturado diretamente pela Anthropic. Sem custos ocultos, controlo total.',
+    setup_text: 'O HCT usa IA para as suas análises. Precisa de uma chave de acesso pessoal da Anthropic (o fornecedor de IA) — gratuita para criar, inserida apenas uma vez. O uso de IA custa aprox. <strong style="color:var(--text);">~$0,80 por análise (Sonnet) / ~$5,00 (Opus)</strong>, faturado diretamente pela Anthropic. Sem custos ocultos, controlo total.',
     setup1_text: 'Visite <strong>console.anthropic.com</strong> & crie uma conta gratuita',
     setup2_text: 'Crie uma <strong>chave API</strong> no painel (1 clique)',
     setup3_text: 'Introduza a <strong>chave no HCT</strong> uma vez — pronto',
