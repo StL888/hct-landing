@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Holistic Coin Trainer — AI Crypto Analysis</title>
-  <meta name="description" content="AI-powered crypto analysis. Real data. No noise. Stop being played by the market.">
+  <title>Holistic Coin Trainer — Der Markt spielt alle. Bis jetzt.</title>
+  <meta name="description" content="KI-gestützte Krypto-Analyse für macOS. Wyckoff · DCA-Plan · Survival-Score. 2 Analysen kostenlos. Kein Abo. Läuft lokal auf deinem Mac.">
+  <meta name="keywords" content="Krypto Analyse Tool, Bitcoin Analyse macOS, Wyckoff Crypto, DCA Plan Krypto, Holistic Coin Trainer, Coin Analyse KI">
+  <meta name="author" content="Holistic Coin Trainer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://holisticcointrainer.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://holisticcointrainer.com/">
+  <meta property="og:title" content="Holistic Coin Trainer — Der Markt spielt alle. Bis jetzt.">
+  <meta property="og:description" content="KI-gestützte Krypto-Analyse für macOS. 2 Analysen kostenlos. Kein Abo.">
+  <meta property="og:image" content="https://holisticcointrainer.com/hero.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Holistic Coin Trainer — Der Markt spielt alle. Bis jetzt.">
+  <meta name="twitter:description" content="KI-gestützte Krypto-Analyse für macOS. 2 Analysen kostenlos testen.">
+  <meta name="twitter:image" content="https://holisticcointrainer.com/hero.jpeg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Holistic Coin Trainer","operatingSystem":"macOS 12+","applicationCategory":"FinanceApplication","description":"KI-gestützte Krypto-Analyse für macOS. Professionelles Coin-Research mit Wyckoff-Analyse und DCA-Plan.","url":"https://holisticcointrainer.com/","offers":{"@type":"Offer","price":"599","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Holistic Coin Trainer","url":"https://holisticcointrainer.com"}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
@@ -862,7 +878,32 @@
       background: var(--gray);
       margin: 28px 0 0;
     }
-    .ent-card { background: var(--bg2); padding: 32px 28px; }
+    .ent-card { background: var(--bg2); padding: 32px 28px; transition: background 0.2s; }
+    .ent-card:hover { background: #111820; }
+    .ent-features {
+      list-style: none;
+      margin: 16px 0 0;
+      font-size: 11px;
+      color: var(--gray-light);
+      font-family: var(--mono, monospace);
+      line-height: 1.8;
+    }
+    .ent-features li::before { content: "// "; color: var(--green-dim); }
+    .ent-btn-wrap { margin-top: 18px; }
+    .ent-card-btn {
+      display: inline-block;
+      padding: 8px 18px;
+      font-family: var(--font);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--green);
+      border: 1px solid var(--green-dim);
+      text-decoration: none;
+      transition: all 0.2s;
+      background: transparent;
+    }
+    .ent-card-btn:hover { background: var(--green-dim); color: var(--bg); }
     .ent-seats {
       font-family: var(--mono, monospace);
       font-size: 10px;
@@ -930,6 +971,7 @@
         <div class="t-line">&gt; ENGINE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="hero_t2">// CLAUDE AI + COINGECKO LIVE-DATEN</span></div>
         <div class="t-line">&gt; ANALYSIS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="hero_t3">// WYCKOFF · FUNDAMENTALS · DCA-PLAN</span></div>
         <div class="t-line">&gt; TRIAL &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="hero_t4">// 2 ANALYSEN KOSTENLOS INKLUSIVE</span></div>
+        <div class="t-line">&gt; SIGNING &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span data-i18n="hero_t5">// APPLE DEVELOPER ID · NOTARIZED</span></div>
         <div class="t-prompt">&gt; _</div>
       </div>
 
@@ -1068,6 +1110,12 @@
     <blockquote class="learn-quote" data-i18n="learn_quote">
       „Du wächst in den Analysten hinein. Das Tool bleibt dein Vorsprung."
     </blockquote>
+
+    <!-- Psychology warning -->
+    <div style="margin-top:32px; border: 1px solid var(--amber); padding:24px 28px; background:rgba(255,165,0,0.04);">
+      <div style="font-family:var(--font); font-size:10px; letter-spacing:0.2em; color:var(--amber); font-weight:700; margin-bottom:12px;" data-i18n="psych_label">&gt; WARNUNG // DAS GRÖSSTE RISIKO IM KRYPTO: DU SELBST</div>
+      <p style="font-family:var(--font); font-size:13px; color:var(--gray-light); line-height:1.75;" data-i18n="psych_text">FOMO. Panikverkäufe. Overtrading. Emotionale Entscheidungen zerstören mehr Portfolios als schlechte Coins. HCT erzwingt Struktur: Tri-Filter-Kaskade, Survival-Score-Veto, DCA-Tranchen-Plan. Kein Bauchgefühl. Kein Hype. Nur Framework.</p>
+    </div>
   </div>
 
   <!-- ── TRIAL ────────────────────────────────────────────────── -->
@@ -1164,7 +1212,7 @@
     <!-- ── ENTERPRISE ──────────────────────────────────────────────── -->
     <div class="enterprise-wrap" id="enterprise">
       <div class="section-label" data-i18n="price_e_label">&gt; ENTERPRISE</div>
-      <div class="section-title" data-i18n="price_e_title">Für Teams, Clubs und Institutionen.</div>
+      <div class="section-title" data-i18n="price_e_title">Für Firmen, Family Offices und Institutionen.</div>
 
       <div class="ent-grid">
 
@@ -1172,24 +1220,61 @@
           <div class="ent-seats" data-i18n="ent_seats_1">3–5 SEATS</div>
           <div class="ent-price"><sup>€</sup>499<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
           <div class="ent-saving" data-i18n="ent_save_1">–€100 · 17% RABATT</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f4">Zentrales Lizenz-Management</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%203-5%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
         <div class="ent-card">
           <div class="ent-seats" data-i18n="ent_seats_2">6–20 SEATS</div>
           <div class="ent-price"><sup>€</sup>399<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
           <div class="ent-saving" data-i18n="ent_save_2">–€200 · 33% RABATT</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f4">Zentrales Lizenz-Management</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%206-20%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
         <div class="ent-card">
           <div class="ent-seats" data-i18n="ent_seats_3">21–50 SEATS</div>
           <div class="ent-price"><sup>€</sup>299<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
           <div class="ent-saving" data-i18n="ent_save_3">–€300 · 50% RABATT</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f4">Zentrales Lizenz-Management</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%2021-50%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
         <div class="ent-card">
           <div class="ent-seats" data-i18n="ent_seats_4">50+ SEATS</div>
           <div class="ent-price-req" data-i18n="ent_price_req">AUF ANFRAGE</div>
           <div class="ent-saving" data-i18n="ent_save_4">INDIVIDUELLE KONDITIONEN</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f5">Dedizierter Support</li>
+            <li data-i18n="ent_f6">Individuelle Konditionen</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%2050%2B%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
       </div>
@@ -1202,7 +1287,30 @@
     </div>
 
     <!-- API KEY NOTE -->
-    <div class="api-note" data-i18n-html="api_note"><strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-Analysen. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Analyse kostet etwa <code>$0,60 – $0,90</code> mit Claude Sonnet. Analysen mit Claude Opus (höchste Genauigkeit) kosten mehr. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.</div>
+    <div class="api-note" data-i18n-html="api_note"><strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-Analysen. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Analyse kostet etwa <code>~$0,80 mit Claude Sonnet · ~$5,00 mit Claude Opus</code>. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.</div>
+
+    <!-- SYSTEM REQUIREMENTS -->
+    <div class="api-note" style="margin-top:16px; border-left-color: var(--green-dim);">
+      <div style="font-size:10px; letter-spacing:0.18em; color:var(--green-dim); font-weight:700; margin-bottom:12px;" data-i18n="sysreq_title">&gt; SYSTEMANFORDERUNGEN</div>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div style="display:flex; gap:12px; font-size:12px; align-items:flex-start;">
+          <span style="color:var(--green-mid); min-width:16px;">✓</span>
+          <span data-i18n-html="sysreq_os"><strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia</span>
+        </div>
+        <div style="display:flex; gap:12px; font-size:12px; align-items:flex-start;">
+          <span style="color:var(--green-mid); min-width:16px;">✓</span>
+          <span data-i18n-html="sysreq_chip"><strong>Apple Silicon</strong> nativ · Intel Mac via Rosetta 2</span>
+        </div>
+        <div style="display:flex; gap:12px; font-size:12px; align-items:flex-start;">
+          <span style="color:var(--green-mid); min-width:16px;">✓</span>
+          <span data-i18n-html="sysreq_ram"><strong>4 GB RAM</strong> Minimum · 8 GB empfohlen</span>
+        </div>
+        <div style="display:flex; gap:12px; font-size:12px; align-items:flex-start;">
+          <span style="color:var(--green-mid); min-width:16px;">✓</span>
+          <span data-i18n-html="sysreq_net"><strong>Internetverbindung</strong> erforderlich (API-Anfragen)</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- ── DISCLAIMER ────────────────────────────────────────────── -->
@@ -1215,6 +1323,8 @@
       <a href="legal/impressum.html">Impressum</a>
       <a href="legal/datenschutz.html">Datenschutz</a>
       <a href="mailto:hello@holisticcointrainer.com" data-i18n="footer_contact">Kontakt</a>
+      <a href="https://www.facebook.com/HolisticCoinTrainer" target="_blank" rel="noopener" data-i18n="footer_facebook">Facebook</a>
+      <a href="https://www.instagram.com/holisticcointrainer" target="_blank" rel="noopener" data-i18n="footer_instagram">Instagram</a>
     </div>
     <div class="footer-version">&gt; holisticcointrainer.com &nbsp;//&nbsp; v1.5 &nbsp;//&nbsp; 2026</div>
   </footer>
@@ -1312,8 +1422,12 @@ const T = {
     feat_a_seats: "2 Installationen",
     feat_3_seats: "2 Installationen",
     feat_l_seats: "1 Installation",
+    page_title: "Holistic Coin Trainer — Der Markt spielt alle. Bis jetzt.",
+    hero_t5: "// APPLE DEVELOPER ID · NOTARIZED",
+    psych_label: "> WARNUNG // DAS GRÖSSTE RISIKO IM KRYPTO: DU SELBST",
+    psych_text: "FOMO. Panikverkäufe. Overtrading. Emotionale Entscheidungen zerstören mehr Portfolios als schlechte Coins. HCT erzwingt Struktur: Tri-Filter-Kaskade, Survival-Score-Veto, DCA-Tranchen-Plan. Kein Bauchgefühl. Kein Hype. Nur Framework.",
     price_e_label: "> ENTERPRISE",
-    price_e_title: "Für Teams, Clubs und Institutionen.",
+    price_e_title: "Für Firmen, Family Offices und Institutionen.",
     ent_seats_1: "3–5 SEATS",
     ent_seats_2: "6–20 SEATS",
     ent_seats_3: "21–50 SEATS",
@@ -1324,11 +1438,25 @@ const T = {
     ent_save_3: "–€300 · 50% RABATT",
     ent_price_req: "AUF ANFRAGE",
     ent_save_4: "INDIVIDUELLE KONDITIONEN",
+    ent_f1: "Individuelle API-Keys pro Nutzer",
+    ent_f2: "Eigener CoinGecko API-Key",
+    ent_f3: "Sonnet & Opus Analysen",
+    ent_f4: "Zentrales Lizenz-Management",
+    ent_f5: "Dedizierter Support",
+    ent_f6: "Individuelle Konditionen",
+    ent_card_btn: "Angebot anfragen",
     ent_info: "// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · INVESTMENT-CLUBS · FAMILY OFFICES · TRADING-DESKS · BILDUNGSEINRICHTUNGEN",
     price_e_btn: "ZUGANG VERHANDELN",
-    api_note: "<strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-Analysen. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Analyse kostet etwa <code>$0,60 – $0,90</code> mit Claude Sonnet. Analysen mit Claude Opus (höchste Genauigkeit) kosten mehr. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.",
+    sysreq_title: "> SYSTEMANFORDERUNGEN",
+    sysreq_os: "<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia",
+    sysreq_chip: "<strong>Apple Silicon</strong> nativ · Intel Mac via Rosetta 2",
+    sysreq_ram: "<strong>4 GB RAM</strong> Minimum · 8 GB empfohlen",
+    sysreq_net: "<strong>Internetverbindung</strong> erforderlich (API-Anfragen)",
+    api_note: "<strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-Analysen. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Analyse kostet etwa <code>~$0,80 mit Claude Sonnet · ~$5,00 mit Claude Opus</code>. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Recherche-Tool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Investiere niemals mehr, als du dir leisten kannst zu verlieren. Konsultiere vor Anlageentscheidungen einen qualifizierten Finanzberater. Steuerliche Hinweise sind allgemeiner Natur und kein Ersatz für professionelle Steuerberatung.",
-    footer_contact: "Kontakt"
+    footer_contact: "Kontakt",
+    footer_facebook: "Facebook",
+    footer_instagram: "Instagram"
   },
 
   EN: {
@@ -1421,8 +1549,12 @@ const T = {
     feat_a_seats: "2 installs",
     feat_3_seats: "2 installs",
     feat_l_seats: "1 install",
+    page_title: "Holistic Coin Trainer — The market plays everyone. Until now.",
+    hero_t5: "// APPLE DEVELOPER ID · NOTARIZED",
+    psych_label: "> WARNING // THE BIGGEST RISK IN CRYPTO: YOU",
+    psych_text: "FOMO. Panic selling. Overtrading. Emotional decisions destroy more portfolios than bad coins. HCT enforces structure: Tri-Filter Cascade, Survival Score Veto, DCA Tranche Plan. No gut feeling. No hype. Just framework.",
     price_e_label: "> ENTERPRISE",
-    price_e_title: "For teams, clubs and institutions.",
+    price_e_title: "For companies, family offices and institutions.",
     ent_seats_1: "3–5 SEATS",
     ent_seats_2: "6–20 SEATS",
     ent_seats_3: "21–50 SEATS",
@@ -1433,11 +1565,25 @@ const T = {
     ent_save_3: "–€300 · 50% DISCOUNT",
     ent_price_req: "ON REQUEST",
     ent_save_4: "INDIVIDUAL TERMS",
+    ent_f1: "Individual API keys per user",
+    ent_f2: "Own CoinGecko API key",
+    ent_f3: "Sonnet & Opus analyses",
+    ent_f4: "Central license management",
+    ent_f5: "Dedicated support",
+    ent_f6: "Custom terms",
+    ent_card_btn: "Request offer",
     ent_info: "// 1 SEAT = 1 MAC · ANNUAL LICENCE ONLY · INVESTMENT CLUBS · FAMILY OFFICES · TRADING DESKS · EDUCATIONAL INSTITUTIONS",
     price_e_btn: "NEGOTIATE ACCESS",
-    api_note: "<strong>&gt; IMPORTANT — API KEY &amp; USAGE COSTS</strong><br>HCT requires your own <strong>Anthropic API key</strong> to run AI analyses. The key is entered once in the app and never leaves your machine. API usage is billed directly by Anthropic — separate from your HCT license. A typical analysis costs approximately <code>~$0.80 per analysis with Claude Sonnet, ~$5.00 with Claude Opus. You stay in full control of your API spend at all times. An Anthropic account can be created at <code>console.anthropic.com</code>.",
+    sysreq_title: "> SYSTEM REQUIREMENTS",
+    sysreq_os: "<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia",
+    sysreq_chip: "<strong>Apple Silicon</strong> native · Intel Mac via Rosetta 2",
+    sysreq_ram: "<strong>4 GB RAM</strong> minimum · 8 GB recommended",
+    sysreq_net: "<strong>Internet connection</strong> required (API requests)",
+    api_note: "<strong>&gt; IMPORTANT — API KEY &amp; USAGE COSTS</strong><br>HCT requires your own <strong>Anthropic API key</strong> to run AI analyses. The key is entered once in the app and never leaves your machine. API usage is billed directly by Anthropic — separate from your HCT license. A typical analysis costs approximately <code>~$0.80 with Claude Sonnet · ~$5.00 with Claude Opus</code>. You stay in full control of your API spend at all times. An Anthropic account can be created at <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NOT FINANCIAL ADVICE.</strong> Holistic Coin Trainer is an educational and research tool only. All analysis output is generated by AI and does not constitute investment advice, financial advice, or a recommendation to buy or sell any asset. Crypto assets are highly volatile. Past performance is not indicative of future results. Never invest more than you can afford to lose. Consult a qualified financial advisor before making investment decisions. Tax information provided is general in nature and not a substitute for professional tax advice.",
-    footer_contact: "Contact"
+    footer_contact: "Contact",
+    footer_facebook: "Facebook",
+    footer_instagram: "Instagram"
   },
 
   FR: {
@@ -1530,8 +1676,12 @@ const T = {
     feat_a_seats: "2 installations",
     feat_3_seats: "2 installations",
     feat_l_seats: "1 installation",
+    page_title: "Holistic Coin Trainer — Le marché joue tout le monde. Jusqu'à maintenant.",
+    hero_t5: "// APPLE DEVELOPER ID · NOTARIZED",
+    psych_label: "> AVERTISSEMENT // LE PLUS GRAND RISQUE EN CRYPTO : TOI",
+    psych_text: "FOMO. Ventes paniques. Overtrading. Les décisions émotionnelles détruisent plus de portefeuilles que les mauvaises coins. HCT impose la structure : cascade Tri-Filter, veto score de survie, plan de tranches DCA. Pas d'instinct. Pas de hype. Juste le framework.",
     price_e_label: "> ENTERPRISE",
-    price_e_title: "Pour les équipes, clubs et institutions.",
+    price_e_title: "Pour les entreprises, family offices et institutions.",
     ent_seats_1: "3–5 SEATS",
     ent_seats_2: "6–20 SEATS",
     ent_seats_3: "21–50 SEATS",
@@ -1542,11 +1692,25 @@ const T = {
     ent_save_3: "–€300 · 50% RÉDUCTION",
     ent_price_req: "SUR DEMANDE",
     ent_save_4: "CONDITIONS INDIVIDUELLES",
+    ent_f1: "Clés API individuelles par utilisateur",
+    ent_f2: "Propre clé API CoinGecko",
+    ent_f3: "Analyses Sonnet & Opus",
+    ent_f4: "Gestion centralisée des licences",
+    ent_f5: "Support dédié",
+    ent_f6: "Conditions personnalisées",
+    ent_card_btn: "Demander une offre",
     ent_info: "// 1 SIÈGE = 1 MAC · LICENCE ANNUELLE UNIQUEMENT · CLUBS D'INVESTISSEMENT · FAMILY OFFICES · TRADING DESKS · ÉTABLISSEMENTS D'ENSEIGNEMENT",
     price_e_btn: "NÉGOCIER L'ACCÈS",
-    api_note: "<strong>&gt; IMPORTANT — CLÉ API &amp; COÛTS D'UTILISATION</strong><br>HCT nécessite ta propre <strong>clé API Anthropic</strong> pour effectuer des analyses IA. La clé est saisie une seule fois dans l'app et ne quitte jamais ta machine. L'utilisation de l'API est facturée directement par Anthropic — séparément de ta licence HCT. Une analyse typique coûte environ <code>$0,60 – $0,90</code> avec Claude Sonnet. Les analyses avec Claude Opus (précision maximale) coûteront plus. Tu gardes le contrôle total de tes dépenses API. Un compte Anthropic peut être créé sur <code>console.anthropic.com</code>.",
+    sysreq_title: "> CONFIGURATION REQUISE",
+    sysreq_os: "<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia",
+    sysreq_chip: "<strong>Apple Silicon</strong> natif · Intel Mac via Rosetta 2",
+    sysreq_ram: "<strong>4 Go de RAM</strong> minimum · 8 Go recommandés",
+    sysreq_net: "<strong>Connexion Internet</strong> requise (requêtes API)",
+    api_note: "<strong>&gt; IMPORTANT — CLÉ API &amp; COÛTS D'UTILISATION</strong><br>HCT nécessite ta propre <strong>clé API Anthropic</strong> pour effectuer des analyses IA. La clé est saisie une seule fois dans l'app et ne quitte jamais ta machine. L'utilisation de l'API est facturée directement par Anthropic — séparément de ta licence HCT. Une analyse typique coûte environ <code>~$0,80 avec Sonnet · ~$5,00 avec Opus</code>. Tu gardes le contrôle total de tes dépenses API. Un compte Anthropic peut être créé sur <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">PAS DE CONSEIL FINANCIER.</strong> Holistic Coin Trainer est uniquement un outil éducatif et de recherche. Tous les outputs d'analyse sont générés par IA et ne constituent pas des conseils en investissement, conseils financiers ou recommandations d'achat ou de vente d'actifs. Les crypto-actifs sont très volatils. Les performances passées ne présagent pas des résultats futurs. N'investissez jamais plus que ce que vous pouvez vous permettre de perdre. Consultez un conseiller financier qualifié avant de prendre des décisions d'investissement. Les informations fiscales fournies sont générales et ne remplacent pas les conseils fiscaux professionnels.",
-    footer_contact: "Contact"
+    footer_contact: "Contact",
+    footer_facebook: "Facebook",
+    footer_instagram: "Instagram"
   },
 
   ES: {
@@ -1639,8 +1803,12 @@ const T = {
     feat_a_seats: "2 instalaciones",
     feat_3_seats: "2 instalaciones",
     feat_l_seats: "1 instalación",
+    page_title: "Holistic Coin Trainer — El mercado engaña a todos. Hasta ahora.",
+    hero_t5: "// APPLE DEVELOPER ID · NOTARIZED",
+    psych_label: "> AVISO // EL MAYOR RIESGO EN CRYPTO: TÚ",
+    psych_text: "FOMO. Ventas de pánico. Overtrading. Las decisiones emocionales destruyen más carteras que las malas monedas. HCT impone estructura: cascada Tri-Filter, veto de puntuación de supervivencia, plan de tranches DCA. Sin instinto. Sin hype. Solo framework.",
     price_e_label: "> ENTERPRISE",
-    price_e_title: "Para equipos, clubes e instituciones.",
+    price_e_title: "Para empresas, family offices e instituciones.",
     ent_seats_1: "3–5 SEATS",
     ent_seats_2: "6–20 SEATS",
     ent_seats_3: "21–50 SEATS",
@@ -1651,11 +1819,25 @@ const T = {
     ent_save_3: "–€300 · 50% DESCUENTO",
     ent_price_req: "A CONSULTAR",
     ent_save_4: "CONDICIONES INDIVIDUALES",
+    ent_f1: "Claves API individuales por usuario",
+    ent_f2: "Propia clave API CoinGecko",
+    ent_f3: "Análisis Sonnet & Opus",
+    ent_f4: "Gestión centralizada de licencias",
+    ent_f5: "Soporte dedicado",
+    ent_f6: "Condiciones individuales",
+    ent_card_btn: "Solicitar oferta",
     ent_info: "// 1 PUESTO = 1 MAC · SOLO LICENCIA ANUAL · CLUBS DE INVERSIÓN · FAMILY OFFICES · TRADING DESKS · INSTITUCIONES EDUCATIVAS",
     price_e_btn: "NEGOCIAR ACCESO",
-    api_note: "<strong>&gt; IMPORTANTE — CLAVE API &amp; COSTOS DE USO</strong><br>HCT requiere tu propia <strong>clave API de Anthropic</strong> para ejecutar análisis IA. La clave se ingresa una vez en la app y nunca sale de tu máquina. El uso de la API es facturado directamente por Anthropic — por separado de tu licencia HCT. Un análisis típico cuesta aproximadamente <code>$0.60 – $0.90</code> usando Claude Sonnet. Los análisis con Claude Opus (mayor precisión) costarán más. Mantienes control total de tus gastos de API. Se puede crear una cuenta de Anthropic en <code>console.anthropic.com</code>.",
+    sysreq_title: "> REQUISITOS DEL SISTEMA",
+    sysreq_os: "<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia",
+    sysreq_chip: "<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2",
+    sysreq_ram: "<strong>4 GB de RAM</strong> mínimo · 8 GB recomendados",
+    sysreq_net: "<strong>Conexión a Internet</strong> requerida (solicitudes API)",
+    api_note: "<strong>&gt; IMPORTANTE — CLAVE API &amp; COSTOS DE USO</strong><br>HCT requiere tu propia <strong>clave API de Anthropic</strong> para ejecutar análisis IA. La clave se ingresa una vez en la app y nunca sale de tu máquina. El uso de la API es facturado directamente por Anthropic — por separado de tu licencia HCT. Un análisis típico cuesta aproximadamente <code>~$0,80 con Sonnet · ~$5,00 con Opus</code>. Mantienes control total de tus gastos de API. Se puede crear una cuenta de Anthropic en <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NO ES ASESORAMIENTO FINANCIERO.</strong> Holistic Coin Trainer es exclusivamente una herramienta educativa y de investigación. Todo el output de análisis es generado por IA y no constituye asesoramiento de inversión, financiero ni recomendación de compra o venta de activos. Los criptoactivos son altamente volátiles. El rendimiento pasado no indica resultados futuros. Nunca inviertas más de lo que puedas permitirte perder. Consulta a un asesor financiero calificado antes de tomar decisiones de inversión. La información fiscal proporcionada es de naturaleza general.",
-    footer_contact: "Contacto"
+    footer_contact: "Contacto",
+    footer_facebook: "Facebook",
+    footer_instagram: "Instagram"
   },
 
   IT: {
@@ -1748,8 +1930,12 @@ const T = {
     feat_a_seats: "2 installazioni",
     feat_3_seats: "2 installazioni",
     feat_l_seats: "1 installazione",
+    page_title: "Holistic Coin Trainer — Il mercato gioca con tutti. Fino ad ora.",
+    hero_t5: "// APPLE DEVELOPER ID · NOTARIZED",
+    psych_label: "> AVVISO // IL MAGGIORE RISCHIO NEL CRYPTO: TU",
+    psych_text: "FOMO. Vendite in preda al panico. Overtrading. Le decisioni emotive distruggono più portafogli delle coin cattive. HCT impone struttura: cascata Tri-Filter, veto punteggio di sopravvivenza, piano di tranche DCA. Nessun istinto. Nessun hype. Solo framework.",
     price_e_label: "> ENTERPRISE",
-    price_e_title: "Per team, club e istituzioni.",
+    price_e_title: "Per aziende, family office e istituzioni.",
     ent_seats_1: "3–5 SEATS",
     ent_seats_2: "6–20 SEATS",
     ent_seats_3: "21–50 SEATS",
@@ -1760,11 +1946,25 @@ const T = {
     ent_save_3: "–€300 · 50% SCONTO",
     ent_price_req: "SU RICHIESTA",
     ent_save_4: "CONDIZIONI INDIVIDUALI",
+    ent_f1: "Chiavi API individuali per utente",
+    ent_f2: "Propria chiave API CoinGecko",
+    ent_f3: "Analisi Sonnet & Opus",
+    ent_f4: "Gestione centralizzata delle licenze",
+    ent_f5: "Supporto dedicato",
+    ent_f6: "Condizioni personalizzate",
+    ent_card_btn: "Richiedi offerta",
     ent_info: "// 1 POSTAZIONE = 1 MAC · SOLO LICENZA ANNUALE · CONFIGURAZIONE DI SQUADRA SU RICHIESTA",
     price_e_btn: "NEGOZIA L'ACCESSO",
-    api_note: "<strong>&gt; IMPORTANTE — CHIAVE API &amp; COSTI DI UTILIZZO</strong><br>HCT richiede la tua <strong>chiave API Anthropic</strong> per eseguire analisi IA. La chiave viene inserita una volta nell'app e non lascia mai la tua macchina. L'utilizzo dell'API viene fatturato direttamente da Anthropic — separatamente dalla tua licenza HCT. Una tipica analisi costa circa <code>$0,60 – $0,90</code> con Claude Sonnet. Le analisi con Claude Opus (massima precisione) costeranno di più. Mantieni il pieno controllo delle tue spese API. Un account Anthropic può essere creato su <code>console.anthropic.com</code>.",
+    sysreq_title: "> REQUISITI DI SISTEMA",
+    sysreq_os: "<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia",
+    sysreq_chip: "<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2",
+    sysreq_ram: "<strong>4 GB di RAM</strong> minimo · 8 GB consigliati",
+    sysreq_net: "<strong>Connessione Internet</strong> necessaria (richieste API)",
+    api_note: "<strong>&gt; IMPORTANTE — CHIAVE API &amp; COSTI DI UTILIZZO</strong><br>HCT richiede la tua <strong>chiave API Anthropic</strong> per eseguire analisi IA. La chiave viene inserita una volta nell'app e non lascia mai la tua macchina. L'utilizzo dell'API viene fatturato direttamente da Anthropic — separatamente dalla tua licenza HCT. Una tipica analisi costa circa <code>~$0,80 con Sonnet · ~$5,00 con Opus</code>. Mantieni il pieno controllo delle tue spese API. Un account Anthropic può essere creato su <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NON È CONSULENZA FINANZIARIA.</strong> Holistic Coin Trainer è esclusivamente uno strumento educativo e di ricerca. Tutti gli output di analisi sono generati da IA e non costituiscono consulenza sugli investimenti, finanziaria o raccomandazione di acquisto o vendita di attività. Le criptovalute sono altamente volatili. I risultati passati non indicano risultati futuri. Non investire mai più di quanto ti puoi permettere di perdere. Consulta un consulente finanziario qualificato prima di prendere decisioni di investimento. Le informazioni fiscali fornite sono di natura generale.",
-    footer_contact: "Contatto"
+    footer_contact: "Contatto",
+    footer_facebook: "Facebook",
+    footer_instagram: "Instagram"
   },
 
   PT: {
@@ -1857,8 +2057,12 @@ const T = {
     feat_a_seats: "2 instalações",
     feat_3_seats: "2 instalações",
     feat_l_seats: "1 instalação",
+    page_title: "Holistic Coin Trainer — O mercado engana a todos. Até agora.",
+    hero_t5: "// APPLE DEVELOPER ID · NOTARIZED",
+    psych_label: "> AVISO // O MAIOR RISCO EM CRIPTO: VOCÊ",
+    psych_text: "FOMO. Vendas em pânico. Overtrading. Decisões emocionais destroem mais portfólios do que coins ruins. HCT impõe estrutura: cascata Tri-Filter, veto de pontuação de sobrevivência, plano de tranches DCA. Sem instinto. Sem hype. Só framework.",
     price_e_label: "> ENTERPRISE",
-    price_e_title: "Para equipas, clubes e instituições.",
+    price_e_title: "Para empresas, family offices e instituições.",
     ent_seats_1: "3–5 SEATS",
     ent_seats_2: "6–20 SEATS",
     ent_seats_3: "21–50 SEATS",
@@ -1869,11 +2073,25 @@ const T = {
     ent_save_3: "–€300 · 50% DESCONTO",
     ent_price_req: "SOB CONSULTA",
     ent_save_4: "CONDIÇÕES INDIVIDUAIS",
+    ent_f1: "Chaves API individuais por utilizador",
+    ent_f2: "Própria chave API CoinGecko",
+    ent_f3: "Análises Sonnet & Opus",
+    ent_f4: "Gestão centralizada de licenças",
+    ent_f5: "Suporte dedicado",
+    ent_f6: "Condições individuais",
+    ent_card_btn: "Solicitar oferta",
     ent_info: "// 1 LUGAR = 1 MAC · APENAS LICENÇA ANUAL · CONFIGURAÇÃO DE EQUIPA SOB CONSULTA",
     price_e_btn: "NEGOCIAR ACESSO",
-    api_note: "<strong>&gt; IMPORTANTE — CHAVE API &amp; CUSTOS DE UTILIZAÇÃO</strong><br>HCT requer a tua própria <strong>chave API Anthropic</strong> para executar análises IA. A chave é inserida uma vez na app e nunca sai da tua máquina. A utilização da API é faturada diretamente pela Anthropic — separadamente da tua licença HCT. Uma análise típica custa aproximadamente <code>$0,60 – $0,90</code> com Claude Sonnet. As análises com Claude Opus (máxima precisão) custarão mais. Mantens o controlo total dos teus gastos de API. Uma conta Anthropic pode ser criada em <code>console.anthropic.com</code>.",
+    sysreq_title: "> REQUISITOS DO SISTEMA",
+    sysreq_os: "<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia",
+    sysreq_chip: "<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2",
+    sysreq_ram: "<strong>4 GB de RAM</strong> mínimo · 8 GB recomendado",
+    sysreq_net: "<strong>Ligação à Internet</strong> obrigatória (pedidos API)",
+    api_note: "<strong>&gt; IMPORTANTE — CHAVE API &amp; CUSTOS DE UTILIZAÇÃO</strong><br>HCT requer a tua própria <strong>chave API Anthropic</strong> para executar análises IA. A chave é inserida uma vez na app e nunca sai da tua máquina. A utilização da API é faturada diretamente pela Anthropic — separadamente da tua licença HCT. Uma análise típica custa aproximadamente <code>~$0,80 com Sonnet · ~$5,00 com Opus</code>. Mantens o controlo total dos teus gastos de API. Uma conta Anthropic pode ser criada em <code>console.anthropic.com</code>.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NÃO É ACONSELHAMENTO FINANCEIRO.</strong> Holistic Coin Trainer é exclusivamente uma ferramenta educativa e de investigação. Todo o output de análise é gerado por IA e não constitui aconselhamento de investimento, financeiro ou recomendação de compra ou venda de ativos. Os criptoativos são altamente voláteis. O desempenho passado não indica resultados futuros. Nunca investas mais do que podes perder. Consulta um consultor financeiro qualificado antes de tomar decisões de investimento. As informações fiscais fornecidas são de natureza geral.",
-    footer_contact: "Contacto"
+    footer_contact: "Contacto",
+    footer_facebook: "Facebook",
+    footer_instagram: "Instagram"
   }
 };
 
@@ -1899,6 +2117,9 @@ function applyLang(lang) {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
 
+  // update page title
+  if (tr.page_title) document.title = tr.page_title;
+
   // update html lang attribute
   document.documentElement.lang = lang.toLowerCase();
 
@@ -1908,8 +2129,9 @@ function applyLang(lang) {
 
 // Init
 document.addEventListener('DOMContentLoaded', () => {
-  let saved = 'DE';
-  try { saved = localStorage.getItem('hct_lang') || 'DE'; } catch(e) {}
+  const urlLang = new URLSearchParams(window.location.search).get('lang');
+  let saved = (urlLang && T[urlLang.toUpperCase()]) ? urlLang.toUpperCase() : 'DE';
+  try { if (!urlLang) saved = localStorage.getItem('hct_lang') || saved; } catch(e) {}
   if (!T[saved]) saved = 'DE';
   applyLang(saved);
 
