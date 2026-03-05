@@ -4,7 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Holistic Coin Trainer — Krypto-Analyse für ernsthafte Investoren</title>
-  <meta name="description" content="Professionelle Krypto-Analyse. Kein Fachjargon. Keine Cloud. Einmal kaufen, dauerhaft nutzen.">
+  <meta name="description" content="KI-gestützte Krypto-Analyse für macOS. Professionelles Coin-Research ohne Vorkenntnisse. 3 Analyse-Level, 6 Sprachen, lokale Datenspeicherung. Jetzt 2 Analysen kostenlos testen.">
+  <meta name="keywords" content="Krypto Analyse Tool, Bitcoin Analyse, Coin Analyse macOS, Krypto Investment, DCA Plan Krypto, Holistic Coin Trainer">
+  <meta name="author" content="Holistic Coin Trainer">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://profi.holisticcointrainer.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://profi.holisticcointrainer.com/">
+  <meta property="og:title" content="Holistic Coin Trainer — Krypto analysieren wie ein Profi">
+  <meta property="og:description" content="KI-gestützte Krypto-Analyse für macOS. Professionell, lokal, ohne Abo. 2 Analysen kostenlos testen.">
+  <meta property="og:image" content="https://profi.holisticcointrainer.com/hero.jpeg">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Holistic Coin Trainer — Krypto analysieren wie ein Profi">
+  <meta name="twitter:description" content="KI-gestützte Krypto-Analyse für macOS. 2 Analysen kostenlos testen.">
+  <meta name="twitter:image" content="https://profi.holisticcointrainer.com/hero.jpeg">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Holistic Coin Trainer","operatingSystem":"macOS 12+","applicationCategory":"FinanceApplication","description":"KI-gestützte Krypto-Analyse für macOS. Professionelles Coin-Research ohne Vorkenntnisse.","url":"https://profi.holisticcointrainer.com/","offers":{"@type":"Offer","price":"599","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"Holistic Coin Trainer","url":"https://holisticcointrainer.com"}}
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -734,7 +752,43 @@
     .ent-card {
       background: var(--bg2);
       padding: 32px 28px;
+      transition: background 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
     }
+    .ent-card:hover { background: var(--bg3); transform: translateY(-2px); }
+    .ent-features {
+      list-style: none;
+      margin: 16px 0 20px;
+      flex: 1;
+    }
+    .ent-features li {
+      font-size: 12px;
+      color: var(--text-soft);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(58,69,85,0.25);
+      line-height: 1.5;
+    }
+    .ent-features li::before { content: '✓ '; color: var(--green-mid); font-weight: 700; }
+    .ent-btn-wrap { margin-top: auto; }
+    .ent-card-btn {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: 1px solid var(--gold-dim);
+      color: var(--gold-dim);
+      transition: all 0.2s;
+      cursor: pointer;
+      background: transparent;
+      width: 100%;
+    }
+    .ent-card-btn:hover { background: var(--gold-dim); color: var(--bg); }
     .ent-seats {
       font-family: var(--mono);
       font-size: 10px;
@@ -813,6 +867,7 @@
         <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust2">Kein Abo — einmal kaufen</span></div>
         <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust3">Deine Daten bleiben bei dir</span></div>
         <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust4">2 Analysen kostenlos testen</span></div>
+        <div class="trust-item"><div class="trust-dot" style="background:var(--amber)"></div><span data-i18n="trust5">Apple Developer ID signiert</span></div>
       </div>
 
       <a href="#trial" class="hero-cta" data-i18n="hero_cta">Kostenlos starten</a>
@@ -929,6 +984,10 @@
     <div class="trust-statement" data-i18n="trust_statement">
       „Die meisten Krypto-Tools richten sich an Entwickler oder Day-Trader. HCT ist für jemanden gebaut, der einmal pro Woche eine fundierte Entscheidung treffen will — ohne den ganzen Rest."
     </div>
+    <div class="trust-statement" style="margin-top:1px; border-left-color:var(--green-dim); font-style:normal;">
+      <div style="font-family:var(--mono); font-size:10px; color:var(--green-dim); letter-spacing:0.2em; margin-bottom:12px;" data-i18n="psych_label">// DER MARKT SPIELT MIT EMOTIONEN</div>
+      <p data-i18n="psych_text">Die größten Verluste entstehen nicht aus Unwissenheit — sondern weil man kauft, wenn es aufregend ist. HCT trainiert das Gegenteil: sachlich analysieren, wenn alle Euphorie haben. Nüchtern entscheiden, wenn Panik herrscht. Das ist der systematische Vorteil gegenüber dem Retail-Investor.</p>
+    </div>
   </div>
 
 
@@ -1037,7 +1096,7 @@
     <!-- ── ENTERPRISE ──────────────────────────────────────────────── -->
     <div class="enterprise-wrap" id="enterprise">
       <div class="section-label" data-i18n="ent_label">&gt; ENTERPRISE</div>
-      <div class="section-title" data-i18n="ent_title">Für Teams, Clubs und Institutionen.</div>
+      <div class="section-title" data-i18n="ent_title">Für Firmen, Family Offices und Institutionen.</div>
 
       <div class="ent-grid">
 
@@ -1045,32 +1104,65 @@
           <div class="ent-seats" data-i18n="ent_seats_1">3–5 SEATS</div>
           <div class="ent-price"><sup>€</sup>499<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
           <div class="ent-saving" data-i18n="ent_save_1">–€100 · 17% Rabatt</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f4">Zentrales Lizenz-Management</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
         <div class="ent-card">
           <div class="ent-seats" data-i18n="ent_seats_2">6–20 SEATS</div>
           <div class="ent-price"><sup>€</sup>399<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
           <div class="ent-saving" data-i18n="ent_save_2">–€200 · 33% Rabatt</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f5">Opus Power-User Features</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
         <div class="ent-card">
           <div class="ent-seats" data-i18n="ent_seats_3">21–50 SEATS</div>
           <div class="ent-price"><sup>€</sup>299<br><span class="ent-unit" data-i18n="ent_per_seat">/Seat/Jahr</span></div>
           <div class="ent-saving" data-i18n="ent_save_3">–€300 · 50% Rabatt</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f3">Sonnet &amp; Opus Analysen</li>
+            <li data-i18n="ent_f5">Opus Power-User Features</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
         <div class="ent-card">
           <div class="ent-seats" data-i18n="ent_seats_4">50+ SEATS</div>
           <div class="ent-price-req" data-i18n="ent_price_req">Auf Anfrage</div>
           <div class="ent-saving" data-i18n="ent_save_4">Individuelle Konditionen</div>
+          <ul class="ent-features">
+            <li data-i18n="ent_f1">Individuelle API-Keys pro Nutzer</li>
+            <li data-i18n="ent_f2">Eigener CoinGecko API-Key</li>
+            <li data-i18n="ent_f6">Gruppen-API-Keys möglich</li>
+            <li data-i18n="ent_f5">Opus Power-User Features</li>
+          </ul>
+          <div class="ent-btn-wrap">
+            <a href="mailto:hello@holisticcointrainer.com" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
+          </div>
         </div>
 
       </div>
 
-      <p class="ent-info" data-i18n="ent_info">1 Seat = 1 Mac · Nur Jahres-Lizenz · Investment-Clubs · Family Offices · Trading-Desks · Bildungseinrichtungen</p>
-      <div class="ent-cta">
-        <a href="mailto:hello@holisticcointrainer.com" class="card-btn btn-outline" data-i18n="ent_btn">Angebot anfragen</a>
-      </div>
+      <p class="ent-info" data-i18n="ent_info">1 Seat = 1 Mac · Nur Jahres-Lizenz · Firmen · Family Offices · Trading-Desks · Bildungseinrichtungen</p>
     </div>
 
     <!-- SETUP NOTE -->
@@ -1097,6 +1189,29 @@
         </div>
       </div>
     </div>
+
+    <!-- SYSTEM REQUIREMENTS -->
+    <div class="setup-note" style="margin-top:16px; border-left-color: var(--green-dim);">
+      <div class="setup-note-title" style="color:var(--green-dim);" data-i18n="sysreq_title">&gt; SYSTEMANFORDERUNGEN</div>
+      <div class="setup-steps" style="margin-top:12px;">
+        <div class="setup-step">
+          <div class="setup-num" style="color:var(--green-mid); font-size:16px; min-width:20px;">✓</div>
+          <div class="setup-step-text" data-i18n-html="sysreq_os"><strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num" style="color:var(--green-mid); font-size:16px; min-width:20px;">✓</div>
+          <div class="setup-step-text" data-i18n-html="sysreq_chip"><strong>Apple Silicon</strong> nativ · Intel Mac via Rosetta 2</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num" style="color:var(--green-mid); font-size:16px; min-width:20px;">✓</div>
+          <div class="setup-step-text" data-i18n-html="sysreq_ram"><strong>4 GB RAM</strong> Minimum · 8 GB empfohlen</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num" style="color:var(--green-mid); font-size:16px; min-width:20px;">✓</div>
+          <div class="setup-step-text" data-i18n-html="sysreq_net"><strong>Internetverbindung</strong> erforderlich (API-Anfragen)</div>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -1113,6 +1228,8 @@
       <a href="legal/impressum.html" data-i18n="footer_impressum">Impressum</a>
       <a href="legal/datenschutz.html" data-i18n="footer_datenschutz">Datenschutz</a>
       <a href="mailto:hello@holisticcointrainer.com" data-i18n="footer_kontakt">Kontakt</a>
+      <a href="https://facebook.com/HolisticCoinTrainer" data-i18n="footer_facebook" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/holisticcointrainer" data-i18n="footer_instagram" target="_blank" rel="noopener">Instagram</a>
     </div>
     <div class="footer-version">&gt; holisticcointrainer.com &nbsp;//&nbsp; v1.5 &nbsp;//&nbsp; 2026</div>
   </footer>
@@ -1133,6 +1250,7 @@ const TRANSLATIONS = {
     trust2: 'Kein Abo — einmal kaufen',
     trust3: 'Deine Daten bleiben bei dir',
     trust4: '2 Analysen kostenlos testen',
+    trust5: 'Apple Developer ID signiert',
     hero_cta: 'Kostenlos starten',
     scroll_hint: '▼ · MEHR ERFAHREN',
     steps_label: '> ABLAUF',
@@ -1175,6 +1293,8 @@ const TRANSLATIONS = {
     tbox3_label: 'Daten in der Cloud —<br>alles bleibt lokal',
     tbox4_label: 'Analysen mit Lizenz —<br>kein Limit',
     trust_statement: '„Die meisten Krypto-Tools richten sich an Entwickler oder Day-Trader. HCT ist für jemanden gebaut, der einmal pro Woche eine fundierte Entscheidung treffen will — ohne den ganzen Rest."',
+    psych_label: '// DER MARKT SPIELT MIT EMOTIONEN',
+    psych_text: 'Die größten Verluste entstehen nicht aus Unwissenheit — sondern weil man kauft, wenn es aufregend ist. HCT trainiert das Gegenteil: sachlich analysieren, wenn alle Euphorie haben. Nüchtern entscheiden, wenn Panik herrscht. Das ist der systematische Vorteil gegenüber dem Retail-Investor.',
     trial_label: '> KOSTENLOS TESTEN',
     trial_title: 'Überzeuge dich selbst.',
     trial_badge: '// 2 VOLLSTÄNDIGE ANALYSEN KOSTENLOS',
@@ -1226,7 +1346,7 @@ const TRANSLATIONS = {
     feat2_seats: '2 Arbeitsplätze',
     feat3_seats: '1 Arbeitsplatz',
     ent_label: '> ENTERPRISE',
-    ent_title: 'Für Teams, Clubs und Institutionen.',
+    ent_title: 'Für Firmen, Family Offices und Institutionen.',
     ent_seats_1: '3–5 SEATS',
     ent_seats_2: '6–20 SEATS',
     ent_seats_3: '21–50 SEATS',
@@ -1237,17 +1357,31 @@ const TRANSLATIONS = {
     ent_save_3: '–€300 · 50% Rabatt',
     ent_price_req: 'Auf Anfrage',
     ent_save_4: 'Individuelle Konditionen',
-    ent_info: '1 Seat = 1 Mac · Nur Jahres-Lizenz · Investment-Clubs · Family Offices · Trading-Desks · Bildungseinrichtungen',
+    ent_info: '1 Seat = 1 Mac · Nur Jahres-Lizenz · Firmen · Family Offices · Trading-Desks · Bildungseinrichtungen',
     ent_btn: 'Angebot anfragen',
+    ent_card_btn: 'Angebot anfragen',
+    ent_f1: 'Individuelle API-Keys pro Nutzer',
+    ent_f2: 'Eigener CoinGecko API-Key',
+    ent_f3: 'Sonnet & Opus Analysen',
+    ent_f4: 'Zentrales Lizenz-Management',
+    ent_f5: 'Opus Power-User Features',
+    ent_f6: 'Gruppen-API-Keys möglich',
     setup_title: '> EINMALIGE EINRICHTUNG — CA. 5 MINUTEN',
     setup_text: 'HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben. Die KI-Nutzung kostet ca. <strong style="color:var(--text);">~$0,80 pro Analyse (Sonnet) / ~$5,00 (Opus)</strong>, direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.',
     setup1_text: '<strong>console.anthropic.com</strong> aufrufen & kostenloses Konto erstellen',
     setup2_text: '<strong>API-Schlüssel</strong> im Dashboard erstellen (1 Klick)',
     setup3_text: '<strong>Schlüssel in HCT</strong> einmalig eingeben — fertig',
+    sysreq_title: '> SYSTEMANFORDERUNGEN',
+    sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
+    sysreq_chip: '<strong>Apple Silicon</strong> nativ · Intel Mac via Rosetta 2',
+    sysreq_ram: '<strong>4 GB RAM</strong> Minimum · 8 GB empfohlen',
+    sysreq_net: '<strong>Internetverbindung</strong> erforderlich (API-Anfragen)',
     disclaimer: '<strong style="color:var(--gray-light);">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Recherche-Tool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Investiere niemals mehr, als du dir leisten kannst zu verlieren. Konsultiere vor Anlageentscheidungen einen qualifizierten Finanzberater. Steuerliche Hinweise sind allgemeiner Natur und kein Ersatz für professionelle Steuerberatung.',
     footer_impressum: 'Impressum',
     footer_datenschutz: 'Datenschutz',
     footer_kontakt: 'Kontakt',
+    footer_facebook: 'Facebook',
+    footer_instagram: 'Instagram',
   },
 
   EN: {
@@ -1261,6 +1395,7 @@ const TRANSLATIONS = {
     trust2: 'No subscription — buy once',
     trust3: 'Your data stays with you',
     trust4: '2 free analyses to try',
+    trust5: 'Apple Developer ID signed',
     hero_cta: 'Start for free',
     scroll_hint: '▼ · LEARN MORE',
     steps_label: '> HOW IT WORKS',
@@ -1303,6 +1438,8 @@ const TRANSLATIONS = {
     tbox3_label: 'data in the cloud —<br>everything stays local',
     tbox4_label: 'analyses with licence —<br>no limit',
     trust_statement: '"Most crypto tools are built for developers or day-traders. HCT is built for someone who wants to make one well-informed decision per week — without all the rest."',
+    psych_label: '// THE MARKET PLAYS WITH EMOTIONS',
+    psych_text: "The biggest losses don't come from ignorance — they come from buying when it's exciting. HCT trains the opposite: analysing objectively when everyone is euphoric. Deciding soberly when panic sets in. That's the systematic advantage over the retail investor.",
     trial_label: '> TRY FOR FREE',
     trial_title: 'See it for yourself.',
     trial_badge: '// 2 FULL ANALYSES FREE',
@@ -1354,7 +1491,7 @@ const TRANSLATIONS = {
     feat2_seats: '2 installs',
     feat3_seats: '1 install',
     ent_label: '> ENTERPRISE',
-    ent_title: 'For teams, clubs and institutions.',
+    ent_title: 'For companies, family offices and institutions.',
     ent_seats_1: '3–5 SEATS',
     ent_seats_2: '6–20 SEATS',
     ent_seats_3: '21–50 SEATS',
@@ -1365,17 +1502,31 @@ const TRANSLATIONS = {
     ent_save_3: '–€300 · 50% discount',
     ent_price_req: 'On Request',
     ent_save_4: 'Individual terms',
-    ent_info: '1 seat = 1 Mac · Annual licence only · Investment clubs · Family offices · Trading desks · Educational institutions',
+    ent_info: '1 seat = 1 Mac · Annual licence only · Companies · Family offices · Trading desks · Educational institutions',
     ent_btn: 'Request a quote',
+    ent_card_btn: 'Request a quote',
+    ent_f1: 'Individual API keys per user',
+    ent_f2: 'Your own CoinGecko API key',
+    ent_f3: 'Sonnet & Opus analyses',
+    ent_f4: 'Central licence management',
+    ent_f5: 'Opus power-user features',
+    ent_f6: 'Group API keys available',
     setup_title: '> ONE-TIME SETUP — APPROX. 5 MINUTES',
     setup_text: 'HCT uses AI for its analyses. You\'ll need a personal access key from Anthropic (the AI provider) — free to create, entered just once. AI usage costs approx. <strong style="color:var(--text);">~$0.80 per analysis (Sonnet) / ~$5.00 (Opus)</strong>, billed directly by Anthropic. No hidden costs, full control.',
     setup1_text: 'Visit <strong>console.anthropic.com</strong> & create a free account',
     setup2_text: 'Create an <strong>API key</strong> in the dashboard (1 click)',
     setup3_text: 'Enter the <strong>key in HCT</strong> once — done',
+    sysreq_title: '> SYSTEM REQUIREMENTS',
+    sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
+    sysreq_chip: '<strong>Apple Silicon</strong> native · Intel Mac via Rosetta 2',
+    sysreq_ram: '<strong>4 GB RAM</strong> minimum · 8 GB recommended',
+    sysreq_net: '<strong>Internet connection</strong> required (API requests)',
     disclaimer: '<strong style="color:var(--gray-light);">NOT INVESTMENT ADVICE.</strong> Holistic Coin Trainer is exclusively an educational and research tool. All analysis outputs are generated by AI and do not constitute investment advice, financial advice, or a recommendation to buy or sell any asset. Crypto assets are highly volatile. Past performance is not indicative of future results. Never invest more than you can afford to lose. Consult a qualified financial advisor before making investment decisions. Tax notes are general in nature and are not a substitute for professional tax advice.',
     footer_impressum: 'Legal Notice',
     footer_datenschutz: 'Privacy Policy',
     footer_kontakt: 'Contact',
+    footer_facebook: 'Facebook',
+    footer_instagram: 'Instagram',
   },
 
   FR: {
@@ -1389,6 +1540,7 @@ const TRANSLATIONS = {
     trust2: "Pas d'abonnement — achat unique",
     trust3: 'Vos données restent chez vous',
     trust4: "2 analyses gratuites à l'essai",
+    trust5: 'Signé Apple Developer ID',
     hero_cta: 'Commencer gratuitement',
     scroll_hint: '▼ · EN SAVOIR PLUS',
     steps_label: '> COMMENT ÇA MARCHE',
@@ -1431,6 +1583,8 @@ const TRANSLATIONS = {
     tbox3_label: 'données dans le cloud —<br>tout reste en local',
     tbox4_label: 'analyses avec licence —<br>sans limite',
     trust_statement: '"La plupart des outils crypto s\'adressent aux développeurs ou aux day-traders. HCT est conçu pour quelqu\'un qui veut prendre une décision bien informée par semaine — sans tout le reste."',
+    psych_label: '// LE MARCHÉ JOUE AVEC LES ÉMOTIONS',
+    psych_text: "Les plus grandes pertes ne viennent pas de l'ignorance — mais d'acheter quand c'est excitant. HCT entraîne le contraire : analyser objectivement quand tout le monde est euphorique. Décider sobrement quand la panique règne. C'est l'avantage systématique sur l'investisseur particulier.",
     trial_label: '> ESSAI GRATUIT',
     trial_title: 'Voyez par vous-même.',
     trial_badge: '// 2 ANALYSES COMPLÈTES GRATUITES',
@@ -1482,7 +1636,7 @@ const TRANSLATIONS = {
     feat2_seats: '2 postes',
     feat3_seats: '1 poste',
     ent_label: '> ENTERPRISE',
-    ent_title: 'Pour les équipes, clubs et institutions.',
+    ent_title: 'Pour les entreprises, family offices et institutions.',
     ent_seats_1: '3–5 SEATS',
     ent_seats_2: '6–20 SEATS',
     ent_seats_3: '21–50 SEATS',
@@ -1493,17 +1647,31 @@ const TRANSLATIONS = {
     ent_save_3: '–€300 · 50% de réduction',
     ent_price_req: 'Sur demande',
     ent_save_4: 'Conditions individuelles',
-    ent_info: '1 siège = 1 Mac · Licence annuelle uniquement · Clubs d\'investissement · Family offices · Trading desks · Établissements d\'enseignement',
+    ent_info: '1 siège = 1 Mac · Licence annuelle uniquement · Entreprises · Family offices · Trading desks · Établissements d\'enseignement',
     ent_btn: 'Demander un devis',
+    ent_card_btn: 'Demander un devis',
+    ent_f1: 'Clés API individuelles par utilisateur',
+    ent_f2: 'Clé API CoinGecko personnelle',
+    ent_f3: 'Analyses Sonnet & Opus',
+    ent_f4: 'Gestion centralisée des licences',
+    ent_f5: 'Fonctionnalités Opus Power-User',
+    ent_f6: 'Clés API de groupe disponibles',
     setup_title: '> CONFIGURATION UNIQUE — ENVIRON 5 MINUTES',
     setup_text: "HCT utilise l'IA pour ses analyses. Vous avez besoin d'une clé d'accès personnelle chez Anthropic (le fournisseur IA) — gratuite à créer, à saisir une seule fois. L'utilisation de l'IA coûte environ <strong style=\"color:var(--text);\">~$0,80 par analyse (Sonnet) / ~$5,00 (Opus)</strong>, facturé directement par Anthropic. Pas de frais cachés, contrôle total.",
     setup1_text: 'Visitez <strong>console.anthropic.com</strong> & créez un compte gratuit',
     setup2_text: 'Créez une <strong>clé API</strong> dans le tableau de bord (1 clic)',
     setup3_text: "Entrez la <strong>clé dans HCT</strong> une fois — c'est tout",
+    sysreq_title: '> CONFIGURATION REQUISE',
+    sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
+    sysreq_chip: '<strong>Apple Silicon</strong> natif · Intel Mac via Rosetta 2',
+    sysreq_ram: '<strong>4 Go RAM</strong> minimum · 8 Go recommandé',
+    sysreq_net: '<strong>Connexion internet</strong> requise (requêtes API)',
     disclaimer: '<strong style="color:var(--gray-light);">PAS DE CONSEIL EN INVESTISSEMENT.</strong> Holistic Coin Trainer est exclusivement un outil éducatif et de recherche. Tous les résultats d\'analyse sont générés par IA et ne constituent pas des conseils en investissement, des conseils financiers ou une recommandation d\'achat ou de vente d\'actifs. Les crypto-actifs sont très volatils. Les performances passées ne sont pas indicatives des résultats futurs. N\'investissez jamais plus que ce que vous pouvez vous permettre de perdre. Consultez un conseiller financier qualifié avant de prendre des décisions d\'investissement. Les notes fiscales sont de nature générale et ne remplacent pas un conseil fiscal professionnel.',
     footer_impressum: 'Mentions légales',
     footer_datenschutz: 'Politique de confidentialité',
     footer_kontakt: 'Contact',
+    footer_facebook: 'Facebook',
+    footer_instagram: 'Instagram',
   },
 
   ES: {
@@ -1517,6 +1685,7 @@ const TRANSLATIONS = {
     trust2: 'Sin suscripción — pago único',
     trust3: 'Tus datos permanecen contigo',
     trust4: '2 análisis gratuitos de prueba',
+    trust5: 'Firmado con Apple Developer ID',
     hero_cta: 'Empezar gratis',
     scroll_hint: '▼ · SABER MÁS',
     steps_label: '> CÓMO FUNCIONA',
@@ -1559,6 +1728,8 @@ const TRANSLATIONS = {
     tbox3_label: 'datos en la nube —<br>todo permanece local',
     tbox4_label: 'análisis con licencia —<br>sin límite',
     trust_statement: '"La mayoría de las herramientas cripto están diseñadas para desarrolladores o day-traders. HCT está construido para alguien que quiere tomar una decisión bien informada a la semana — sin todo lo demás."',
+    psych_label: '// EL MERCADO JUEGA CON LAS EMOCIONES',
+    psych_text: 'Las mayores pérdidas no vienen de la ignorancia — sino de comprar cuando es emocionante. HCT entrena lo contrario: analizar objetivamente cuando todos están eufóricos. Decidir con sobriedad cuando cunde el pánico. Esa es la ventaja sistemática sobre el inversor minorista.',
     trial_label: '> PRUEBA GRATIS',
     trial_title: 'Compruébalo tú mismo.',
     trial_badge: '// 2 ANÁLISIS COMPLETOS GRATIS',
@@ -1610,7 +1781,7 @@ const TRANSLATIONS = {
     feat2_seats: '2 puestos',
     feat3_seats: '1 puesto',
     ent_label: '> ENTERPRISE',
-    ent_title: 'Para equipos, clubes e instituciones.',
+    ent_title: 'Para empresas, family offices e instituciones.',
     ent_seats_1: '3–5 SEATS',
     ent_seats_2: '6–20 SEATS',
     ent_seats_3: '21–50 SEATS',
@@ -1621,17 +1792,31 @@ const TRANSLATIONS = {
     ent_save_3: '–€300 · 50% de descuento',
     ent_price_req: 'A consultar',
     ent_save_4: 'Condiciones individuales',
-    ent_info: '1 puesto = 1 Mac · Solo licencia anual · Clubs de inversión · Family offices · Trading desks · Instituciones educativas',
+    ent_info: '1 puesto = 1 Mac · Solo licencia anual · Empresas · Family offices · Trading desks · Instituciones educativas',
     ent_btn: 'Solicitar presupuesto',
+    ent_card_btn: 'Solicitar presupuesto',
+    ent_f1: 'Claves API individuales por usuario',
+    ent_f2: 'Clave API CoinGecko propia',
+    ent_f3: 'Análisis Sonnet & Opus',
+    ent_f4: 'Gestión central de licencias',
+    ent_f5: 'Funciones Opus Power-User',
+    ent_f6: 'Claves API de grupo disponibles',
     setup_title: '> CONFIGURACIÓN ÚNICA — APROX. 5 MINUTOS',
     setup_text: 'HCT utiliza IA para sus análisis. Necesitas una clave de acceso personal de Anthropic (el proveedor de IA) — gratuita de crear, se introduce una sola vez. El uso de IA cuesta aprox. <strong style="color:var(--text);">~$0,80 por análisis (Sonnet) / ~$5,00 (Opus)</strong>, facturado directamente por Anthropic. Sin costes ocultos, control total.',
     setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea una cuenta gratuita',
     setup2_text: 'Crea una <strong>clave API</strong> en el panel de control (1 clic)',
     setup3_text: 'Introduce la <strong>clave en HCT</strong> una vez — listo',
+    sysreq_title: '> REQUISITOS DEL SISTEMA',
+    sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
+    sysreq_chip: '<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2',
+    sysreq_ram: '<strong>4 GB RAM</strong> mínimo · 8 GB recomendado',
+    sysreq_net: '<strong>Conexión a internet</strong> requerida (solicitudes API)',
     disclaimer: '<strong style="color:var(--gray-light);">NO ES ASESORAMIENTO DE INVERSIÓN.</strong> Holistic Coin Trainer es exclusivamente una herramienta educativa y de investigación. Todos los resultados de análisis son generados por IA y no constituyen asesoramiento de inversión, asesoramiento financiero o una recomendación de compra o venta de activos. Los criptoactivos son altamente volátiles. El rendimiento pasado no es indicativo de resultados futuros. Nunca inviertas más de lo que puedas permitirte perder. Consulta a un asesor financiero cualificado antes de tomar decisiones de inversión. Las notas fiscales son de carácter general y no sustituyen al asesoramiento fiscal profesional.',
     footer_impressum: 'Aviso legal',
     footer_datenschutz: 'Política de privacidad',
     footer_kontakt: 'Contacto',
+    footer_facebook: 'Facebook',
+    footer_instagram: 'Instagram',
   },
 
   IT: {
@@ -1645,6 +1830,7 @@ const TRANSLATIONS = {
     trust2: 'Nessun abbonamento — acquisto unico',
     trust3: 'I tuoi dati rimangono con te',
     trust4: '2 analisi gratuite di prova',
+    trust5: 'Firmato Apple Developer ID',
     hero_cta: 'Inizia gratuitamente',
     scroll_hint: '▼ · SCOPRI DI PIÙ',
     steps_label: '> COME FUNZIONA',
@@ -1687,6 +1873,8 @@ const TRANSLATIONS = {
     tbox3_label: 'dati nel cloud —<br>tutto rimane locale',
     tbox4_label: 'analisi con licenza —<br>senza limiti',
     trust_statement: '"La maggior parte degli strumenti crypto è pensata per sviluppatori o day-trader. HCT è costruito per chi vuole prendere una decisione informata a settimana — senza tutto il resto."',
+    psych_label: '// IL MERCATO GIOCA CON LE EMOZIONI',
+    psych_text: 'Le perdite maggiori non derivano dall\'ignoranza — ma dall\'acquistare quando è emozionante. HCT allena il contrario: analizzare obiettivamente quando tutti sono euforici. Decidere sobriamente quando regna il panico. Questo è il vantaggio sistematico rispetto all\'investitore retail.',
     trial_label: '> PROVA GRATUITA',
     trial_title: 'Vedi tu stesso.',
     trial_badge: '// 2 ANALISI COMPLETE GRATUITE',
@@ -1738,7 +1926,7 @@ const TRANSLATIONS = {
     feat2_seats: '2 postazioni',
     feat3_seats: '1 postazione',
     ent_label: '> ENTERPRISE',
-    ent_title: 'Per team, club e istituzioni.',
+    ent_title: 'Per aziende, family office e istituzioni.',
     ent_seats_1: '3–5 SEATS',
     ent_seats_2: '6–20 SEATS',
     ent_seats_3: '21–50 SEATS',
@@ -1749,17 +1937,31 @@ const TRANSLATIONS = {
     ent_save_3: '–€300 · sconto 50%',
     ent_price_req: 'Su richiesta',
     ent_save_4: 'Condizioni individuali',
-    ent_info: '1 postazione = 1 Mac · Solo licenza annuale · Club di investimento · Family office · Trading desk · Istituti scolastici',
+    ent_info: '1 postazione = 1 Mac · Solo licenza annuale · Aziende · Family office · Trading desk · Istituti scolastici',
     ent_btn: 'Richiedi un preventivo',
+    ent_card_btn: 'Richiedi un preventivo',
+    ent_f1: 'Chiavi API individuali per utente',
+    ent_f2: 'Chiave API CoinGecko personale',
+    ent_f3: 'Analisi Sonnet & Opus',
+    ent_f4: 'Gestione centrale delle licenze',
+    ent_f5: 'Funzionalità Opus Power-User',
+    ent_f6: 'Chiavi API di gruppo disponibili',
     setup_title: '> CONFIGURAZIONE UNICA — CIRCA 5 MINUTI',
     setup_text: "HCT usa l'IA per le sue analisi. Hai bisogno di una chiave di accesso personale da Anthropic (il fornitore IA) — gratuita da creare, da inserire una sola volta. L'utilizzo dell'IA costa circa <strong style=\"color:var(--text);\">~$0,80 per analisi (Sonnet) / ~$5,00 (Opus)</strong>, fatturato direttamente da Anthropic. Nessun costo nascosto, pieno controllo.",
     setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea un account gratuito',
     setup2_text: 'Crea una <strong>chiave API</strong> nella dashboard (1 clic)',
     setup3_text: 'Inserisci la <strong>chiave in HCT</strong> una volta — fatto',
+    sysreq_title: '> REQUISITI DI SISTEMA',
+    sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
+    sysreq_chip: '<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2',
+    sysreq_ram: '<strong>4 GB RAM</strong> minimo · 8 GB consigliato',
+    sysreq_net: '<strong>Connessione internet</strong> richiesta (richieste API)',
     disclaimer: '<strong style="color:var(--gray-light);">NON È UN CONSIGLIO DI INVESTIMENTO.</strong> Holistic Coin Trainer è esclusivamente uno strumento educativo e di ricerca. Tutti i risultati di analisi sono generati dall\'IA e non costituiscono consigli di investimento, consulenza finanziaria o una raccomandazione di acquisto o vendita di asset. I cripto-asset sono altamente volatili. Le performance passate non sono indicative dei risultati futuri. Non investire mai più di quanto puoi permetterti di perdere. Consulta un consulente finanziario qualificato prima di prendere decisioni di investimento. Le note fiscali sono di carattere generale e non sostituiscono la consulenza fiscale professionale.',
     footer_impressum: 'Note legali',
     footer_datenschutz: 'Informativa sulla privacy',
     footer_kontakt: 'Contatto',
+    footer_facebook: 'Facebook',
+    footer_instagram: 'Instagram',
   },
 
   PT: {
@@ -1773,6 +1975,7 @@ const TRANSLATIONS = {
     trust2: 'Sem subscrição — compra única',
     trust3: 'Os seus dados ficam consigo',
     trust4: '2 análises gratuitas para testar',
+    trust5: 'Assinado com Apple Developer ID',
     hero_cta: 'Começar gratuitamente',
     scroll_hint: '▼ · SABER MAIS',
     steps_label: '> COMO FUNCIONA',
@@ -1815,6 +2018,8 @@ const TRANSLATIONS = {
     tbox3_label: 'dados na cloud —<br>tudo fica local',
     tbox4_label: 'análises com licença —<br>sem limite',
     trust_statement: '"A maioria das ferramentas cripto é feita para programadores ou day-traders. O HCT é construído para alguém que quer tomar uma decisão bem informada por semana — sem todo o resto."',
+    psych_label: '// O MERCADO JOGA COM AS EMOÇÕES',
+    psych_text: 'As maiores perdas não vêm da ignorância — mas de comprar quando é emocionante. O HCT treina o oposto: analisar objetivamente quando todos estão eufóricos. Decidir com sobriedade quando o pânico domina. Essa é a vantagem sistemática sobre o investidor de retalho.',
     trial_label: '> TESTAR GRÁTIS',
     trial_title: 'Veja por si mesmo.',
     trial_badge: '// 2 ANÁLISES COMPLETAS GRÁTIS',
@@ -1866,7 +2071,7 @@ const TRANSLATIONS = {
     feat2_seats: '2 postos',
     feat3_seats: '1 posto',
     ent_label: '> ENTERPRISE',
-    ent_title: 'Para equipas, clubes e instituições.',
+    ent_title: 'Para empresas, family offices e instituições.',
     ent_seats_1: '3–5 SEATS',
     ent_seats_2: '6–20 SEATS',
     ent_seats_3: '21–50 SEATS',
@@ -1877,17 +2082,31 @@ const TRANSLATIONS = {
     ent_save_3: '–€300 · 50% de desconto',
     ent_price_req: 'Sob consulta',
     ent_save_4: 'Condições individuais',
-    ent_info: '1 posto = 1 Mac · Apenas licença anual · Clubes de investimento · Family offices · Trading desks · Instituições de ensino',
+    ent_info: '1 posto = 1 Mac · Apenas licença anual · Empresas · Family offices · Trading desks · Instituições de ensino',
     ent_btn: 'Solicitar orçamento',
+    ent_card_btn: 'Solicitar orçamento',
+    ent_f1: 'Chaves API individuais por utilizador',
+    ent_f2: 'Chave API CoinGecko própria',
+    ent_f3: 'Análises Sonnet & Opus',
+    ent_f4: 'Gestão central de licenças',
+    ent_f5: 'Funcionalidades Opus Power-User',
+    ent_f6: 'Chaves API de grupo disponíveis',
     setup_title: '> CONFIGURAÇÃO ÚNICA — APROX. 5 MINUTOS',
     setup_text: 'O HCT usa IA para as suas análises. Precisa de uma chave de acesso pessoal da Anthropic (o fornecedor de IA) — gratuita para criar, inserida apenas uma vez. O uso de IA custa aprox. <strong style="color:var(--text);">~$0,80 por análise (Sonnet) / ~$5,00 (Opus)</strong>, faturado diretamente pela Anthropic. Sem custos ocultos, controlo total.',
     setup1_text: 'Visite <strong>console.anthropic.com</strong> & crie uma conta gratuita',
     setup2_text: 'Crie uma <strong>chave API</strong> no painel (1 clique)',
     setup3_text: 'Introduza a <strong>chave no HCT</strong> uma vez — pronto',
+    sysreq_title: '> REQUISITOS DO SISTEMA',
+    sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
+    sysreq_chip: '<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2',
+    sysreq_ram: '<strong>4 GB RAM</strong> mínimo · 8 GB recomendado',
+    sysreq_net: '<strong>Ligação à internet</strong> necessária (pedidos API)',
     disclaimer: '<strong style="color:var(--gray-light);">NÃO É ACONSELHAMENTO DE INVESTIMENTO.</strong> O Holistic Coin Trainer é exclusivamente uma ferramenta educativa e de investigação. Todos os resultados de análise são gerados por IA e não constituem aconselhamento de investimento, aconselhamento financeiro ou uma recomendação de compra ou venda de ativos. Os cripto-ativos são altamente voláteis. O desempenho passado não é indicativo de resultados futuros. Nunca invista mais do que pode perder. Consulte um consultor financeiro qualificado antes de tomar decisões de investimento. As notas fiscais são de natureza geral e não substituem o aconselhamento fiscal profissional.',
     footer_impressum: 'Aviso legal',
     footer_datenschutz: 'Política de privacidade',
     footer_kontakt: 'Contacto',
+    footer_facebook: 'Facebook',
+    footer_instagram: 'Instagram',
   },
 
 };
