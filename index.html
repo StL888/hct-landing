@@ -867,7 +867,7 @@
         <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust2">Kein Abo — einmal kaufen</span></div>
         <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust3">Deine Daten bleiben bei dir</span></div>
         <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust4">2 Analysen kostenlos testen</span></div>
-        <div class="trust-item"><div class="trust-dot" style="background:var(--amber)"></div><span data-i18n="trust5">Apple Developer ID signiert</span></div>
+        <div class="trust-item"><div class="trust-dot"></div><span data-i18n="trust5">Apple Developer ID signiert</span></div>
       </div>
 
       <a href="#trial" class="hero-cta" data-i18n="hero_cta">Kostenlos starten</a>
@@ -1185,6 +1185,10 @@
         </div>
         <div class="setup-step">
           <div class="setup-num">3.</div>
+          <div class="setup-step-text" data-i18n-html="setup_credit_text"><strong>Guthaben aufladen</strong> — $25 empfohlen (ca. 30 Analysen mit Sonnet)</div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-num">4.</div>
           <div class="setup-step-text" data-i18n-html="setup3_text"><strong>Schlüssel in HCT</strong> einmalig eingeben — fertig</div>
         </div>
       </div>
@@ -1228,8 +1232,8 @@
       <a href="legal/impressum.html" data-i18n="footer_impressum">Impressum</a>
       <a href="legal/datenschutz.html" data-i18n="footer_datenschutz">Datenschutz</a>
       <a href="mailto:hello@holisticcointrainer.com" data-i18n="footer_kontakt">Kontakt</a>
-      <a href="https://facebook.com/HolisticCoinTrainer" data-i18n="footer_facebook" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/holisticcointrainer" data-i18n="footer_instagram" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/HolisticCoinTrainer" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+      <a href="https://instagram.com/holisticcointrainer" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagram</a>
     </div>
     <div class="footer-version">&gt; holisticcointrainer.com &nbsp;//&nbsp; v1.5 &nbsp;//&nbsp; 2026</div>
   </footer>
@@ -1370,6 +1374,7 @@ const TRANSLATIONS = {
     setup_text: 'HCT nutzt KI für seine Analysen. Dafür brauchst du einen persönlichen Zugangsschlüssel bei Anthropic (dem KI-Anbieter) — kostenlos zu erstellen, einmalig einzugeben. Die KI-Nutzung kostet ca. <strong style="color:var(--text);">~$0,80 pro Analyse (Sonnet) / ~$5,00 (Opus)</strong>, direkt abgerechnet von Anthropic. Keine versteckten Kosten, volle Kontrolle.',
     setup1_text: '<strong>console.anthropic.com</strong> aufrufen & kostenloses Konto erstellen',
     setup2_text: '<strong>API-Schlüssel</strong> im Dashboard erstellen (1 Klick)',
+    setup_credit_text: '<strong>Guthaben aufladen</strong> — $25 empfohlen (ca. 30 Analysen mit Sonnet)',
     setup3_text: '<strong>Schlüssel in HCT</strong> einmalig eingeben — fertig',
     sysreq_title: '> SYSTEMANFORDERUNGEN',
     sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
@@ -1515,6 +1520,7 @@ const TRANSLATIONS = {
     setup_text: 'HCT uses AI for its analyses. You\'ll need a personal access key from Anthropic (the AI provider) — free to create, entered just once. AI usage costs approx. <strong style="color:var(--text);">~$0.80 per analysis (Sonnet) / ~$5.00 (Opus)</strong>, billed directly by Anthropic. No hidden costs, full control.',
     setup1_text: 'Visit <strong>console.anthropic.com</strong> & create a free account',
     setup2_text: 'Create an <strong>API key</strong> in the dashboard (1 click)',
+    setup_credit_text: '<strong>Add credit</strong> — $25 recommended (~30 Sonnet analyses)',
     setup3_text: 'Enter the <strong>key in HCT</strong> once — done',
     sysreq_title: '> SYSTEM REQUIREMENTS',
     sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
@@ -1660,6 +1666,7 @@ const TRANSLATIONS = {
     setup_text: "HCT utilise l'IA pour ses analyses. Vous avez besoin d'une clé d'accès personnelle chez Anthropic (le fournisseur IA) — gratuite à créer, à saisir une seule fois. L'utilisation de l'IA coûte environ <strong style=\"color:var(--text);\">~$0,80 par analyse (Sonnet) / ~$5,00 (Opus)</strong>, facturé directement par Anthropic. Pas de frais cachés, contrôle total.",
     setup1_text: 'Visitez <strong>console.anthropic.com</strong> & créez un compte gratuit',
     setup2_text: 'Créez une <strong>clé API</strong> dans le tableau de bord (1 clic)',
+    setup_credit_text: '<strong>Recharger le crédit</strong> — $25 recommandé (~30 analyses Sonnet)',
     setup3_text: "Entrez la <strong>clé dans HCT</strong> une fois — c'est tout",
     sysreq_title: '> CONFIGURATION REQUISE',
     sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
@@ -1805,6 +1812,7 @@ const TRANSLATIONS = {
     setup_text: 'HCT utiliza IA para sus análisis. Necesitas una clave de acceso personal de Anthropic (el proveedor de IA) — gratuita de crear, se introduce una sola vez. El uso de IA cuesta aprox. <strong style="color:var(--text);">~$0,80 por análisis (Sonnet) / ~$5,00 (Opus)</strong>, facturado directamente por Anthropic. Sin costes ocultos, control total.',
     setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea una cuenta gratuita',
     setup2_text: 'Crea una <strong>clave API</strong> en el panel de control (1 clic)',
+    setup_credit_text: '<strong>Añadir crédito</strong> — $25 recomendado (~30 análisis con Sonnet)',
     setup3_text: 'Introduce la <strong>clave en HCT</strong> una vez — listo',
     sysreq_title: '> REQUISITOS DEL SISTEMA',
     sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
@@ -1950,6 +1958,7 @@ const TRANSLATIONS = {
     setup_text: "HCT usa l'IA per le sue analisi. Hai bisogno di una chiave di accesso personale da Anthropic (il fornitore IA) — gratuita da creare, da inserire una sola volta. L'utilizzo dell'IA costa circa <strong style=\"color:var(--text);\">~$0,80 per analisi (Sonnet) / ~$5,00 (Opus)</strong>, fatturato direttamente da Anthropic. Nessun costo nascosto, pieno controllo.",
     setup1_text: 'Visita <strong>console.anthropic.com</strong> & crea un account gratuito',
     setup2_text: 'Crea una <strong>chiave API</strong> nella dashboard (1 clic)',
+    setup_credit_text: '<strong>Aggiungere credito</strong> — $25 consigliato (~30 analisi con Sonnet)',
     setup3_text: 'Inserisci la <strong>chiave in HCT</strong> una volta — fatto',
     sysreq_title: '> REQUISITI DI SISTEMA',
     sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
@@ -2095,6 +2104,7 @@ const TRANSLATIONS = {
     setup_text: 'O HCT usa IA para as suas análises. Precisa de uma chave de acesso pessoal da Anthropic (o fornecedor de IA) — gratuita para criar, inserida apenas uma vez. O uso de IA custa aprox. <strong style="color:var(--text);">~$0,80 por análise (Sonnet) / ~$5,00 (Opus)</strong>, faturado diretamente pela Anthropic. Sem custos ocultos, controlo total.',
     setup1_text: 'Visite <strong>console.anthropic.com</strong> & crie uma conta gratuita',
     setup2_text: 'Crie uma <strong>chave API</strong> no painel (1 clique)',
+    setup_credit_text: '<strong>Adicionar crédito</strong> — $25 recomendado (~30 análises com Sonnet)',
     setup3_text: 'Introduza a <strong>chave no HCT</strong> uma vez — pronto',
     sysreq_title: '> REQUISITOS DO SISTEMA',
     sysreq_os: '<strong>macOS 12+</strong> · Monterey, Ventura, Sonoma, Sequoia',
