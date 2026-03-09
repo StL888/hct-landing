@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EULA — Holistic Coin Trainer</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --bg:         #0a0a0a;
+      --surface:    #111111;
+      --border:     #1e1e1e;
+      --text:       #c8c8c8;
+      --gray:       #555;
+      --gray-light: #888;
+      --gold:       #ffd700;
+      --gold-dim:   #b8960c;
+      --font: 'SF Mono', 'Fira Mono', 'Cascadia Code', 'Consolas', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOPBAR ─────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+    }
+    .logo span { color: var(--gold); }
+
+    .back-link {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gold-dim); }
+    .back-link::before { content: "← "; }
+
+    /* ── MAIN ───────────────────────────────────────────────── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+      flex: 1;
+    }
+
+    .page-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--gold-dim);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+
+    ul li {
+      color: var(--text);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    ul li::before {
+      content: "//";
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-size: 10px;
+    }
+
+    a {
+      color: var(--gray-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--gold-dim); }
+
+    .notice {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold-dim);
+      padding: 16px 20px;
+      font-size: 11px;
+      color: var(--gray-light);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      text-align: center;
+      font-size: 9px;
+      color: var(--gray);
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      main   { padding: 40px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>HCT</span> // HOLISTIC COIN TRAINER</div>
+    <a href="../index.html" class="back-link">Zurück</a>
+  </header>
+
+  <main>
+    <div class="page-label">EULA · Stand März 2026</div>
+    <h1>ENDNUTZER-LIZENZ&shy;VEREINBARUNG</h1>
+
+    <section>
+      <h2>1. Lizenzgegenstand</h2>
+      <p>
+        Diese Endnutzer-Lizenzvereinbarung (EULA) regelt die Nutzung der Software
+        „Holistic Coin Trainer" (nachfolgend „Software"), bereitgestellt von:
+      </p>
+      <p>
+        Stefan Laackman<br>
+        Torstraße 68, 10119 Berlin<br>
+        E-Mail: <a href="mailto:hello@holisticcointrainer.com">hello@holisticcointrainer.com</a>
+      </p>
+      <p>
+        Mit der Installation und Nutzung der Software erklärt sich der Nutzer
+        mit den Bedingungen dieser EULA einverstanden. Stimmt der Nutzer nicht
+        zu, darf die Software nicht installiert oder verwendet werden.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Lizenzumfang</h2>
+      <p>
+        Der Nutzer erhält eine einfache, nicht-exklusive, nicht übertragbare
+        und widerrufliche Lizenz zur Nutzung der Software auf einem (1)
+        macOS-Gerät.
+      </p>
+      <p>Die Lizenz umfasst:</p>
+      <ul>
+        <li>Installation und Ausführung der Software</li>
+        <li>Erstellung von KI-gestützten Analyse-Reports zu Lernzwecken</li>
+        <li>Nutzung des interaktiven Lernmodus</li>
+        <li>Lokale Speicherung von Reports in der Datenbank</li>
+        <li>Export von Reports als PDF oder Markdown</li>
+      </ul>
+      <p>Die Lizenz umfasst ausdrücklich nicht:</p>
+      <ul>
+        <li>Reverse Engineering, Dekompilierung oder Disassemblierung</li>
+        <li>Weitergabe, Vervielfältigung oder Redistribution der Software</li>
+        <li>Kommerzielle Nutzung oder Weitergabe generierter Reports</li>
+        <li>Modifikation des Prompt-Systems oder der Analyse-Engine</li>
+        <li>Nutzung in ausgeschlossenen Jurisdiktionen (USA, UK, China, Russland, Kanada)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>3. Bildungszweck</h2>
+      <p>
+        Die Software dient ausschließlich Bildungs- und Lernzwecken.
+        Sämtliche generierten Inhalte sind Lerninhalte und stellen keine
+        Anlageberatung, Finanzberatung oder Steuerberatung dar.
+      </p>
+      <p>
+        KI-generierte Analysen können Fehler, Ungenauigkeiten oder
+        Halluzinationen enthalten. Der Nutzer ist verpflichtet, vor jeder
+        Investitionsentscheidung unabhängigen professionellen Rat einzuholen.
+      </p>
+      <div class="notice">
+        Die Software ersetzt keine professionelle Beratung. Alle Inhalte
+        dienen dem Lernzweck und der persönlichen Weiterbildung.
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Technische Voraussetzungen</h2>
+      <p>
+        Die Nutzung der Software setzt einen eigenen API-Schlüssel des
+        Anbieters Anthropic voraus. Die API-Kosten (ca. $0,50–$5,00 pro
+        Analyse, abhängig vom gewählten Modell) trägt der Nutzer selbst.
+      </p>
+      <p>
+        Die Verfügbarkeit der Drittanbieter-Dienste (Anthropic API,
+        CoinGecko API) wird vom Anbieter der Software nicht garantiert.
+        Ausfälle oder Änderungen dieser Dienste liegen außerhalb des
+        Einflussbereichs des Anbieters.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Gewährleistung &amp; Haftung</h2>
+      <p>
+        Die Software wird „as is" ohne jegliche ausdrückliche oder
+        stillschweigende Gewährleistung bereitgestellt. Eine Garantie für
+        Fehlerfreiheit, ununterbrochene Verfügbarkeit oder Eignung für
+        einen bestimmten Zweck wird nicht übernommen.
+      </p>
+      <p>
+        Die Haftung richtet sich nach den Regelungen in § 5 der
+        <a href="agb.html">Allgemeinen Geschäftsbedingungen</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Laufzeit &amp; Beendigung</h2>
+      <p>
+        Die Laufzeit der Lizenz richtet sich nach dem erworbenen Lizenzmodell.
+        Der Anbieter ist berechtigt, die Lizenz bei Verstößen gegen diese
+        EULA mit sofortiger Wirkung zu beenden, insbesondere bei:
+      </p>
+      <ul>
+        <li>Nutzung in ausgeschlossenen Jurisdiktionen</li>
+        <li>Reverse Engineering oder Manipulation der Software</li>
+        <li>Kommerzielle Verwertung der generierten Inhalte</li>
+        <li>Weitergabe oder Redistribution der Software</li>
+      </ul>
+      <p>
+        Bereits generierte Reports verbleiben beim Nutzer und können
+        weiterhin für den persönlichen Lerngebrauch genutzt werden.
+      </p>
+    </section>
+
+    <section>
+      <h2>7. Anwendbares Recht</h2>
+      <p>
+        Es gilt das Recht der Bundesrepublik Deutschland. Die
+        <a href="agb.html">Allgemeinen Geschäftsbedingungen</a> gelten
+        ergänzend.
+      </p>
+    </section>
+
+    <div class="notice">
+      Stand: März 2026 — Diese EULA wird bei wesentlichen Änderungen
+      aktualisiert. Die jeweils aktuelle Fassung ist unter
+      holisticcointrainer.com/legal/eula.html abrufbar.
+    </div>
+  </main>
+
+  <footer>
+    &gt; holisticcointrainer.com &nbsp;//&nbsp; 2026
+  </footer>
+
+</body>
+</html>

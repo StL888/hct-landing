@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widerrufsbelehrung — Holistic Coin Trainer</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --bg:         #0a0a0a;
+      --surface:    #111111;
+      --border:     #1e1e1e;
+      --text:       #c8c8c8;
+      --gray:       #555;
+      --gray-light: #888;
+      --gold:       #ffd700;
+      --gold-dim:   #b8960c;
+      --font: 'SF Mono', 'Fira Mono', 'Cascadia Code', 'Consolas', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOPBAR ─────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+    }
+    .logo span { color: var(--gold); }
+
+    .back-link {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gold-dim); }
+    .back-link::before { content: "← "; }
+
+    /* ── MAIN ───────────────────────────────────────────────── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+      flex: 1;
+    }
+
+    .page-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--gold-dim);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+
+    ul li {
+      color: var(--text);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    ul li::before {
+      content: "//";
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-size: 10px;
+    }
+
+    a {
+      color: var(--gray-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--gold-dim); }
+
+    .notice {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold-dim);
+      padding: 16px 20px;
+      font-size: 11px;
+      color: var(--gray-light);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    .form-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 20px 24px;
+      margin-top: 12px;
+      font-size: 12px;
+      line-height: 2.0;
+    }
+
+    .form-box .form-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold-dim);
+      margin-bottom: 12px;
+    }
+
+    .form-box .field {
+      color: var(--gray-light);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+
+    .form-box .field-label {
+      color: var(--gray);
+      font-size: 10px;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      text-align: center;
+      font-size: 9px;
+      color: var(--gray);
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      main   { padding: 40px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>HCT</span> // HOLISTIC COIN TRAINER</div>
+    <a href="../index.html" class="back-link">Zurück</a>
+  </header>
+
+  <main>
+    <div class="page-label">FERNABSATZRECHT · §§ 312g, 356 BGB</div>
+    <h1>WIDERRUFS&shy;BELEHRUNG</h1>
+
+    <section>
+      <h2>Widerrufsrecht</h2>
+      <p>
+        Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen
+        diesen Vertrag zu widerrufen. Die Widerrufsfrist beträgt vierzehn Tage
+        ab dem Tag des Vertragsschlusses.
+      </p>
+      <p>
+        Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer
+        eindeutigen Erklärung (z.&nbsp;B. ein mit der Post versandter Brief
+        oder eine E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen,
+        informieren. Richten Sie Ihren Widerruf an:
+      </p>
+      <p>
+        Stefan Laackman<br>
+        Torstraße 68, 10119 Berlin<br>
+        E-Mail: <a href="mailto:hello@holisticcointrainer.com">hello@holisticcointrainer.com</a>
+      </p>
+      <p>
+        Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung
+        über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist
+        absenden.
+      </p>
+    </section>
+
+    <section>
+      <h2>Folgen des Widerrufs</h2>
+      <p>
+        Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen,
+        die wir von Ihnen erhalten haben, unverzüglich und spätestens binnen
+        vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über
+        Ihren Widerruf bei uns eingegangen ist.
+      </p>
+      <p>
+        Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie
+        bei der ursprünglichen Transaktion eingesetzt haben, es sei denn,
+        mit Ihnen wurde ausdrücklich etwas anderes vereinbart. In keinem Fall
+        werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.
+      </p>
+    </section>
+
+    <section>
+      <h2>Besonderer Hinweis — Vorzeitiges Erlöschen</h2>
+      <div class="notice">
+        Das Widerrufsrecht erlischt vorzeitig, wenn der Nutzer:<br><br>
+        (1) ausdrücklich zugestimmt hat, dass der Anbieter mit der Ausführung
+        des Vertrags vor Ablauf der Widerrufsfrist beginnt, und<br><br>
+        (2) seine Kenntnis davon bestätigt hat, dass er durch seine Zustimmung
+        mit Beginn der Ausführung des Vertrags sein Widerrufsrecht verliert.<br><br>
+        Die Ausführung beginnt mit der Aktivierung des Lizenzschlüssels.
+      </div>
+    </section>
+
+    <section>
+      <h2>Muster-Widerrufsformular</h2>
+      <p>
+        Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses
+        Formular aus und senden Sie es zurück:
+      </p>
+
+      <div class="form-box">
+        <div class="form-title">// WIDERRUFSFORMULAR</div>
+
+        <p>
+          An: Stefan Laackman, Torstraße 68, 10119 Berlin<br>
+          E-Mail: hello@holisticcointrainer.com
+        </p>
+
+        <p>
+          Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen
+          Vertrag über den Kauf folgender Ware / die Erbringung folgender
+          Dienstleistung (*):
+        </p>
+
+        <div class="field">
+          <span class="field-label">Lizenzmodell:</span> ___________________________
+        </div>
+        <div class="field">
+          <span class="field-label">Bestellt am / erhalten am (*):</span> ___________________________
+        </div>
+        <div class="field">
+          <span class="field-label">Name des/der Verbraucher(s):</span> ___________________________
+        </div>
+        <div class="field">
+          <span class="field-label">Anschrift des/der Verbraucher(s):</span> ___________________________
+        </div>
+        <div class="field">
+          <span class="field-label">Unterschrift (nur bei Papierform):</span> ___________________________
+        </div>
+        <div class="field">
+          <span class="field-label">Datum:</span> ___________________________
+        </div>
+
+        <p style="margin-top: 12px; font-size: 10px; color: var(--gray);">
+          (*) Unzutreffendes streichen.
+        </p>
+      </div>
+    </section>
+
+    <div class="notice">
+      Stand: März 2026 — Diese Widerrufsbelehrung entspricht dem gesetzlichen
+      Muster gemäß Anlage 1 zu Art. 246a § 1 Abs. 2 Satz 1 Nr. 1 EGBGB.
+    </div>
+  </main>
+
+  <footer>
+    &gt; holisticcointrainer.com &nbsp;//&nbsp; 2026
+  </footer>
+
+</body>
+</html>
