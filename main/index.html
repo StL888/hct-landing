@@ -407,6 +407,9 @@
       padding: 32px 28px;
       transition: background 0.2s;
     }
+    .feature--highlight {
+      grid-column: 1 / -1;
+    }
     .feature:hover { background: #111820; }
 
     .feature-id {
@@ -1116,10 +1119,10 @@
         <div class="feature-title" data-i18n="cap_f6_title">LOKAL – KEINE CLOUD</div>
         <div class="feature-text" data-i18n="cap_f6_text">Alles läuft auf deinem Rechner. Deine Analysen, dein Archiv, dein API-Key. Keine Daten verlassen deinen Computer – außer dem KI-Call. Zero Telemetry.</div>
       </div>
-      <div class="feature">
+      <div class="feature feature--highlight">
         <div class="feature-id">// 07</div>
         <div class="feature-title" data-i18n="cap_f7_title">PRIMER: KI-LERNBEGLEITER</div>
-        <div class="feature-text" data-i18n="cap_f7_text">Ein persönlicher Gesprächspartner der deine Analysen kennt, deine Thesen hinterfragt und Querverbindungen zieht. Drei Gesprächsstile. Ein Gedächtnis. Nicht Lexikon — Gespräch.</div>
+        <div class="feature-text" data-i18n-html="cap_f7_text">Stell dir ein Buch vor das zurückspricht.<br><br>Es kennt dich. Weiß was du verstanden hast und wo du unsicher bist. Es passt seine Sprache an — wird einfacher wenn du stockst, fordernder wenn du bereit bist. Es erfindet keine Antworten. Es stellt die richtigen Fragen.<br><br>So ein Buch existierte bisher nur in Science-Fiction. Wir haben es gebaut.<br><br>Drei Modi. Ein Gedächtnis. Kein Chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>Das Ziel: Du brauchst es nicht mehr.</div>
       </div>
     </div>
   </div>
@@ -1458,7 +1461,7 @@ const T = {
     cap_f6_title: "LOKAL – KEINE CLOUD",
     cap_f6_text: "Alles läuft auf deinem Rechner. Deine Analysen, dein Archiv, dein API-Key. Keine Daten verlassen deinen Computer – außer dem KI-Call. Zero Telemetry.",
     cap_f7_title: "PRIMER: KI-LERNBEGLEITER",
-    cap_f7_text: "Ein persönlicher Gesprächspartner der deine Analysen kennt, deine Thesen hinterfragt und Querverbindungen zieht. Drei Gesprächsstile. Ein Gedächtnis. Nicht Lexikon — Gespräch.",
+    cap_f7_text: "Stell dir ein Buch vor das zurückspricht.<br><br>Es kennt dich. Weiß was du verstanden hast und wo du unsicher bist. Es passt seine Sprache an — wird einfacher wenn du stockst, fordernder wenn du bereit bist. Es erfindet keine Antworten. Es stellt die richtigen Fragen.<br><br>So ein Buch existierte bisher nur in Science-Fiction. Wir haben es gebaut.<br><br>Drei Modi. Ein Gedächtnis. Kein Chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>Das Ziel: Du brauchst es nicht mehr.",
     learn_label: "> TRAININGSSYSTEM",
     learn_title: "In Wochen lernen, nicht in Jahren.",
     learn_intro: "Die meisten Crypto-Tools liefern Daten. HCT liefert <em>Verständnis</em>.<br>Jede Analyse ist eine interaktive Lerneinheit. Die KI passt sich an dein Level an — erklärt, wenn du Erklärung brauchst, fordert dich heraus, wenn du bereit bist. Du wirst aufgefordert mitzudenken, bevor du die Einschätzung siehst. So wächst echtes Urteilsvermögen — nicht Abhängigkeit.",
@@ -1594,7 +1597,7 @@ const T = {
     cap_f6_title: "LOCAL — NO CLOUD",
     cap_f6_text: "Everything runs on your machine. Your analyses, your archive, your API key. No data leaves your computer except the AI call. Zero telemetry.",
     cap_f7_title: "PRIMER: AI LEARNING COMPANION",
-    cap_f7_text: "A personal conversation partner that knows your analyses, challenges your theses and draws connections. Three conversation styles. A memory. Not an encyclopedia — a conversation.",
+    cap_f7_text: "Imagine a book that talks back.<br><br>It knows you. Knows what you've grasped and where you hesitate. It adapts its language — simpler when you stumble, more demanding when you're ready. It doesn't invent answers. It asks the right questions.<br><br>A book like that only existed in science fiction. We built it.<br><br>Three modes. A memory. Not a chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>The goal: You won't need it anymore.",
     learn_label: "> TRAINING SYSTEM",
     learn_title: "Learn in weeks, not years.",
     learn_intro: "Most crypto tools deliver data. HCT delivers <em>understanding</em>.<br>Every analysis is an interactive learning session. The AI adapts to your level — explains when you need explanation, challenges you when you're ready. You're asked to think before you see the assessment. That's how real judgment grows — not dependency.",
@@ -1730,7 +1733,7 @@ const T = {
     cap_f6_title: "LOCAL — SANS CLOUD",
     cap_f6_text: "Tout tourne sur ta machine. Tes analyses, ton archive, ta clé API. Aucune donnée ne quitte ton ordinateur sauf l'appel IA. Zéro télémétrie.",
     cap_f7_title: "PRIMER : COMPAGNON IA",
-    cap_f7_text: "Un partenaire de conversation personnel qui connaît tes analyses, questionne tes thèses et établit des connexions. Trois styles de conversation. Une mémoire. Pas une encyclopédie — une conversation.",
+    cap_f7_text: "Imagine un livre qui te répond.<br><br>Il te connaît. Sait ce que tu as compris et où tu hésites. Il adapte son langage — plus simple quand tu bloques, plus exigeant quand tu es prêt. Il n'invente pas de réponses. Il pose les bonnes questions.<br><br>Un tel livre n'existait que dans la science-fiction. Nous l'avons construit.<br><br>Trois modes. Une mémoire. Pas un chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>L'objectif : Tu n'en auras plus besoin.",
     learn_label: "> SYSTÈME DE FORMATION",
     learn_title: "Apprendre en semaines, pas en années.",
     learn_intro: "La plupart des outils crypto livrent des données. HCT livre de la <em>compréhension</em>.<br>Chaque analyse est une session d'apprentissage interactive. L'IA s'adapte à ton niveau — explique quand tu as besoin d'explications, te défie quand tu es prêt. Tu es invité à réfléchir avant de voir l'évaluation. C'est ainsi que se développe un vrai jugement — pas une dépendance.",
@@ -1866,7 +1869,7 @@ const T = {
     cap_f6_title: "LOCAL — SIN NUBE",
     cap_f6_text: "Todo corre en tu máquina. Tus análisis, tu archivo, tu clave API. Ningún dato sale de tu computadora excepto la llamada IA. Cero telemetría.",
     cap_f7_title: "PRIMER: COMPAÑERO IA",
-    cap_f7_text: "Un compañero de conversación personal que conoce tus análisis, cuestiona tus tesis y establece conexiones. Tres estilos de conversación. Una memoria. No es una enciclopedia — es una conversación.",
+    cap_f7_text: "Imagina un libro que te responde.<br><br>Te conoce. Sabe lo que has entendido y dónde dudas. Adapta su lenguaje — más simple cuando te atascas, más exigente cuando estás listo. No inventa respuestas. Hace las preguntas correctas.<br><br>Un libro así solo existía en la ciencia ficción. Lo hemos construido.<br><br>Tres modos. Una memoria. No es un chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>El objetivo: No lo necesitarás más.",
     learn_label: "> SISTEMA DE FORMACIÓN",
     learn_title: "Aprende en semanas, no en años.",
     learn_intro: "La mayoría de herramientas crypto entregan datos. HCT entrega <em>comprensión</em>.<br>Cada análisis es una sesión de aprendizaje interactiva. La IA se adapta a tu nivel — explica cuando necesitas explicación, te desafía cuando estás listo. Se te pide pensar antes de ver la evaluación. Así crece el juicio real — no la dependencia.",
@@ -2002,7 +2005,7 @@ const T = {
     cap_f6_title: "LOCALE — NESSUN CLOUD",
     cap_f6_text: "Tutto gira sulla tua macchina. Le tue analisi, il tuo archivio, la tua chiave API. Nessun dato lascia il tuo computer tranne la chiamata IA. Zero telemetria.",
     cap_f7_title: "PRIMER: COMPAGNO IA",
-    cap_f7_text: "Un partner di conversazione personale che conosce le tue analisi, mette in discussione le tue tesi e crea connessioni. Tre stili di conversazione. Una memoria. Non un'enciclopedia — una conversazione.",
+    cap_f7_text: "Immagina un libro che ti risponde.<br><br>Ti conosce. Sa cosa hai capito e dove esiti. Adatta il suo linguaggio — più semplice quando ti blocchi, più esigente quando sei pronto. Non inventa risposte. Fa le domande giuste.<br><br>Un libro così esisteva solo nella fantascienza. L'abbiamo costruito.<br><br>Tre modalità. Una memoria. Non un chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>L'obiettivo: Non ne avrai più bisogno.",
     learn_label: "> SISTEMA DI FORMAZIONE",
     learn_title: "Imparare in settimane, non in anni.",
     learn_intro: "La maggior parte degli strumenti crypto fornisce dati. HCT fornisce <em>comprensione</em>.<br>Ogni analisi è una sessione di apprendimento interattiva. L'IA si adatta al tuo livello — spiega quando hai bisogno di spiegazioni, ti sfida quando sei pronto. Ti viene chiesto di pensare prima di vedere la valutazione. Così cresce il vero giudizio — non la dipendenza.",
@@ -2138,7 +2141,7 @@ const T = {
     cap_f6_title: "LOCAL — SEM NUVEM",
     cap_f6_text: "Tudo corre na sua máquina. As suas análises, o seu arquivo, a sua chave API. Nenhum dado sai do seu computador exceto a chamada IA. Zero telemetria.",
     cap_f7_title: "PRIMER: COMPANHEIRO IA",
-    cap_f7_text: "Um parceiro de conversação pessoal que conhece as suas análises, questiona as suas teses e estabelece conexões. Três estilos de conversação. Uma memória. Não é uma enciclopédia — é uma conversa.",
+    cap_f7_text: "Imagina um livro que te responde.<br><br>Conhece-te. Sabe o que compreendeste e onde hesitas. Adapta a sua linguagem — mais simples quando bloqueias, mais exigente quando estás pronto. Não inventa respostas. Faz as perguntas certas.<br><br>Um livro assim só existia na ficção científica. Nós construímo-lo.<br><br>Três modos. Uma memória. Não é um chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>O objetivo: Não vais precisar mais dele.",
     learn_label: "> SISTEMA DE FORMAÇÃO",
     learn_title: "Aprender em semanas, não em anos.",
     learn_intro: "A maioria das ferramentas crypto entrega dados. HCT entrega <em>compreensão</em>.<br>Cada análise é uma sessão de aprendizagem interativa. A IA adapta-se ao teu nível — explica quando precisas de explicação, desafia-te quando estás pronto. És convidado a pensar antes de veres a avaliação. É assim que cresce o verdadeiro julgamento — não a dependência.",
