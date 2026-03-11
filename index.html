@@ -323,6 +323,7 @@
       transition: background 0.2s;
     }
     .step-simple:hover { background: var(--bg3); }
+    .step-simple--wide { grid-column: 1 / -1; }
 
     .step-icon {
       width: 48px;
@@ -367,6 +368,7 @@
       transition: background 0.2s;
     }
     .benefit:hover { background: var(--bg3); }
+    .benefit--highlight { grid-column: 1 / -1; }
 
     .benefit-icon {
       font-family: var(--mono);
@@ -1001,7 +1003,7 @@
         <div class="step-simple-title" data-i18n="step4_title">PDF exportieren</div>
         <p class="step-simple-text" data-i18n="step4_text">Speichere jeden Bericht als PDF. Dein persönliches Lerntagebuch — übersichtlich, jederzeit abrufbar, ausschließlich auf deinem Rechner.</p>
       </div>
-      <div class="step-simple">
+      <div class="step-simple step-simple--wide">
         <div class="step-icon">05</div>
         <div class="step-simple-title" data-i18n="step5_title">Mit dem Lernbegleiter vertiefen</div>
         <p class="step-simple-text" data-i18n="step5_text">Stell Fragen zu deinen Analysen. Der persönliche Lernbegleiter kennt deinen Fortschritt, erklärt Zusammenhänge und passt sich an dein Niveau an — von Einsteiger bis Experte.</p>
@@ -1054,10 +1056,10 @@
         <p class="benefit-text" data-i18n="b6_text">HCT zeigt dir, wie eine systematische Analyse aufgebaut ist — du siehst nicht nur das Ergebnis, sondern die Methodik dahinter. Die KI fordert dich auf mitzudenken, bevor sie ihre Analyse zeigt. Nach 20–30 Lerneinheiten verstehst du, wie ein Analyst denkt. Das Tool stärkt dein analytisches Verständnis.</p>
       </div>
 
-      <div class="benefit">
+      <div class="benefit benefit--highlight">
         <div class="benefit-icon" data-i18n="b7_icon">// LERNBEGLEITER</div>
         <div class="benefit-title" data-i18n="b7_title">Persönlicher KI-Gesprächspartner</div>
-        <p class="benefit-text" data-i18n="b7_text">Stellen Sie Fragen zu Ihren Analysen — der Lernbegleiter kennt Ihren Fortschritt, erinnert sich an besprochene Konzepte und passt sich an Ihr Niveau an. Drei Gesprächsstile: strukturiert, fordernd oder auf Augenhöhe.</p>
+        <p class="benefit-text" data-i18n-html="b7_text">Stellen Sie sich ein Buch vor, das antwortet.<br><br>Es kennt Sie. Weiß, was Sie verstanden haben und wo Sie unsicher sind. Es passt seine Sprache an — wird einfacher, wenn Sie stocken, fordernder, wenn Sie bereit sind. Es erfindet keine Antworten. Es stellt die richtigen Fragen.<br><br>So ein Buch existierte bisher nur in der Fiktion. Wir haben es gebaut.<br><br>Drei Modi. Ein Gedächtnis. Kein Chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>Das Ziel: Sie brauchen es nicht mehr.</p>
       </div>
 
     </div>
@@ -1150,6 +1152,7 @@
           <li data-i18n="feat1_3">Marktphasen verstehen lernen</li>
           <li data-i18n="feat1_4">Automatischer Sicherheitscheck</li>
           <li data-i18n="feat1_5">Schritt-für-Schritt Lernszenario</li>
+          <li data-i18n="feat1_primer">PRIMER Lernbegleiter (3 Modi)</li>
           <li data-i18n="feat1_6">PDF-Export &amp; lokales Archiv</li>
           <li data-i18n="feat1_7">6 Sprachen</li>
           <li data-i18n="feat1_8">Alle Updates im Lizenzzeitraum</li>
@@ -1171,6 +1174,7 @@
           <li data-i18n="feat2_3">Marktphasen verstehen lernen</li>
           <li data-i18n="feat2_4">Automatischer Sicherheitscheck</li>
           <li data-i18n="feat2_5">Schritt-für-Schritt Lernszenario</li>
+          <li data-i18n="feat2_primer">PRIMER Lernbegleiter (3 Modi)</li>
           <li data-i18n="feat2_6">PDF-Export &amp; lokales Archiv</li>
           <li data-i18n="feat2_7">6 Sprachen</li>
           <li data-i18n="feat2_8">Alle Updates für 3 Jahre</li>
@@ -1191,6 +1195,7 @@
           <li data-i18n="feat3_3">Marktphasen verstehen lernen</li>
           <li data-i18n="feat3_4">Automatischer Sicherheitscheck</li>
           <li data-i18n="feat3_5">Schritt-für-Schritt Lernszenario</li>
+          <li data-i18n="feat3_primer">PRIMER Lernbegleiter (3 Modi)</li>
           <li data-i18n="feat3_6">PDF-Export &amp; lokales Archiv</li>
           <li data-i18n="feat3_7">6 Sprachen</li>
           <li data-i18n="feat3_8">Alle zukünftigen Updates — für immer</li>
@@ -1412,7 +1417,7 @@ const TRANSLATIONS = {
     b6_text: 'HCT zeigt dir, wie eine systematische Analyse aufgebaut ist — du siehst nicht nur das Ergebnis, sondern die Methodik dahinter. Die KI fordert dich auf mitzudenken, bevor sie ihre Analyse zeigt. Nach 20–30 Lerneinheiten verstehst du, wie ein Analyst denkt. Das Tool stärkt dein analytisches Verständnis.',
     b7_icon: "// LERNBEGLEITER",
     b7_title: "Persönlicher KI-Gesprächspartner",
-    b7_text: "Stellen Sie Fragen zu Ihren Analysen — der Lernbegleiter kennt Ihren Fortschritt, erinnert sich an besprochene Konzepte und passt sich an Ihr Niveau an. Drei Gesprächsstile: strukturiert, fordernd oder auf Augenhöhe.",
+    b7_text: 'Stellen Sie sich ein Buch vor, das antwortet.<br><br>Es kennt Sie. Weiß, was Sie verstanden haben und wo Sie unsicher sind. Es passt seine Sprache an — wird einfacher, wenn Sie stocken, fordernder, wenn Sie bereit sind. Es erfindet keine Antworten. Es stellt die richtigen Fragen.<br><br>So ein Buch existierte bisher nur in der Fiktion. Wir haben es gebaut.<br><br>Drei Modi. Ein Gedächtnis. Kein Chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>Das Ziel: Sie brauchen es nicht mehr.',
     trust_label: '> WARUM HCT',
     trust_title: 'Für Menschen, die verstehen wollen, bevor sie entscheiden.',
     trust_sub: 'Du brauchst kein GitHub-Konto. Kein Telegram. Keine 3-Stunden-YouTube-Videos. Nur einen Mac und den Willen, Krypto wirklich zu verstehen.',
@@ -1442,6 +1447,7 @@ const TRANSLATIONS = {
     feat1_3: 'Marktphasen verstehen lernen',
     feat1_4: 'Automatischer Sicherheitscheck',
     feat1_5: 'Schritt-für-Schritt Lernszenario',
+    feat1_primer: 'PRIMER Lernbegleiter (3 Modi)',
     feat1_6: 'PDF-Export & lokales Archiv',
     feat1_7: '6 Sprachen',
     feat1_8: 'Alle Updates im Lizenzzeitraum',
@@ -1454,6 +1460,7 @@ const TRANSLATIONS = {
     feat2_3: 'Marktphasen verstehen lernen',
     feat2_4: 'Automatischer Sicherheitscheck',
     feat2_5: 'Schritt-für-Schritt Lernszenario',
+    feat2_primer: 'PRIMER Lernbegleiter (3 Modi)',
     feat2_6: 'PDF-Export & lokales Archiv',
     feat2_7: '6 Sprachen',
     feat2_8: 'Alle Updates für 3 Jahre',
@@ -1466,6 +1473,7 @@ const TRANSLATIONS = {
     feat3_3: 'Marktphasen verstehen lernen',
     feat3_4: 'Automatischer Sicherheitscheck',
     feat3_5: 'Schritt-für-Schritt Lernszenario',
+    feat3_primer: 'PRIMER Lernbegleiter (3 Modi)',
     feat3_6: 'PDF-Export & lokales Archiv',
     feat3_7: '6 Sprachen',
     feat3_8: 'Alle zukünftigen Updates — für immer',
@@ -1568,7 +1576,7 @@ const TRANSLATIONS = {
     b6_text: 'HCT shows you how a systematic analysis is structured — you see not just the result, but the methodology behind it. The AI asks you to think along before showing its analysis. After 20–30 learning sessions, you understand how an analyst thinks. The tool strengthens your analytical understanding.',
     b7_icon: "// COMPANION",
     b7_title: "Personal AI conversation partner",
-    b7_text: "Ask questions about your analyses — the learning companion knows your progress, remembers discussed concepts and adapts to your level. Three conversation styles: structured, challenging or eye-to-eye.",
+    b7_text: 'Imagine a book that talks back.<br><br>It knows you. Knows what you\'ve grasped and where you hesitate. It adapts its language — simpler when you stumble, more demanding when you\'re ready. It doesn\'t invent answers. It asks the right questions.<br><br>A book like that only existed in science fiction. We built it.<br><br>Three modes. A memory. Not a chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>The goal: You won\'t need it anymore.',
     trust_label: '> WHY HCT',
     trust_title: 'For people who want to understand before they decide.',
     trust_sub: "You don't need a GitHub account. No Telegram. No 3-hour YouTube videos. Just a Mac and the will to truly understand crypto.",
@@ -1598,6 +1606,7 @@ const TRANSLATIONS = {
     feat1_3: 'Learn to understand market phases',
     feat1_4: 'Automatic security check',
     feat1_5: 'Step-by-step learning scenario',
+    feat1_primer: 'PRIMER learning companion (3 modes)',
     feat1_6: 'PDF export & local archive',
     feat1_7: '6 languages',
     feat1_8: 'All updates during licence period',
@@ -1610,6 +1619,7 @@ const TRANSLATIONS = {
     feat2_3: 'Learn to understand market phases',
     feat2_4: 'Automatic security check',
     feat2_5: 'Step-by-step learning scenario',
+    feat2_primer: 'PRIMER learning companion (3 modes)',
     feat2_6: 'PDF export & local archive',
     feat2_7: '6 languages',
     feat2_8: 'All updates for 3 years',
@@ -1622,6 +1632,7 @@ const TRANSLATIONS = {
     feat3_3: 'Learn to understand market phases',
     feat3_4: 'Automatic security check',
     feat3_5: 'Step-by-step learning scenario',
+    feat3_primer: 'PRIMER learning companion (3 modes)',
     feat3_6: 'PDF export & local archive',
     feat3_7: '6 languages',
     feat3_8: 'All future updates — forever',
@@ -1724,7 +1735,7 @@ const TRANSLATIONS = {
     b6_text: "HCT te montre comment une analyse systématique est structurée — tu vois non seulement le résultat, mais la méthodologie qui le sous-tend. L'IA te demande de réfléchir avant de montrer son analyse. Après 20–30 sessions d'apprentissage, tu comprends comment un analyste pense. L'outil renforce ta compréhension analytique.",
     b7_icon: "// COMPAGNON",
     b7_title: "Partenaire de conversation IA personnel",
-    b7_text: "Posez des questions sur vos analyses — le compagnon connaît votre progression, se souvient des concepts abordés et s'adapte à votre niveau. Trois styles de conversation : structuré, exigeant ou d'égal à égal.",
+    b7_text: 'Imaginez un livre qui vous répond.<br><br>Il vous connaît. Sait ce que vous avez compris et où vous hésitez. Il adapte son langage — plus simple quand vous bloquez, plus exigeant quand vous êtes prêt. Il n\'invente pas de réponses. Il pose les bonnes questions.<br><br>Un tel livre n\'existait que dans la fiction. Nous l\'avons construit.<br><br>Trois modes. Une mémoire. Pas un chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>L\'objectif : Vous n\'en aurez plus besoin.',
     trust_label: '> POURQUOI HCT',
     trust_title: 'Pour ceux qui veulent comprendre avant de décider.',
     trust_sub: "Tu n'as pas besoin d'un compte GitHub. Pas de Telegram. Pas de vidéos YouTube de 3 heures. Juste un Mac et la volonté de vraiment comprendre la crypto.",
@@ -1754,6 +1765,7 @@ const TRANSLATIONS = {
     feat1_3: 'Apprendre à comprendre les phases de marché',
     feat1_4: 'Vérification automatique de sécurité',
     feat1_5: "Scénario d'apprentissage étape par étape",
+    feat1_primer: 'PRIMER compagnon IA (3 modes)',
     feat1_6: 'Export PDF & archive locale',
     feat1_7: '6 langues',
     feat1_8: 'Toutes les mises à jour pendant la licence',
@@ -1766,6 +1778,7 @@ const TRANSLATIONS = {
     feat2_3: 'Apprendre à comprendre les phases de marché',
     feat2_4: 'Vérification automatique de sécurité',
     feat2_5: "Scénario d'apprentissage étape par étape",
+    feat2_primer: 'PRIMER compagnon IA (3 modes)',
     feat2_6: 'Export PDF & archive locale',
     feat2_7: '6 langues',
     feat2_8: 'Toutes les mises à jour pendant 3 ans',
@@ -1778,6 +1791,7 @@ const TRANSLATIONS = {
     feat3_3: 'Apprendre à comprendre les phases de marché',
     feat3_4: 'Vérification automatique de sécurité',
     feat3_5: "Scénario d'apprentissage étape par étape",
+    feat3_primer: 'PRIMER compagnon IA (3 modes)',
     feat3_6: 'Export PDF & archive locale',
     feat3_7: '6 langues',
     feat3_8: 'Toutes les mises à jour futures — pour toujours',
@@ -1880,7 +1894,7 @@ const TRANSLATIONS = {
     b6_text: 'HCT te muestra cómo se estructura un análisis sistemático — no solo ves el resultado, sino la metodología detrás. La IA te pide que pienses antes de mostrar su análisis. Después de 20–30 sesiones de aprendizaje, comprendes cómo piensa un analista. La herramienta fortalece tu comprensión analítica.',
     b7_icon: "// COMPAÑERO",
     b7_title: "Compañero de conversación IA personal",
-    b7_text: "Haz preguntas sobre tus análisis — el compañero conoce tu progreso, recuerda los conceptos discutidos y se adapta a tu nivel. Tres estilos de conversación: estructurado, desafiante o de igual a igual.",
+    b7_text: 'Imagine un libro que le responde.<br><br>Le conoce. Sabe lo que ha entendido y dónde duda. Adapta su lenguaje — más simple cuando se atasca, más exigente cuando está listo. No inventa respuestas. Hace las preguntas correctas.<br><br>Un libro así solo existía en la ficción. Lo hemos construido.<br><br>Tres modos. Una memoria. No es un chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>El objetivo: No lo necesitará más.',
     trust_label: '> POR QUÉ HCT',
     trust_title: 'Para personas que quieren entender antes de decidir.',
     trust_sub: 'No necesitas una cuenta de GitHub. Sin Telegram. Sin videos de YouTube de 3 horas. Solo un Mac y la voluntad de entender realmente las criptos.',
@@ -1910,6 +1924,7 @@ const TRANSLATIONS = {
     feat1_3: 'Aprender a entender las fases del mercado',
     feat1_4: 'Verificación automática de seguridad',
     feat1_5: 'Escenario de aprendizaje paso a paso',
+    feat1_primer: 'PRIMER compañero IA (3 modos)',
     feat1_6: 'Exportación PDF & archivo local',
     feat1_7: '6 idiomas',
     feat1_8: 'Todas las actualizaciones durante la licencia',
@@ -1922,6 +1937,7 @@ const TRANSLATIONS = {
     feat2_3: 'Aprender a entender las fases del mercado',
     feat2_4: 'Verificación automática de seguridad',
     feat2_5: 'Escenario de aprendizaje paso a paso',
+    feat2_primer: 'PRIMER compañero IA (3 modos)',
     feat2_6: 'Exportación PDF & archivo local',
     feat2_7: '6 idiomas',
     feat2_8: 'Todas las actualizaciones durante 3 años',
@@ -1934,6 +1950,7 @@ const TRANSLATIONS = {
     feat3_3: 'Aprender a entender las fases del mercado',
     feat3_4: 'Verificación automática de seguridad',
     feat3_5: 'Escenario de aprendizaje paso a paso',
+    feat3_primer: 'PRIMER compañero IA (3 modos)',
     feat3_6: 'Exportación PDF & archivo local',
     feat3_7: '6 idiomas',
     feat3_8: 'Todas las actualizaciones futuras — para siempre',
@@ -2036,7 +2053,7 @@ const TRANSLATIONS = {
     b6_text: "HCT ti mostra come è strutturata un'analisi sistematica — non vedi solo il risultato, ma la metodologia dietro. L'IA ti chiede di riflettere prima di mostrare la sua analisi. Dopo 20–30 sessioni di apprendimento, comprendi come pensa un analista. Lo strumento rafforza la tua comprensione analitica.",
     b7_icon: "// COMPAGNO",
     b7_title: "Partner di conversazione IA personale",
-    b7_text: "Fai domande sulle tue analisi — il compagno conosce i tuoi progressi, ricorda i concetti discussi e si adatta al tuo livello. Tre stili di conversazione: strutturato, stimolante o alla pari.",
+    b7_text: 'Immagini un libro che Le risponde.<br><br>La conosce. Sa cosa ha capito e dove esita. Adatta il suo linguaggio — più semplice quando si blocca, più esigente quando è pronto. Non inventa risposte. Fa le domande giuste.<br><br>Un libro così esisteva solo nella finzione. L\'abbiamo costruito.<br><br>Tre modalità. Una memoria. Non un chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>L\'obiettivo: Non ne avrà più bisogno.',
     trust_label: '> PERCHÉ HCT',
     trust_title: 'Per chi vuole capire prima di decidere.',
     trust_sub: "Non ti serve un account GitHub. Nessun Telegram. Nessun video YouTube di 3 ore. Solo un Mac e la volontà di capire davvero le crypto.",
@@ -2066,6 +2083,7 @@ const TRANSLATIONS = {
     feat1_3: 'Imparare a capire le fasi di mercato',
     feat1_4: 'Verifica automatica della sicurezza',
     feat1_5: 'Scenario di apprendimento passo dopo passo',
+    feat1_primer: 'PRIMER compagno IA (3 modalità)',
     feat1_6: 'Export PDF & archivio locale',
     feat1_7: '6 lingue',
     feat1_8: 'Tutti gli aggiornamenti durante la licenza',
@@ -2078,6 +2096,7 @@ const TRANSLATIONS = {
     feat2_3: 'Imparare a capire le fasi di mercato',
     feat2_4: 'Verifica automatica della sicurezza',
     feat2_5: 'Scenario di apprendimento passo dopo passo',
+    feat2_primer: 'PRIMER compagno IA (3 modalità)',
     feat2_6: 'Export PDF & archivio locale',
     feat2_7: '6 lingue',
     feat2_8: 'Tutti gli aggiornamenti per 3 anni',
@@ -2090,6 +2109,7 @@ const TRANSLATIONS = {
     feat3_3: 'Imparare a capire le fasi di mercato',
     feat3_4: 'Verifica automatica della sicurezza',
     feat3_5: 'Scenario di apprendimento passo dopo passo',
+    feat3_primer: 'PRIMER compagno IA (3 modalità)',
     feat3_6: 'Export PDF & archivio locale',
     feat3_7: '6 lingue',
     feat3_8: 'Tutti gli aggiornamenti futuri — per sempre',
@@ -2192,7 +2212,7 @@ const TRANSLATIONS = {
     b6_text: 'O HCT mostra-te como uma análise sistemática é estruturada — não vês apenas o resultado, mas a metodologia por trás. A IA pede-te que penses antes de mostrar a sua análise. Após 20–30 sessões de aprendizagem, compreendes como um analista pensa. A ferramenta fortalece a tua compreensão analítica.',
     b7_icon: "// COMPANHEIRO",
     b7_title: "Parceiro de conversação IA pessoal",
-    b7_text: "Faça perguntas sobre as suas análises — o companheiro conhece o seu progresso, lembra-se dos conceitos discutidos e adapta-se ao seu nível. Três estilos de conversação: estruturado, desafiante ou de igual para igual.",
+    b7_text: 'Imagine um livro que lhe responde.<br><br>Conhece-o. Sabe o que compreendeu e onde hesita. Adapta a sua linguagem — mais simples quando bloqueia, mais exigente quando está pronto. Não inventa respostas. Faz as perguntas certas.<br><br>Um livro assim só existia na ficção. Nós construímo-lo.<br><br>Três modos. Uma memória. Não é um chatbot.<br>⚔ SPARRING · 🎯 MENTOR · 🤝 PEER<br><br>O objetivo: Não vai precisar mais dele.',
     trust_label: '> PORQUÊ O HCT',
     trust_title: 'Para quem quer compreender antes de decidir.',
     trust_sub: 'Não precisas de uma conta GitHub. Sem Telegram. Sem vídeos YouTube de 3 horas. Apenas um Mac e a vontade de compreender realmente as criptos.',
@@ -2222,6 +2242,7 @@ const TRANSLATIONS = {
     feat1_3: 'Aprender a compreender as fases do mercado',
     feat1_4: 'Verificação automática de segurança',
     feat1_5: 'Cenário de aprendizagem passo a passo',
+    feat1_primer: 'PRIMER companheiro IA (3 modos)',
     feat1_6: 'Exportação PDF & arquivo local',
     feat1_7: '6 idiomas',
     feat1_8: 'Todas as atualizações durante a licença',
@@ -2234,6 +2255,7 @@ const TRANSLATIONS = {
     feat2_3: 'Aprender a compreender as fases do mercado',
     feat2_4: 'Verificação automática de segurança',
     feat2_5: 'Cenário de aprendizagem passo a passo',
+    feat2_primer: 'PRIMER companheiro IA (3 modos)',
     feat2_6: 'Exportação PDF & arquivo local',
     feat2_7: '6 idiomas',
     feat2_8: 'Todas as atualizações durante 3 anos',
@@ -2246,6 +2268,7 @@ const TRANSLATIONS = {
     feat3_3: 'Aprender a compreender as fases do mercado',
     feat3_4: 'Verificação automática de segurança',
     feat3_5: 'Cenário de aprendizagem passo a passo',
+    feat3_primer: 'PRIMER companheiro IA (3 modos)',
     feat3_6: 'Exportação PDF & arquivo local',
     feat3_7: '6 idiomas',
     feat3_8: 'Todas as atualizações futuras — para sempre',
