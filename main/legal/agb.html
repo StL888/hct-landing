@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGB — Holistic Coin Trainer</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    :root {
+      --bg:         #0a0a0a;
+      --surface:    #111111;
+      --border:     #1e1e1e;
+      --text:       #c8c8c8;
+      --gray:       #555;
+      --gray-light: #888;
+      --gold:       #ffd700;
+      --gold-dim:   #b8960c;
+      --font: 'SF Mono', 'Fira Mono', 'Cascadia Code', 'Consolas', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 13px;
+      line-height: 1.8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOPBAR ─────────────────────────────────────────────── */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+    }
+    .logo span { color: var(--gold); }
+
+    .back-link {
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--gray);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--gold-dim); }
+    .back-link::before { content: "← "; }
+
+    /* ── MAIN ───────────────────────────────────────────────── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+      flex: 1;
+    }
+
+    .page-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      color: var(--gold-dim);
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    section {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+
+    ul li {
+      color: var(--text);
+      padding-left: 16px;
+      position: relative;
+      margin-bottom: 4px;
+    }
+
+    ul li::before {
+      content: "//";
+      position: absolute;
+      left: 0;
+      color: var(--gold-dim);
+      font-size: 10px;
+    }
+
+    a {
+      color: var(--gray-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    a:hover { color: var(--gold-dim); }
+
+    .notice {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--gold-dim);
+      padding: 16px 20px;
+      font-size: 11px;
+      color: var(--gray-light);
+      margin-top: 8px;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 40px;
+      text-align: center;
+      font-size: 9px;
+      color: var(--gray);
+      letter-spacing: 0.15em;
+      opacity: 0.5;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      main   { padding: 40px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>HCT</span> // HOLISTIC COIN TRAINER</div>
+    <a href="../index.html" class="back-link">Zurück</a>
+  </header>
+
+  <main>
+    <div class="page-label">AGB · Stand März 2026</div>
+    <h1>ALLGEMEINE GESCHÄFTS&shy;BEDINGUNGEN</h1>
+
+    <section>
+      <h2>§ 1 Geltungsbereich</h2>
+      <p>
+        Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung der Software
+        „Holistic Coin Trainer" (nachfolgend „Software"), angeboten von:
+      </p>
+      <p>
+        Stefan Laackman<br>
+        Torstraße 68, 10119 Berlin<br>
+        E-Mail: <a href="mailto:hello@holisticcointrainer.com">hello@holisticcointrainer.com</a>
+      </p>
+      <p>
+        Die Software ist ein Lern- und Bildungswerkzeug für die eigenständige
+        Auseinandersetzung mit Kryptowährungen. Sie stellt ausdrücklich keine
+        Anlageberatung, Finanzportfolioverwaltung, Steuerberatung oder sonstige
+        regulierte Finanzdienstleistung dar.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 2 Vertragsschluss &amp; Lizenzmodelle</h2>
+      <p>
+        Der Vertrag kommt durch den Kauf einer Lizenz über den Zahlungsdienstleister
+        Lemon Squeezy (LemonSqueezy LLC) zustande. Lemon Squeezy agiert als
+        Merchant of Record und ist vertragsschließender Händler gegenüber dem Käufer.
+      </p>
+      <p>Es stehen folgende Lizenzmodelle zur Verfügung:</p>
+      <ul>
+        <li>1-Jahres-Lizenz: €599</li>
+        <li>3-Jahres-Lizenz: €1.399</li>
+        <li>Lifetime-Lizenz: €1.999</li>
+      </ul>
+      <p>
+        Jede Lizenz ist persönlich und nicht übertragbar. Die 1-Jahres-Lizenz
+        und die 3-Jahres-Lizenz berechtigen zur Nutzung auf bis zu zwei (2)
+        macOS-Geräten. Die Lifetime-Lizenz berechtigt zur Nutzung auf einem (1)
+        macOS-Gerät. Die Nutzung der Software erfordert einen
+        eigenen API-Schlüssel des Anbieters Anthropic. Die dadurch entstehenden
+        API-Kosten trägt der Nutzer selbst und sind nicht im Lizenzpreis enthalten.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 3 Bildungszweck</h2>
+      <p>
+        (1) Die Software dient ausschließlich Bildungs- und Lernzwecken. Sie ist
+        ausdrücklich keine der folgenden regulierten Dienstleistungen:
+      </p>
+      <ul>
+        <li>Anlageberatung im Sinne von § 2 Abs. 8 Nr. 10 WpHG</li>
+        <li>Finanzportfolioverwaltung</li>
+        <li>Steuerberatung im Sinne des StBerG</li>
+        <li>Beratung zu Kryptowerten im Sinne von Art. 3 Abs. 1 Nr. 25 MiCA (Verordnung (EU) 2023/1114)</li>
+      </ul>
+      <p>
+        (2) Dies gilt für sämtliche Funktionsbereiche der Software, insbesondere:
+        Analyse-Reports, DCA-Szenarien, DCA-Denklabor, interaktive Lerngespräche
+        im PRIMER sowie das Analyse-Profil.
+      </p>
+      <p>
+        (3) Der dialogische Charakter des PRIMER — einschließlich namentlicher
+        Ansprache, Bezugnahme auf vergangene Analysen und personalisiertem
+        Feedback — begründet kein individuelles Beratungsverhältnis. Der PRIMER
+        ist ein automatisiertes Lernsystem auf Basis vorprogrammierter
+        KI-Modelle.
+      </p>
+      <p>
+        (4) DCA-Szenarien und DCA-Denklabor-Simulationen verwenden fiktive
+        „Lerneinheiten" (LE) ohne Bezug zu echtem Geld. Steuerliche Hinweise
+        sind allgemeine Bildungsinhalte und ersetzen keine individuelle
+        steuerliche Beratung.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 4 Pflichten des Nutzers</h2>
+      <p>
+        Der Nutzer ist verpflichtet, vor jeder Investitionsentscheidung
+        unabhängigen professionellen Rat einzuholen. Bei erstmaliger Nutzung
+        der Software bestätigt der Nutzer durch eine Checkbox, dass er dies
+        zur Kenntnis genommen hat.
+      </p>
+      <p>
+        Der Nutzer ist selbst dafür verantwortlich, die Einhaltung der in
+        seiner Jurisdiktion geltenden Gesetze sicherzustellen. Die Nutzung
+        der Software ist in folgenden Jurisdiktionen ausdrücklich ausgeschlossen:
+      </p>
+      <ul>
+        <li>Vereinigte Staaten von Amerika (USA)</li>
+        <li>Kanada</li>
+        <li>Vereinigtes Königreich (UK)</li>
+        <li>Volksrepublik China</li>
+        <li>Russische Föderation</li>
+      </ul>
+      <p>
+        Der Nutzer ist für die sichere Aufbewahrung seines API-Schlüssels
+        selbst verantwortlich.
+      </p>
+      <p>
+        Der Nutzer nimmt zur Kenntnis, dass im PRIMER eingegebene
+        Freitext-Nachrichten zur Verarbeitung an Anthropic, Inc. (USA)
+        übermittelt werden. Der Nutzer verpflichtet sich, im PRIMER keine
+        sensiblen persönlichen Daten einzugeben, insbesondere keine
+        Finanzdaten, Portfolioinformationen, Kontodaten oder
+        Vermögensverhältnisse.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 5 KI-generierte Inhalte &amp; Haftung</h2>
+      <p>
+        (1) Die Software verwendet KI-Modelle (Anthropic Claude) zur Erzeugung
+        von Analyse-Reports und interaktiven Lerninhalten. KI-generierte Inhalte
+        können Fehler, Ungenauigkeiten oder Halluzinationen enthalten. Dies gilt
+        für Analyse-Reports ebenso wie für PRIMER-Lerngespräche. Eine Gewähr
+        für die Richtigkeit, Vollständigkeit oder Aktualität der Inhalte wird
+        nicht übernommen.
+      </p>
+      <p>
+        (2) Personalisierte Rückmeldungen im PRIMER (Bezugnahme auf analysierte
+        Coins, Einschätzungstendenzen) stellen keine individuelle Finanz- oder
+        Anlageberatung dar.
+      </p>
+      <p>
+        (3) Die Einschätzungs-Statistik im Analyse-Profil vergleicht die
+        Einordnungen des Nutzers mit dem Framework — sie bewertet nicht die
+        Qualität von Anlageentscheidungen.
+      </p>
+      <p>
+        Marktdaten von CoinGecko werden ohne Gewährleistung bereitgestellt.
+        Die Haftung bei Verletzung von Kardinalpflichten ist der Höhe nach
+        auf den vertragstypischen, vorhersehbaren Schaden begrenzt. Die
+        vorstehenden Haftungsbeschränkungen gelten nicht für Schäden aus der
+        Verletzung des Lebens, des Körpers oder der Gesundheit, bei Vorsatz
+        oder grober Fahrlässigkeit, bei Übernahme einer Garantie sowie für
+        Ansprüche nach dem Produkthaftungsgesetz. Für Vermögensschäden, die
+        aus Investitionsentscheidungen auf Basis der Software-Inhalte
+        resultieren, wird keine Haftung übernommen.
+      </p>
+      <div class="notice">
+        Hinweis: KI-generierte Analysen und PRIMER-Lerngespräche sind
+        Bildungsinhalte und keine Handlungsempfehlungen. Der Nutzer trägt
+        die alleinige Verantwortung für seine Investitionsentscheidungen.
+      </div>
+    </section>
+
+    <section>
+      <h2>§ 6 Datenschutz</h2>
+      <p>
+        Es werden keine personenbezogenen Daten auf Servern des Anbieters
+        gespeichert. Der API-Schlüssel wird ausschließlich im macOS Keychain
+        des Nutzers abgelegt. Die Zahlungsabwicklung erfolgt über
+        Lemon Squeezy in eigener datenschutzrechtlicher Verantwortung.
+      </p>
+      <p>
+        Zur Lizenzverwaltung werden pseudonymisierte Geräte-IDs verwendet.
+        Die Datenverarbeitung durch Anthropic richtet sich nach der
+        Datenschutzerklärung von Anthropic.
+      </p>
+      <p>
+        Ausführliche Informationen finden Sie in unserer
+        <a href="datenschutz.html">Datenschutzerklärung</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 7 Geistiges Eigentum</h2>
+      <p>
+        Die Software einschließlich Tri-Filter-Analyse-Engine, Prompt-System
+        und Framework-Architektur ist urheberrechtlich geschützt. Der Nutzer
+        erhält eine einfache, nicht-exklusive Lizenz zur bestimmungsgemäßen
+        Nutzung.
+      </p>
+      <p>
+        Erstellte Analyse-Reports dürfen ausschließlich für den persönlichen
+        Lerngebrauch verwendet werden. Eine kommerzielle Weiterverwertung,
+        Vervielfältigung oder Weitergabe der Reports ist nicht gestattet.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 8 Verfügbarkeit &amp; Support</h2>
+      <p>
+        Die Software wird „as is" bereitgestellt. Eine ununterbrochene
+        Verfügbarkeit wird nicht garantiert. Dies gilt insbesondere für
+        Drittanbieter-Dienste (Anthropic API, CoinGecko API).
+      </p>
+      <p>
+        Support erfolgt per E-Mail an
+        <a href="mailto:hello@holisticcointrainer.com">hello@holisticcointrainer.com</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 9 Vertragslaufzeit &amp; Kündigung</h2>
+      <p>
+        Die Vertragslaufzeit richtet sich nach dem gewählten Lizenzmodell.
+        Die Lizenz endet automatisch nach Ablauf des Lizenzzeitraums.
+      </p>
+      <p>
+        Eine außerordentliche Kündigung aus wichtigem Grund bleibt beiden
+        Parteien vorbehalten. Bei Verstoß gegen die Jurisdiktionsbeschränkungen
+        (§ 4) ist der Anbieter berechtigt, die Lizenz mit sofortiger Wirkung
+        zu sperren.
+      </p>
+    </section>
+
+    <section>
+      <h2>§ 10 Schlussbestimmungen</h2>
+      <p>
+        Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss
+        des UN-Kaufrechts (CISG). Gerichtsstand für Kaufleute ist Berlin.
+      </p>
+      <p>
+        Die Europäische Kommission stellt eine Plattform zur
+        Online-Streitbeilegung bereit:
+        <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>
+      </p>
+      <p>
+        Der Anbieter ist zur Teilnahme an einem Streitbeilegungsverfahren
+        vor einer Verbraucherschlichtungsstelle weder verpflichtet noch bereit.
+      </p>
+      <p>
+        Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden,
+        bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.
+      </p>
+    </section>
+
+    <div class="notice">
+      Stand: März 2026 — Diese AGB werden bei wesentlichen Änderungen
+      aktualisiert und dem Nutzer in geeigneter Form mitgeteilt.
+    </div>
+  </main>
+
+  <footer>
+    &gt; holisticcointrainer.com &nbsp;//&nbsp; 2026
+  </footer>
+
+</body>
+</html>
