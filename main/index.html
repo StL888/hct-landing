@@ -510,6 +510,20 @@
       margin-bottom: 8px;
     }
 
+    .card-api-hint {
+      font-size: 10px;
+      color: var(--amber);
+      margin-top: 4px;
+      margin-bottom: 8px;
+      opacity: 0.8;
+      letter-spacing: 0.03em;
+    }
+    .card-api-hint a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dotted currentColor;
+    }
+
     .card-saving {
       font-size: 10px;
       color: var(--green-dim);
@@ -1230,6 +1244,7 @@
         <div class="card-tier" data-i18n="price_a_tier">// JAHRES-LIZENZ</div>
         <div class="card-price"><sup>€</sup>599</div>
         <div class="card-period" data-i18n="price_a_period">pro Jahr · jährliche Verlängerung</div>
+        <div class="card-api-hint"><a href="#api-note" data-i18n="card_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         <div class="card-saving">&nbsp;</div>
         <ul class="card-features">
           <li data-i18n="feat_unlimited">Unbegrenzte Lerneinheiten</li>
@@ -1252,6 +1267,7 @@
         <div class="card-tier" data-i18n="price_3_tier">// 3-JAHRES-LIZENZ</div>
         <div class="card-price"><sup>€</sup>1.399</div>
         <div class="card-period" data-i18n="price_3_period">einmalig · 3 Jahre gültig</div>
+        <div class="card-api-hint"><a href="#api-note" data-i18n="card_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         <div class="card-saving" data-i18n="price_3_save">&gt; SPARE €398 ggü. Jahres-Lizenz</div>
         <ul class="card-features">
           <li data-i18n="feat_unlimited">Unbegrenzte Lerneinheiten</li>
@@ -1274,6 +1290,7 @@
         <div class="card-tier" data-i18n="price_l_tier">// LIFETIME-LIZENZ</div>
         <div class="card-price"><sup>€</sup>1.999</div>
         <div class="card-period" data-i18n="price_l_period">einmalig · alle zukünftigen Updates</div>
+        <div class="card-api-hint"><a href="#api-note" data-i18n="card_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         <div class="card-saving" data-i18n="price_l_save">&gt; EINMAL ZAHLEN. FÜR IMMER BESITZEN.</div>
         <ul class="card-features">
           <li data-i18n="feat_unlimited">Unbegrenzte Lerneinheiten</li>
@@ -1315,6 +1332,7 @@
           <div class="ent-btn-wrap">
             <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%203-5%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
           </div>
+          <div class="card-api-hint" style="margin-top:6px;"><a href="#api-note" data-i18n="ent_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         </div>
 
         <div class="ent-card">
@@ -1330,6 +1348,7 @@
           <div class="ent-btn-wrap">
             <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%206-20%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
           </div>
+          <div class="card-api-hint" style="margin-top:6px;"><a href="#api-note" data-i18n="ent_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         </div>
 
         <div class="ent-card">
@@ -1345,6 +1364,7 @@
           <div class="ent-btn-wrap">
             <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%2021-50%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
           </div>
+          <div class="card-api-hint" style="margin-top:6px;"><a href="#api-note" data-i18n="ent_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         </div>
 
         <div class="ent-card">
@@ -1361,11 +1381,12 @@
           <div class="ent-btn-wrap">
             <a href="mailto:hello@holisticcointrainer.com?subject=Enterprise%2050%2B%20Seats" class="ent-card-btn" data-i18n="ent_card_btn">Angebot anfragen</a>
           </div>
+          <div class="card-api-hint" style="margin-top:6px;"><a href="#api-note" data-i18n="ent_api_hint">+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓</a></div>
         </div>
 
       </div>
 
-      <p class="ent-info" data-i18n="ent_info">// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · LERNGRUPPEN · BILDUNGSEINRICHTUNGEN · FORSCHUNGSTEAMS · UNTERNEHMEN</p>
+      <p class="ent-info" data-i18n="ent_info">// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · LERNGRUPPEN · BILDUNGSEINRICHTUNGEN · FORSCHUNGSTEAMS · UNTERNEHMEN · API-KOSTEN SEPARAT PRO SEAT</p>
       <p class="ent-info" style="margin-top:8px; font-style:italic;" data-i18n="ent_edu_note">HCT bleibt auch im Team- und Enterprise-Kontext ein Bildungstool.</p>
       <div class="ent-cta">
         <a href="mailto:hello@holisticcointrainer.com"
@@ -1374,7 +1395,7 @@
     </div>
 
     <!-- API KEY NOTE -->
-    <div class="api-note" data-i18n-html="api_note"><strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-gestützte Lerneinheiten. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Lerneinheit kostet etwa <code>~$0,80 mit Claude Sonnet · ~$6,00 mit Claude Opus Pro</code>. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.</div>
+    <div class="api-note" id="api-note" data-i18n-html="api_note"><strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-gestützte Lerneinheiten. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Lerneinheit kostet etwa <code>~$0,80 mit Claude Sonnet · ~$6,00 mit Claude Opus Pro</code>. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.</div>
 
     <!-- SYSTEM REQUIREMENTS -->
     <div class="api-note" style="margin-top:16px; border-left-color: var(--green-dim);">
@@ -1509,6 +1530,7 @@ const T = {
     price_l_period: "einmalig · alle zukünftigen Updates",
     price_l_save: "> EINMAL ZAHLEN. FÜR IMMER BESITZEN.",
     price_l_btn: "Für immer",
+    card_api_hint: '+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓',
     feat_unlimited: "Unbegrenzte Lerneinheiten",
     feat_coingecko: "Live CoinGecko-Daten",
     feat_wyckoff: "Wyckoff + DCA-Lernszenario",
@@ -1546,7 +1568,8 @@ const T = {
     ent_f5: "Dedizierter Support",
     ent_f6: "Individuelle Konditionen",
     ent_card_btn: "Angebot anfragen",
-    ent_info: "// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · LERNGRUPPEN · BILDUNGSEINRICHTUNGEN · FORSCHUNGSTEAMS · UNTERNEHMEN",
+    ent_api_hint: "+ Anthropic API: ~$0,80/Analyse · PRIMER ~1–3¢/Msg ↓",
+    ent_info: "// 1 SEAT = 1 MAC · NUR JAHRES-LIZENZ · LERNGRUPPEN · BILDUNGSEINRICHTUNGEN · FORSCHUNGSTEAMS · UNTERNEHMEN · API-KOSTEN SEPARAT PRO SEAT",
     ent_edu_note: "HCT bleibt auch im Team- und Enterprise-Kontext ein Bildungstool.",
     price_e_btn: "ZUGANG VERHANDELN",
     sysreq_title: "> SYSTEMANFORDERUNGEN",
@@ -1554,7 +1577,7 @@ const T = {
     sysreq_chip: "<strong>Apple Silicon</strong> nativ · Intel Mac via Rosetta 2",
     sysreq_ram: "<strong>4 GB RAM</strong> Minimum · 8 GB empfohlen",
     sysreq_net: "<strong>Internetverbindung</strong> erforderlich (API-Anfragen)",
-    api_note: "<strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-gestützte Lerneinheiten. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Lerneinheit kostet etwa <code>~$0,80 mit Claude Sonnet · ~$6,00 mit Claude Opus Pro</code>. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden.",
+    api_note: "<strong>&gt; WICHTIG — API-KEY &amp; NUTZUNGSKOSTEN</strong><br>HCT benötigt deinen eigenen <strong>Anthropic API-Key</strong> für KI-gestützte Lerneinheiten. Der Key wird einmalig in der App eingegeben und verlässt nie deinen Rechner. Die API-Nutzung wird direkt von Anthropic abgerechnet – getrennt von deiner HCT-Lizenz. Eine typische Lerneinheit kostet etwa <code>~$0,80 mit Claude Sonnet · ~$6,00 mit Claude Opus Pro</code>. Du hast jederzeit die volle Kontrolle über deine API-Ausgaben. Ein Anthropic-Konto kann unter <code>console.anthropic.com</code> erstellt werden. Der PRIMER Lernbegleiter nutzt ebenfalls die API — ~1–3 Cent pro Nachricht.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">KEINE ANLAGEBERATUNG.</strong> Holistic Coin Trainer ist ausschließlich ein Bildungs- und Lerntool. Alle Analyse-Outputs werden von KI generiert und stellen keine Anlageberatung, Finanzberatung oder Empfehlung zum Kauf oder Verkauf von Vermögenswerten dar. Krypto-Assets sind hochvolatil. Vergangene Performance ist kein Indikator für zukünftige Ergebnisse. Dieses Tool stellt keine Finanz-, Anlage- oder Steuerberatung dar.",
     legal_note: "Mit dem Kauf akzeptierst du die <a href=\"legal/agb.html\" style=\"color:var(--gold-dim);\">AGB</a> und die <a href=\"legal/eula.html\" style=\"color:var(--gold-dim);\">EULA</a>. <a href=\"legal/widerruf.html\" style=\"color:var(--gold-dim);\">Widerrufsbelehrung</a>.",
     footer_agb: "AGB",
@@ -1647,6 +1670,7 @@ const T = {
     price_l_period: "one-time · all future updates",
     price_l_save: "> PAY ONCE. OWN IT FOREVER.",
     price_l_btn: "Own It",
+    card_api_hint: '+ Anthropic API: ~$0.80/analysis · PRIMER ~1–3¢/msg ↓',
     feat_unlimited: "Unlimited learning sessions",
     feat_coingecko: "Live CoinGecko data",
     feat_wyckoff: "Wyckoff + DCA learning scenario",
@@ -1684,7 +1708,8 @@ const T = {
     ent_f5: "Dedicated support",
     ent_f6: "Custom terms",
     ent_card_btn: "Request offer",
-    ent_info: "// 1 SEAT = 1 MAC · ANNUAL LICENCE ONLY · LEARNING GROUPS · EDUCATIONAL INSTITUTIONS · RESEARCH TEAMS · COMPANIES",
+    ent_api_hint: "+ Anthropic API: ~$0.80/analysis · PRIMER ~1–3¢/msg ↓",
+    ent_info: "// 1 SEAT = 1 MAC · ANNUAL LICENCE ONLY · LEARNING GROUPS · EDUCATIONAL INSTITUTIONS · RESEARCH TEAMS · COMPANIES · API COSTS SEPARATE PER SEAT",
     ent_edu_note: "HCT remains an educational tool in team and enterprise contexts.",
     price_e_btn: "NEGOTIATE ACCESS",
     sysreq_title: "> SYSTEM REQUIREMENTS",
@@ -1692,8 +1717,8 @@ const T = {
     sysreq_chip: "<strong>Apple Silicon</strong> native · Intel Mac via Rosetta 2",
     sysreq_ram: "<strong>4 GB RAM</strong> minimum · 8 GB recommended",
     sysreq_net: "<strong>Internet connection</strong> required (API requests)",
-    api_note: "<strong>&gt; IMPORTANT — API KEY &amp; USAGE COSTS</strong><br>HCT requires your own <strong>Anthropic API key</strong> for AI-powered learning sessions. The key is entered once in the app and never leaves your machine. API usage is billed directly by Anthropic — separate from your HCT license. A typical learning session costs approximately <code>~$0.80 with Claude Sonnet · ~$6.00 with Claude Opus Pro</code>. You stay in full control of your API spend at all times. An Anthropic account can be created at <code>console.anthropic.com</code>.",
-    disclaimer: "<strong style=\"color:var(--gray-light);\">NOT FINANCIAL ADVICE.</strong> Holistic Coin Trainer is an educational and learning tool only. All analysis output is generated by AI and does not constitute investment advice, financial advice, or a recommendation to buy or sell any asset. Crypto assets are highly volatile. Past performance is not indicative of future results. This tool does not constitute financial, investment, or tax advice.",
+    api_note: "<strong>&gt; IMPORTANT — API KEY &amp; USAGE COSTS</strong><br>HCT requires your own <strong>Anthropic API key</strong> for AI-powered learning sessions. The key is entered once in the app and never leaves your machine. API usage is billed directly by Anthropic — separate from your HCT license. A typical learning session costs approximately <code>~$0.80 with Claude Sonnet · ~$6.00 with Claude Opus Pro</code>. You stay in full control of your API spend at all times. An Anthropic account can be created at <code>console.anthropic.com</code>. The PRIMER learning companion also uses the API — ~1–3 cents per message.",
+    disclaimer: "<strong style=\"color:var(--gray-light);\">NOT INVESTMENT ADVICE.</strong> Holistic Coin Trainer is an educational and learning tool only. All analysis output is generated by AI and does not constitute investment advice, financial advice, or a recommendation to buy or sell any asset. Crypto assets are highly volatile. Past performance is not indicative of future results. This tool does not constitute financial, investment, or tax advice.",
     legal_note: "By purchasing you accept the <a href=\"legal/agb.html\" style=\"color:var(--gold-dim);\">Terms</a> and <a href=\"legal/eula.html\" style=\"color:var(--gold-dim);\">EULA</a>. <a href=\"legal/widerruf.html\" style=\"color:var(--gold-dim);\">Cancellation policy</a>.",
     footer_agb: "Terms",
     footer_widerruf: "Withdrawal",
@@ -1785,6 +1810,7 @@ const T = {
     price_l_period: "unique · toutes les futures mises à jour",
     price_l_save: "> PAYER UNE FOIS. POSSÉDER POUR TOUJOURS.",
     price_l_btn: "Posséder",
+    card_api_hint: '+ Anthropic API : ~0,80 $/analyse · PRIMER ~1–3¢/msg ↓',
     feat_unlimited: "Sessions d'apprentissage illimitées",
     feat_coingecko: "Données live CoinGecko",
     feat_wyckoff: "Wyckoff + scénario DCA",
@@ -1822,7 +1848,8 @@ const T = {
     ent_f5: "Support dédié",
     ent_f6: "Conditions personnalisées",
     ent_card_btn: "Demander une offre",
-    ent_info: "// 1 SIÈGE = 1 MAC · LICENCE ANNUELLE UNIQUEMENT · GROUPES D'APPRENTISSAGE · ÉTABLISSEMENTS D'ENSEIGNEMENT · ÉQUIPES DE RECHERCHE · ENTREPRISES",
+    ent_api_hint: "+ Anthropic API : ~0,80 $/analyse · PRIMER ~1–3¢/msg ↓",
+    ent_info: "// 1 SIÈGE = 1 MAC · LICENCE ANNUELLE UNIQUEMENT · GROUPES D'APPRENTISSAGE · ÉTABLISSEMENTS ÉDUCATIFS · ÉQUIPES DE RECHERCHE · ENTREPRISES · COÛTS API SÉPARÉS PAR SIÈGE",
     ent_edu_note: "HCT reste un outil éducatif dans les contextes d'équipe et d'entreprise.",
     price_e_btn: "NÉGOCIER L'ACCÈS",
     sysreq_title: "> CONFIGURATION REQUISE",
@@ -1830,7 +1857,7 @@ const T = {
     sysreq_chip: "<strong>Apple Silicon</strong> natif · Intel Mac via Rosetta 2",
     sysreq_ram: "<strong>4 Go de RAM</strong> minimum · 8 Go recommandés",
     sysreq_net: "<strong>Connexion Internet</strong> requise (requêtes API)",
-    api_note: "<strong>&gt; IMPORTANT — CLÉ API &amp; COÛTS D'UTILISATION</strong><br>HCT nécessite ta propre <strong>clé API Anthropic</strong> pour effectuer des analyses IA. La clé est saisie une seule fois dans l'app et ne quitte jamais ta machine. L'utilisation de l'API est facturée directement par Anthropic — séparément de ta licence HCT. Une analyse typique coûte environ <code>~$0,80 avec Sonnet · ~$5,00 avec Opus</code>. Tu gardes le contrôle total de tes dépenses API. Un compte Anthropic peut être créé sur <code>console.anthropic.com</code>.",
+    api_note: "<strong>&gt; IMPORTANT — CLÉ API &amp; COÛTS D'UTILISATION</strong><br>HCT nécessite ta propre <strong>clé API Anthropic</strong> pour effectuer des analyses IA. La clé est saisie une seule fois dans l'app et ne quitte jamais ta machine. L'utilisation de l'API est facturée directement par Anthropic — séparément de ta licence HCT. Une analyse typique coûte environ <code>~$0,80 avec Sonnet · ~$5,00 avec Opus</code>. Tu gardes le contrôle total de tes dépenses API. Un compte Anthropic peut être créé sur <code>console.anthropic.com</code>. Le compagnon PRIMER utilise également l'API — ~1–3 cts par message.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">PAS DE CONSEIL FINANCIER.</strong> Holistic Coin Trainer est uniquement un outil éducatif et d'apprentissage. Tous les outputs d'analyse sont générés par IA et ne constituent pas des conseils en investissement, conseils financiers ou recommandations d'achat ou de vente d'actifs. Les crypto-actifs sont très volatils. Les performances passées ne présagent pas des résultats futurs. Cet outil ne constitue pas un conseil financier, d'investissement ou fiscal.",
     legal_note: "En achetant, tu acceptes les <a href=\"legal/agb.html\" style=\"color:var(--gold-dim);\">CGV</a> et le <a href=\"legal/eula.html\" style=\"color:var(--gold-dim);\">CLUF</a>. <a href=\"legal/widerruf.html\" style=\"color:var(--gold-dim);\">Droit de rétractation</a>.",
     footer_agb: "CGV",
@@ -1923,6 +1950,7 @@ const T = {
     price_l_period: "única · todas las actualizaciones futuras",
     price_l_save: "> PAGA UNA VEZ. TUYO PARA SIEMPRE.",
     price_l_btn: "Poseerlo",
+    card_api_hint: '+ Anthropic API: ~$0,80/análisis · PRIMER ~1–3¢/msg ↓',
     feat_unlimited: "Sesiones de aprendizaje ilimitadas",
     feat_coingecko: "Datos live CoinGecko",
     feat_wyckoff: "Wyckoff + escenario DCA",
@@ -1960,7 +1988,8 @@ const T = {
     ent_f5: "Soporte dedicado",
     ent_f6: "Condiciones individuales",
     ent_card_btn: "Solicitar oferta",
-    ent_info: "// 1 PUESTO = 1 MAC · SOLO LICENCIA ANUAL · GRUPOS DE APRENDIZAJE · INSTITUCIONES EDUCATIVAS · EQUIPOS DE INVESTIGACIÓN · EMPRESAS",
+    ent_api_hint: "+ Anthropic API: ~$0,80/análisis · PRIMER ~1–3¢/msg ↓",
+    ent_info: "// 1 PUESTO = 1 MAC · SOLO LICENCIA ANUAL · GRUPOS DE APRENDIZAJE · INSTITUCIONES EDUCATIVAS · EQUIPOS DE INVESTIGACIÓN · EMPRESAS · COSTES API SEPARADOS POR PUESTO",
     ent_edu_note: "HCT sigue siendo una herramienta educativa en contextos de equipo y empresa.",
     price_e_btn: "NEGOCIAR ACCESO",
     sysreq_title: "> REQUISITOS DEL SISTEMA",
@@ -1968,7 +1997,7 @@ const T = {
     sysreq_chip: "<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2",
     sysreq_ram: "<strong>4 GB de RAM</strong> mínimo · 8 GB recomendados",
     sysreq_net: "<strong>Conexión a Internet</strong> requerida (solicitudes API)",
-    api_note: "<strong>&gt; IMPORTANTE — CLAVE API &amp; COSTOS DE USO</strong><br>HCT requiere tu propia <strong>clave API de Anthropic</strong> para ejecutar análisis IA. La clave se ingresa una vez en la app y nunca sale de tu máquina. El uso de la API es facturado directamente por Anthropic — por separado de tu licencia HCT. Un análisis típico cuesta aproximadamente <code>~$0,80 con Sonnet · ~$5,00 con Opus</code>. Mantienes control total de tus gastos de API. Se puede crear una cuenta de Anthropic en <code>console.anthropic.com</code>.",
+    api_note: "<strong>&gt; IMPORTANTE — CLAVE API &amp; COSTOS DE USO</strong><br>HCT requiere tu propia <strong>clave API de Anthropic</strong> para ejecutar análisis IA. La clave se ingresa una vez en la app y nunca sale de tu máquina. El uso de la API es facturado directamente por Anthropic — por separado de tu licencia HCT. Un análisis típico cuesta aproximadamente <code>~$0,80 con Sonnet · ~$5,00 con Opus</code>. Mantienes control total de tus gastos de API. Se puede crear una cuenta de Anthropic en <code>console.anthropic.com</code>. El compañero PRIMER también usa la API — ~1–3 céntimos por mensaje.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NO ES ASESORAMIENTO FINANCIERO.</strong> Holistic Coin Trainer es exclusivamente una herramienta educativa y de aprendizaje. Todo el output de análisis es generado por IA y no constituye asesoramiento de inversión, financiero ni recomendación de compra o venta de activos. Los criptoactivos son altamente volátiles. El rendimiento pasado no indica resultados futuros. Esta herramienta no constituye asesoramiento financiero, de inversión o fiscal.",
     legal_note: "Al comprar aceptas los <a href=\"legal/agb.html\" style=\"color:var(--gold-dim);\">Términos</a> y el <a href=\"legal/eula.html\" style=\"color:var(--gold-dim);\">EULA</a>. <a href=\"legal/widerruf.html\" style=\"color:var(--gold-dim);\">Política de cancelación</a>.",
     footer_agb: "Condiciones",
@@ -2061,6 +2090,7 @@ const T = {
     price_l_period: "una tantum · tutti i futuri aggiornamenti",
     price_l_save: "> PAGA UNA VOLTA. TIENILO PER SEMPRE.",
     price_l_btn: "Possederlo",
+    card_api_hint: '+ Anthropic API: ~$0,80/analisi · PRIMER ~1–3¢/msg ↓',
     feat_unlimited: "Sessioni di apprendimento illimitate",
     feat_coingecko: "Dati live CoinGecko",
     feat_wyckoff: "Wyckoff + scenario DCA",
@@ -2098,7 +2128,8 @@ const T = {
     ent_f5: "Supporto dedicato",
     ent_f6: "Condizioni personalizzate",
     ent_card_btn: "Richiedi offerta",
-    ent_info: "// 1 POSTAZIONE = 1 MAC · SOLO LICENZA ANNUALE · CONFIGURAZIONE DI SQUADRA SU RICHIESTA",
+    ent_api_hint: "+ Anthropic API: ~$0,80/analisi · PRIMER ~1–3¢/msg ↓",
+    ent_info: "// 1 POSTAZIONE = 1 MAC · SOLO LICENZA ANNUALE · GRUPPI DI APPRENDIMENTO · ISTITUTI EDUCATIVI · TEAM DI RICERCA · AZIENDE · COSTI API SEPARATI PER POSTAZIONE",
     ent_edu_note: "HCT rimane uno strumento educativo nei contesti di team e aziendali.",
     price_e_btn: "NEGOZIA L'ACCESSO",
     sysreq_title: "> REQUISITI DI SISTEMA",
@@ -2106,7 +2137,7 @@ const T = {
     sysreq_chip: "<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2",
     sysreq_ram: "<strong>4 GB di RAM</strong> minimo · 8 GB consigliati",
     sysreq_net: "<strong>Connessione Internet</strong> necessaria (richieste API)",
-    api_note: "<strong>&gt; IMPORTANTE — CHIAVE API &amp; COSTI DI UTILIZZO</strong><br>HCT richiede la tua <strong>chiave API Anthropic</strong> per eseguire analisi IA. La chiave viene inserita una volta nell'app e non lascia mai la tua macchina. L'utilizzo dell'API viene fatturato direttamente da Anthropic — separatamente dalla tua licenza HCT. Una tipica analisi costa circa <code>~$0,80 con Sonnet · ~$5,00 con Opus</code>. Mantieni il pieno controllo delle tue spese API. Un account Anthropic può essere creato su <code>console.anthropic.com</code>.",
+    api_note: "<strong>&gt; IMPORTANTE — CHIAVE API &amp; COSTI DI UTILIZZO</strong><br>HCT richiede la tua <strong>chiave API Anthropic</strong> per eseguire analisi IA. La chiave viene inserita una volta nell'app e non lascia mai la tua macchina. L'utilizzo dell'API viene fatturato direttamente da Anthropic — separatamente dalla tua licenza HCT. Una tipica analisi costa circa <code>~$0,80 con Sonnet · ~$5,00 con Opus</code>. Mantieni il pieno controllo delle tue spese API. Un account Anthropic può essere creato su <code>console.anthropic.com</code>. Il compagno PRIMER utilizza anch'esso l'API — ~1–3 cent per messaggio.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NON È CONSULENZA FINANZIARIA.</strong> Holistic Coin Trainer è esclusivamente uno strumento educativo e di apprendimento. Tutti gli output di analisi sono generati da IA e non costituiscono consulenza sugli investimenti, finanziaria o raccomandazione di acquisto o vendita di attività. Le criptovalute sono altamente volatili. I risultati passati non indicano risultati futuri. Questo strumento non costituisce consulenza finanziaria, di investimento o fiscale.",
     legal_note: "Acquistando accetti i <a href=\"legal/agb.html\" style=\"color:var(--gold-dim);\">Termini</a> e l'<a href=\"legal/eula.html\" style=\"color:var(--gold-dim);\">EULA</a>. <a href=\"legal/widerruf.html\" style=\"color:var(--gold-dim);\">Diritto di recesso</a>.",
     footer_agb: "Condizioni",
@@ -2199,6 +2230,7 @@ const T = {
     price_l_period: "única · todas as atualizações futuras",
     price_l_save: "> PAGA UMA VEZ. TORNA-O TEU PARA SEMPRE.",
     price_l_btn: "Possuir",
+    card_api_hint: '+ Anthropic API: ~$0,80/análise · PRIMER ~1–3¢/msg ↓',
     feat_unlimited: "Sessões de aprendizagem ilimitadas",
     feat_coingecko: "Dados live CoinGecko",
     feat_wyckoff: "Wyckoff + cenário DCA",
@@ -2236,7 +2268,8 @@ const T = {
     ent_f5: "Suporte dedicado",
     ent_f6: "Condições individuais",
     ent_card_btn: "Solicitar oferta",
-    ent_info: "// 1 LUGAR = 1 MAC · APENAS LICENÇA ANUAL · CONFIGURAÇÃO DE EQUIPA SOB CONSULTA",
+    ent_api_hint: "+ Anthropic API: ~$0,80/análise · PRIMER ~1–3¢/msg ↓",
+    ent_info: "// 1 LUGAR = 1 MAC · APENAS LICENÇA ANUAL · GRUPOS DE APRENDIZAGEM · INSTITUIÇÕES EDUCATIVAS · EQUIPAS DE INVESTIGAÇÃO · EMPRESAS · CUSTOS API SEPARADOS POR LUGAR",
     ent_edu_note: "O HCT continua a ser uma ferramenta educativa em contextos de equipa e empresariais.",
     price_e_btn: "NEGOCIAR ACESSO",
     sysreq_title: "> REQUISITOS DO SISTEMA",
@@ -2244,7 +2277,7 @@ const T = {
     sysreq_chip: "<strong>Apple Silicon</strong> nativo · Intel Mac via Rosetta 2",
     sysreq_ram: "<strong>4 GB de RAM</strong> mínimo · 8 GB recomendado",
     sysreq_net: "<strong>Ligação à Internet</strong> obrigatória (pedidos API)",
-    api_note: "<strong>&gt; IMPORTANTE — CHAVE API &amp; CUSTOS DE UTILIZAÇÃO</strong><br>HCT requer a tua própria <strong>chave API Anthropic</strong> para executar análises IA. A chave é inserida uma vez na app e nunca sai da tua máquina. A utilização da API é faturada diretamente pela Anthropic — separadamente da tua licença HCT. Uma análise típica custa aproximadamente <code>~$0,80 com Sonnet · ~$5,00 com Opus</code>. Mantens o controlo total dos teus gastos de API. Uma conta Anthropic pode ser criada em <code>console.anthropic.com</code>.",
+    api_note: "<strong>&gt; IMPORTANTE — CHAVE API &amp; CUSTOS DE UTILIZAÇÃO</strong><br>HCT requer a tua própria <strong>chave API Anthropic</strong> para executar análises IA. A chave é inserida uma vez na app e nunca sai da tua máquina. A utilização da API é faturada diretamente pela Anthropic — separadamente da tua licença HCT. Uma análise típica custa aproximadamente <code>~$0,80 com Sonnet · ~$5,00 com Opus</code>. Mantens o controlo total dos teus gastos de API. Uma conta Anthropic pode ser criada em <code>console.anthropic.com</code>. O companheiro PRIMER também usa a API — ~1–3 cêntimos por mensagem.",
     disclaimer: "<strong style=\"color:var(--gray-light);\">NÃO É ACONSELHAMENTO FINANCEIRO.</strong> Holistic Coin Trainer é exclusivamente uma ferramenta educativa e de aprendizagem. Todo o output de análise é gerado por IA e não constitui aconselhamento de investimento, financeiro ou recomendação de compra ou venda de ativos. Os criptoativos são altamente voláteis. O desempenho passado não indica resultados futuros. Esta ferramenta não constitui aconselhamento financeiro, de investimento ou fiscal.",
     legal_note: "Ao comprar, aceitas os <a href=\"legal/agb.html\" style=\"color:var(--gold-dim);\">Termos</a> e o <a href=\"legal/eula.html\" style=\"color:var(--gold-dim);\">EULA</a>. <a href=\"legal/widerruf.html\" style=\"color:var(--gold-dim);\">Política de cancelamento</a>.",
     footer_agb: "Condições",
